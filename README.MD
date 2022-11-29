@@ -1,0 +1,2 @@
+-- Sommige getters en setters gaan later weg als ze niet gebruikt worden
+-- Veel methodes nog niet ingevuld
