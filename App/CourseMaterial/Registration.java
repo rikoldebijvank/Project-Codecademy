@@ -1,3 +1,5 @@
+package App.CourseMaterial;
+
 import java.time.LocalDate;
 
 public class Registration {

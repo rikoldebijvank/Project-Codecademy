@@ -1,3 +1,5 @@
+package App.Individuals;
+
 public class Speaker extends Person {
     private String organization;
 

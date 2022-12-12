@@ -1,6 +1,20 @@
 {
-  "java.project.referencedLibraries": [
-    "lib/**/*.jar",
-    "c:\\Users\\rikol\\Desktop\\sqljdbc_11.2.0.0_enu\\sqljdbc_11.2\\enu\\mssql-jdbc-11.2.0.jre11.jar"
-  ]
+  "java.project.outputPath": "bin",
+  "java.project.referencedLibraries": {
+    "include": [
+      "lib/**/*.jar",
+      "c:\\Users\\rikol\\Downloads\\mssql-jdbc-8.4.0.jre11.jar",
+      "c:\\Users\\rikol\\Desktop\\openjfx-19_windows-x64_bin-sdk\\javafx-sdk-19\\lib\\javafx.base.jar",
+      "c:\\Users\\rikol\\Desktop\\openjfx-19_windows-x64_bin-sdk\\javafx-sdk-19\\lib\\javafx.controls.jar",
+      "c:\\Users\\rikol\\Desktop\\openjfx-19_windows-x64_bin-sdk\\javafx-sdk-19\\lib\\javafx.fxml.jar",
+      "c:\\Users\\rikol\\Desktop\\openjfx-19_windows-x64_bin-sdk\\javafx-sdk-19\\lib\\javafx.graphics.jar",
+      "c:\\Users\\rikol\\Desktop\\openjfx-19_windows-x64_bin-sdk\\javafx-sdk-19\\lib\\javafx.media.jar",
+      "c:\\Users\\rikol\\Desktop\\openjfx-19_windows-x64_bin-sdk\\javafx-sdk-19\\lib\\javafx.swing.jar",
+      "c:\\Users\\rikol\\Desktop\\openjfx-19_windows-x64_bin-sdk\\javafx-sdk-19\\lib\\javafx.web.jar",
+      "c:\\Users\\rikol\\Desktop\\openjfx-19_windows-x64_bin-sdk\\javafx-sdk-19\\lib\\javafx-swt.jar"
+    ],
+    "exclude": [
+      "c:\\Users\\rikol\\Desktop\\sqljdbc_11.2.0.0_enu\\sqljdbc_11.2\\enu\\mssql-jdbc-11.2.0.jre11.jar"
+    ]
+  }
 }

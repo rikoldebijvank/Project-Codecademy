@@ -1,3 +1,7 @@
+package App.CourseMaterial;
+
+import App.Individuals.Employee;
+
 public class Certificate {
     private int id;
     private Double rating;

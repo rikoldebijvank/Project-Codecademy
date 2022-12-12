@@ -1,7 +1,14 @@
+package App.Individuals;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+
+import App.CourseMaterial.Certificate;
+import App.CourseMaterial.Course;
+import App.CourseMaterial.Registration;
+import App.CourseMaterial.Content.Module;
 
 public class Student extends Person {
     private LocalDate birthday;

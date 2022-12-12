@@ -1,4 +1,8 @@
+package App.CourseMaterial.Content;
+
 import java.time.LocalDate;
+
+import App.Individuals.Speaker;
 
 public class Webcast extends Content {
     private String url;

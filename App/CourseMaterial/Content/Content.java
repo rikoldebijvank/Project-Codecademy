@@ -1,3 +1,5 @@
+package App.CourseMaterial.Content;
+
 import java.time.LocalDate;
 
 public abstract class Content {

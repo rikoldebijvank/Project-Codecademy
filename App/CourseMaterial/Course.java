@@ -1,6 +1,12 @@
+package App.CourseMaterial;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+
+import App.CourseMaterial.Content.Content;
+import App.CourseMaterial.Content.Module;
+import App.CourseMaterial.Content.Webcast;
 
 public class Course {
     private String courseName;

@@ -1,3 +1,5 @@
+package App.Individuals;
+
 public class Employee {
     private String name;
 

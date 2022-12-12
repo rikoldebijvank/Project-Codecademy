@@ -1,4 +1,8 @@
+package App.CourseMaterial.Content;
+
 import java.time.LocalDate;
+
+import App.Individuals.ContactPerson;
 
 public class Module extends Content {
     private Double version;
