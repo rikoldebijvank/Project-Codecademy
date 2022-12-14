@@ -1,7 +1,13 @@
 package App.GUI;
 
-public class Gui {
-    public static void start(String[] args) {
+import javafx.application.Application;
+import javafx.stage.Stage;
 
+public class Gui extends Application {
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        stage.setTitle("Application");
+        stage.show();
     }
 }
