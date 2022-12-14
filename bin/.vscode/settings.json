@@ -1,0 +1,15 @@
+{
+  "java.project.outputPath": "bin",
+  "java.project.referencedLibraries": [
+    "lib/**/*.jar",
+    "JarFiles/javafx.base.jar",
+    "JarFiles/javafx.controls.jar",
+    "JarFiles/javafx.fxml.jar",
+    "JarFiles/javafx.graphics.jar",
+    "JarFiles/javafx.media.jar",
+    "JarFiles/javafx.swing.jar",
+    "JarFiles/javafx.web.jar",
+    "JarFiles/javafx-swt.jar",
+    "JarFiles/mssql-jdbc-8.4.0.jre11.jar"
+  ]
+}

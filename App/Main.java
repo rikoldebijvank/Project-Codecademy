@@ -22,7 +22,7 @@ public class Main {
             stmt = con.createStatement();
             rs = stmt.executeQuery(SQL);
 
-            System.out.print(String.format("| %7s | %-32s | %-24s |\n", " ", " ", " ").replace(" ", "-"));
+            System.out.print(String.format("| %33s | %33s | %33s |\n", " ", " ", " ").replace(" ", "-"));
 
         }
 

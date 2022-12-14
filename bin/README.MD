@@ -1,0 +1,3 @@
+-- Sommige getters en setters gaan later weg als ze niet gebruikt worden
+-- Veel methodes nog niet ingevuld
+-- Database code zit in een sql file, kan later worden weggehaald
