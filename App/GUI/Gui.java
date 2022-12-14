@@ -7,7 +7,9 @@ import javafx.stage.Stage;
 public class Gui extends Application {
     public static void start(Stage stage) throws Exception {
 
-        Scene mainview = new Scene(totalPane);
+        stage.setTitle("Avans New");
+
+        Scene mainview = new Scene();
         stage.setScene(mainview);
         stage.show();
     }
