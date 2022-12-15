@@ -1,6 +1,5 @@
 package App;
 
-import java.sql.*;
 import javafx.application.Application;
 import App.GUI.Gui;
 
@@ -10,44 +9,9 @@ public class Main {
 
         Application.launch(Gui.class);
 
-        String connectionUrl = "jdbc:sqlserver://localhost;databaseName=Codecademy;integratedSecurity=true;encrypt=true;trustServerCertificate=true;";
+        // DatabaseController control = new DatabaseController();
+        // String signInSQL = "SELECT * FROM Users";
+        // System.out.println(control.checkSQLEmail("rik@rik.nl"));
 
-        Connection con = null;
-
-        Statement stmt = null;
-
-        ResultSet rs = null;
-
-        try {
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            con = DriverManager.getConnection(connectionUrl);
-
-            String SQL = "SELECT * FROM Certificate";
-            stmt = con.createStatement();
-            rs = stmt.executeQuery(SQL);
-
-            System.out.print(String.format("| %33s | %33s | %33s |\n", " ", " ", " ").replace(" ", "-"));
-
-        }
-
-        catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if (rs != null)
-                try {
-                    rs.close();
-                } catch (Exception e) {
-                }
-            if (stmt != null)
-                try {
-                    stmt.close();
-                } catch (Exception e) {
-                }
-            if (con != null)
-                try {
-                    con.close();
-                } catch (Exception e) {
-                }
-        }
     }
 }
