@@ -2,9 +2,14 @@ package App;
 
 import java.sql.*;
 
+import App.GUI.Gui;
+import javafx.application.Application;
+
 public class Main {
 
     public static void main(String[] args) {
+
+        Application.launch(Gui.class);
 
         String connectionUrl = "jdbc:sqlserver://localhost;databaseName=Codecademy;integratedSecurity=true;encrypt=true;trustServerCertificate=true;";
 
