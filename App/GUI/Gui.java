@@ -18,7 +18,7 @@ public class Gui extends Application {
     public void start(Stage stage) throws Exception {
         DatabaseController controller = new DatabaseController();
 
-        stage.setTitle("Avans new");
+        stage.setTitle("Avans Dash");
 
         Text message = new Text();
         TextField search = new TextField();
