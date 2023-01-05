@@ -37,12 +37,12 @@ public class DatabaseController {
         }
     }
 
-    public String checkSQLEmail(String email) {
+    public String checkSQLEmail(String email, String userType) {
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             con = DriverManager.getConnection(connectionUrl);
             stmt = con.createStatement();
-            rs = stmt.executeQuery("SELECT Email FROM Users");
+            rs = stmt.executeQuery("SELECT Email FROM " + userType);
             while (rs.next()) {
                 String passwordIncluded = rs.getString("Email");
                 if (passwordIncluded.equals(email)) {
@@ -73,12 +73,12 @@ public class DatabaseController {
         return null;
     }
 
-    public String checkSQLPassword(String email, String password) {
+    public String checkSQLPassword(String email, String password, String userType) {
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             con = DriverManager.getConnection(connectionUrl);
             stmt = con.createStatement();
-            rs = stmt.executeQuery("SELECT Password FROM Users WHERE Email = '" + email + "'");
+            rs = stmt.executeQuery("SELECT Password FROM " + userType + " WHERE Email = '" + email + "'");
             while (rs.next()) {
                 String passwordIncluded = rs.getString("Password");
                 if (passwordIncluded.equals(password)) {
