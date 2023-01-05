@@ -10,9 +10,23 @@ import javafx.scene.control.TextField;
 
 public class FxmlController {
     DatabaseController controller = new DatabaseController();
+    Gui gui = new Gui();
 
     public FxmlController() {
 
+    }
+
+    @FXML
+    private Button studentContinue;
+    @FXML
+    private Button adminContinue;
+
+    public void continueToStudentPage() throws IOException {
+        gui.changeScene("FxmlFiles/StudentLoginPage.fxml");
+    }
+
+    public void continueToAdminPage() throws IOException {
+        gui.changeScene("FxmlFiles/AdminLoginPage.fxml");
     }
 
     @FXML
@@ -26,22 +40,30 @@ public class FxmlController {
     @FXML
     private TextField password;
 
-    public void checkLogin() throws IOException {
-        Gui m = new Gui();
-        String signInValuePassword = controller.checkSQLPassword(email.getText(), password.getText());
+    public void checkLogin(String userType) throws IOException {
+        String signInValuePassword = controller.checkSQLPassword(email.getText(), password.getText(), userType);
         if (signInValuePassword == null) {
             error.setText("Login Failed");
         } else if (!signInValuePassword.isEmpty()) {
             error.setText("Login Complete!");
-            m.changeScene("FxmlFiles/afterLogin.fxml");
+            gui.changeScene("FxmlFiles/afterLogin.fxml");
         } else {
             error.setText("Login Failed");
         }
     }
 
-    public void signUp() throws IOException {
-        String signUpSQL = "INSERT INTO Users VALUES ('" + email.getText() + "', '" + password.getText() + "');";
-        String signUpSQLTakenValue = controller.checkSQLEmail(email.getText());
+    public void checkAdminLogin() throws IOException {
+        checkLogin("Admins");
+    }
+
+    public void checkStudentLogin() throws IOException {
+        checkLogin("Students");
+    }
+
+    public void signUp(String userType) throws IOException {
+        String signUpSQL = "INSERT INTO " + userType + " VALUES ('" + email.getText() + "', '" + password.getText()
+                + "');";
+        String signUpSQLTakenValue = controller.checkSQLEmail(email.getText(), userType);
         if (email.getText().equals("") || password.getText().equals("")) {
             error.setText("Please fill out the form");
         } else if (!email.getText().contains("@") || !email.getText().contains(".")) {
@@ -56,5 +78,13 @@ public class FxmlController {
         } else {
             error.setText("Error");
         }
+    }
+
+    public void adminSignUp() throws IOException {
+        signUp("Admins");
+    }
+
+    public void studentSignUp() throws IOException {
+        signUp("Students");
     }
 }
