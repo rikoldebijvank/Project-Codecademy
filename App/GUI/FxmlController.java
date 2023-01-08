@@ -1,10 +1,11 @@
 package App.GUI;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 import App.DatabaseController;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
@@ -16,39 +17,93 @@ public class FxmlController {
 
     }
 
-    @FXML
-    private Button studentContinue;
-    @FXML
-    private Button adminContinue;
-
-    public void continueToStudentPage() throws IOException {
+    public void continueToStudentLogin() throws IOException {
         gui.changeScene("FxmlFiles/StudentLoginPage.fxml");
     }
 
-    public void continueToAdminPage() throws IOException {
+    public void continueToStudentRegistration() throws IOException {
+        gui.changeScene("FxmlFiles/StudentRegistration.fxml");
+    }
+
+    public void continueToAdminLogin() throws IOException {
         gui.changeScene("FxmlFiles/AdminLoginPage.fxml");
     }
 
+    public void continueToAdminRegistration() throws IOException {
+        gui.changeScene("FxmlFiles/AdminRegistration.fxml");
+    }
+
+    public void backToFrontPage() throws IOException {
+        gui.changeScene("FxmlFiles/StartingPage.fxml");
+    }
+
     @FXML
-    private Button loginButton;
+    private TextField studentName;
     @FXML
-    private Button signUpButton;
+    private TextField studentEmail;
     @FXML
-    private Label error;
+    private TextField studentPassword;
     @FXML
-    private TextField email;
+    private DatePicker studentDateOfBirth;
     @FXML
-    private TextField password;
+    private TextField studentAddress;
+    @FXML
+    private TextField studentResidence;
+    @FXML
+    private TextField studentCountry;
+    @FXML
+    private TextField studentGender;
+    @FXML
+    private TextField adminEmail;
+    @FXML
+    private TextField adminPassword;
+    @FXML
+    private Label studentLoginError;
+    @FXML
+    private Label adminLoginError;
+    @FXML
+    private TextField studentLoginEmail;
+    @FXML
+    private TextField studentLoginPassword;
+    @FXML
+    private TextField adminLoginEmail;
+    @FXML
+    private TextField adminLoginPassword;
+    @FXML
+    private Label studentSignUpError;
+    @FXML
+    private Label adminSignUpError;
+
+    public void createStudent() throws IOException {
+        signUp("Students");
+    }
+
+    public void createAdmin() throws IOException {
+        signUp("Admins");
+    }
 
     public void checkLogin(String userType) throws IOException {
-        String signInValuePassword = controller.checkSQLPassword(email.getText(), password.getText(), userType);
-        if (signInValuePassword == null) {
-            error.setText("Login Failed");
-        } else if (!signInValuePassword.isEmpty()) {
-            error.setText("Login Complete!");
-            gui.changeScene("FxmlFiles/afterLogin.fxml");
-        } else {
-            error.setText("Login Failed");
+        if (userType.equals("Students")) {
+            String signInValuePassword = controller.checkSQLPassword(studentLoginEmail.getText(),
+                    studentLoginPassword.getText(), userType);
+            if (signInValuePassword == null) {
+                studentLoginError.setText("Login Failed");
+            } else if (!signInValuePassword.isEmpty()) {
+                studentLoginError.setText("Login Complete!");
+            } else {
+                studentLoginError.setText("Login Failed");
+            }
+        }
+        if (userType.equals("Admins")) {
+            String signInValuePassword = controller.checkSQLPassword(adminLoginEmail.getText(),
+                    adminLoginPassword.getText(), userType);
+            if (signInValuePassword == null) {
+                adminLoginError.setText("Login Failed");
+            } else if (!signInValuePassword.isEmpty()) {
+                adminLoginError.setText("Login Complete!");
+            } else {
+                adminLoginError.setText("Login Failed");
+            }
         }
     }
 
@@ -61,22 +116,48 @@ public class FxmlController {
     }
 
     public void signUp(String userType) throws IOException {
-        String signUpSQL = "INSERT INTO " + userType + " VALUES ('" + email.getText() + "', '" + password.getText()
-                + "');";
-        String signUpSQLTakenValue = controller.checkSQLEmail(email.getText(), userType);
-        if (email.getText().equals("") || password.getText().equals("")) {
-            error.setText("Please fill out the form");
-        } else if (!email.getText().contains("@") || !email.getText().contains(".")) {
-            error.setText("Incorrect Format");
-        } else if (password.getText().length() < 8) {
-            error.setText("Password has to be greater than 8 characters");
-        } else if (signUpSQLTakenValue == null) {
-            controller.executeSQL(signUpSQL);
-            error.setText("Sign Up Complete!");
-        } else if (signUpSQLTakenValue.equals(email.getText())) {
-            error.setText("Email taken");
-        } else {
-            error.setText("Error");
+        if (userType.equals("Students")) {
+            String signUpSQLTakenValue = controller.checkSQLEmail(studentEmail.getText(), "Students");
+            if (studentName.getText().equals("") || studentEmail.getText().equals("")
+                    || studentPassword.getText().equals("") || studentDateOfBirth.getValue().equals("")
+                    || studentAddress.getText().equals("") || studentResidence.getText().equals("")
+                    || studentCountry.getText().equals("") || studentGender.getText().equals("")) {
+                studentSignUpError.setText("Please fill out the form");
+            } else if (!studentEmail.getText().contains("@") || !studentEmail.getText().contains(".")) {
+                studentSignUpError.setText("Incorrect email format");
+            } else if (studentDateOfBirth.getValue().isAfter(LocalDate.now())) {
+                studentSignUpError.setText("Birth date has to be in the past");
+            } else if (studentPassword.getText().length() < 8) {
+                studentSignUpError.setText("Password has to be greater than 8 characters");
+            } else if (!studentGender.getText().equals("Male") && !studentGender.getText().equals("Female")) {
+                studentSignUpError.setText("Gender has to be either 'Male' or 'Female'");
+            } else if (signUpSQLTakenValue == null) {
+                controller.createStudent(studentName.getText(), studentEmail.getText(), studentPassword.getText(),
+                        studentDateOfBirth.getValue(), studentAddress.getText(), studentResidence.getText(),
+                        studentCountry.getText(), studentGender.getText());
+                studentSignUpError.setText("Sign up complete!");
+            } else if (signUpSQLTakenValue.equals(studentEmail.getText())) {
+                studentSignUpError.setText("Email taken");
+            } else {
+                studentSignUpError.setText("Error");
+            }
+        }
+        if (userType.equals("Admins")) {
+            String signUpSQLTakenValue = controller.checkSQLEmail(adminEmail.getText(), "Admins");
+            if (adminEmail.getText().equals("") || adminEmail.getText().equals("")) {
+                adminSignUpError.setText("Please fill out the form");
+            } else if (!adminEmail.getText().contains("@") || !adminEmail.getText().contains(".")) {
+                adminSignUpError.setText("Incorrect email format");
+            } else if (adminPassword.getText().length() < 8) {
+                adminSignUpError.setText("Password has to be greater than 8 characters");
+            } else if (signUpSQLTakenValue == null) {
+                controller.createAdmin(adminEmail.getText(), adminPassword.getText());
+                adminSignUpError.setText("Sign up complete!");
+            } else if (signUpSQLTakenValue.equals(adminEmail.getText())) {
+                adminSignUpError.setText("Email taken");
+            } else {
+                adminSignUpError.setText("Error");
+            }
         }
     }
 
@@ -87,4 +168,5 @@ public class FxmlController {
     public void studentSignUp() throws IOException {
         signUp("Students");
     }
+
 }

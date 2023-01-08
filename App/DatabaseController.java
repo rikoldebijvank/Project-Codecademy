@@ -1,6 +1,7 @@
 package App;
 
 import java.sql.*;
+import java.time.LocalDate;
 
 public class DatabaseController {
     private String connectionUrl = "jdbc:sqlserver://localhost;databaseName=Codecademy;integratedSecurity=true;encrypt=true;trustServerCertificate=true;";
@@ -18,22 +19,6 @@ public class DatabaseController {
 
         catch (Exception e) {
             e.printStackTrace();
-        } finally {
-            if (rs != null)
-                try {
-                    rs.close();
-                } catch (Exception e) {
-                }
-            if (stmt != null)
-                try {
-                    stmt.close();
-                } catch (Exception e) {
-                }
-            if (con != null)
-                try {
-                    con.close();
-                } catch (Exception e) {
-                }
         }
     }
 
@@ -53,22 +38,6 @@ public class DatabaseController {
 
         catch (Exception e) {
             e.printStackTrace();
-        } finally {
-            if (rs != null)
-                try {
-                    rs.close();
-                } catch (Exception e) {
-                }
-            if (stmt != null)
-                try {
-                    stmt.close();
-                } catch (Exception e) {
-                }
-            if (con != null)
-                try {
-                    con.close();
-                } catch (Exception e) {
-                }
         }
         return null;
     }
@@ -89,22 +58,38 @@ public class DatabaseController {
 
         catch (Exception e) {
             e.printStackTrace();
-        } finally {
-            if (rs != null)
-                try {
-                    rs.close();
-                } catch (Exception e) {
-                }
-            if (stmt != null)
-                try {
-                    stmt.close();
-                } catch (Exception e) {
-                }
-            if (con != null)
-                try {
-                    con.close();
-                } catch (Exception e) {
-                }
+        }
+        return null;
+    }
+
+    public String createStudent(String name, String email, String password, LocalDate dateOfBirth, String address,
+            String residence,
+            String country, String gender) {
+        try {
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            con = DriverManager.getConnection(connectionUrl);
+            stmt = con.createStatement();
+            rs = stmt.executeQuery("INSERT INTO Student VALUES ('" + email + "', '" + name + "', '" + dateOfBirth
+                    + "', '" + gender + "', '" + address + "', '" + residence + "', '" + country
+                    + "') INSERT INTO Students VALUES ('" + email + "', '" + password + "')");
+        }
+
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public String createAdmin(String email, String password) {
+        try {
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            con = DriverManager.getConnection(connectionUrl);
+            stmt = con.createStatement();
+            rs = stmt.executeQuery("INSERT INTO Admins VALUES ('" + email + "', '" + password + "')");
+        }
+
+        catch (Exception e) {
+            e.printStackTrace();
         }
         return null;
     }

@@ -29,7 +29,13 @@
                   <Font name="Consolas" size="24.0" />
                </font>
             </Text>
-            <Button fx:id="studentContinue" layoutX="104.0" layoutY="158.0" mnemonicParsing="false" onAction="#continueToStudentPage" prefHeight="37.0" prefWidth="83.0" style="-fx-background-color: #bb0000; -fx-border-radius: 10;" text="Continue" textFill="WHITE" />
+            <Button fx:id="studentLogin" layoutX="104.0" layoutY="103.0" mnemonicParsing="false" onAction="#continueToStudentLogin" prefHeight="37.0" prefWidth="83.0" style="-fx-background-color: #bb0000; -fx-border-radius: 10;" text="Login" textFill="WHITE" />
+            <Button fx:id="studentRegistration" layoutX="104.0" layoutY="245.0" mnemonicParsing="false" onAction="#continueToStudentRegistration" prefHeight="37.0" prefWidth="83.0" style="-fx-background-color: #bb0000; -fx-border-radius: 10;" text="Register" textFill="WHITE" />
+            <Text fill="#bb0000" layoutX="119.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New?">
+               <font>
+                  <Font name="Consolas" size="24.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
    </left>
@@ -41,7 +47,13 @@
                   <Font name="Consolas" size="24.0" />
                </font>
             </Text>
-            <Button fx:id="adminContinue" layoutX="104.0" layoutY="158.0" mnemonicParsing="false" onAction="#continueToAdminPage" prefHeight="37.0" prefWidth="83.0" style="-fx-background-color: #bb0000; -fx-border-radius: 10;" text="Continue" textFill="WHITE" />
+            <Button fx:id="adminLogin" layoutX="103.0" layoutY="101.0" mnemonicParsing="false" onAction="#continueToAdminLogin" prefHeight="37.0" prefWidth="83.0" style="-fx-background-color: #bb0000; -fx-border-radius: 10;" text="Login" textFill="WHITE" />
+            <Text fill="#bb0000" layoutX="118.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New?">
+               <font>
+                  <Font name="Consolas" size="24.0" />
+               </font>
+            </Text>
+            <Button fx:id="adminRegistration" layoutX="103.0" layoutY="242.0" mnemonicParsing="false" onAction="#continueToAdminRegistration" prefHeight="37.0" prefWidth="83.0" style="-fx-background-color: #bb0000; -fx-border-radius: 10;" text="Register" textFill="WHITE" />
          </children>
       </AnchorPane>
    </right>
