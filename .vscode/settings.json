@@ -1,18 +1,4 @@
 {
-<<<<<<< HEAD
-    "java.project.referencedLibraries": [
-        "lib/**/*.jar",
-        "d:\\javafx-sdk-19\\lib\\javafx.base.jar",
-        "d:\\javafx-sdk-19\\lib\\javafx.controls.jar",
-        "d:\\javafx-sdk-19\\lib\\javafx.fxml.jar",
-        "d:\\javafx-sdk-19\\lib\\javafx.graphics.jar",
-        "d:\\javafx-sdk-19\\lib\\javafx.media.jar",
-        "d:\\javafx-sdk-19\\lib\\javafx.swing.jar",
-        "d:\\javafx-sdk-19\\lib\\javafx.web.jar",
-        "d:\\javafx-sdk-19\\lib\\javafx-swt.jar"
-    ]
-} //eigen code toevoegen
-=======
   "java.project.outputPath": "bin",
   "java.project.referencedLibraries": [
     "lib/javafx-sdk-19/lib/javafx.base.jar",
@@ -27,4 +13,3 @@
     "lib/mssql-jdbc-8.4.0.jre11.jar"
   ]
 }
->>>>>>> 41a2c87b756bd990c2aa6b63fb10a0a34a3a3dfd
