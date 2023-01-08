@@ -15,7 +15,7 @@ public class Gui extends Application {
     public void start(Stage stage) throws Exception {
         stg = stage;
         stage.setResizable(false);
-        Parent root = FXMLLoader.load(getClass().getResource("FxmlFiles/StartingPage.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("StartingPage.fxml"));
         stage.setTitle("Avans Dash");
         stage.setScene(new Scene(root, 600, 400));
         stage.show();

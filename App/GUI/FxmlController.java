@@ -34,7 +34,7 @@ public class FxmlController {
     }
 
     public void backToFrontPage() throws IOException {
-        gui.changeScene("FxmlFiles/StartingPage.fxml");
+        gui.changeScene("StartingPage.fxml");
     }
 
     @FXML
