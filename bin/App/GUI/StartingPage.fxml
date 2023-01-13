@@ -1,60 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="App.GUI.FxmlController">
-   <top>
-      <AnchorPane prefHeight="85.0" prefWidth="600.0" style="-fx-background-color: bb0000;" BorderPane.alignment="CENTER">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="696.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox prefHeight="493.0" prefWidth="272.0" style="-fx-background-color: #bb0000;">
          <children>
-            <Text fill="WHITE" layoutX="142.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select an option">
-               <font>
-                  <Font name="Consolas" size="36.0" />
-               </font>
-            </Text>
+            <Pane prefHeight="150.0" prefWidth="272.0" style="-fx-background-color: #a00;">
+               <children>
+                  <Label layoutX="50.0" layoutY="20.0" text="Avans Dash" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="60.0" layoutY="14.0" prefHeight="71.0" prefWidth="152.0" text="Welcome" textFill="WHITE">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="77.0" layoutY="68.0" prefHeight="35.0" prefWidth="118.0" text="to our app" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
          </children>
-      </AnchorPane>
-   </top>
-   <center>
-      <AnchorPane prefHeight="315.0" prefWidth="133.0" style="-fx-background-color: bb0000;" BorderPane.alignment="CENTER" />
-   </center>
-   <left>
-      <AnchorPane prefHeight="315.0" prefWidth="290.0" BorderPane.alignment="CENTER">
+      </VBox>
+      <Pane layoutX="272.0" layoutY="67.0" prefHeight="83.0" prefWidth="425.0" style="-fx-background-color: #b00;">
          <children>
-            <Text fill="#bb0000" layoutX="99.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student">
+            <Label layoutX="31.0" layoutY="24.0" prefHeight="35.0" prefWidth="152.0" text="Starting  page" textFill="WHITE">
                <font>
-                  <Font name="Consolas" size="24.0" />
+                  <Font size="24.0" />
                </font>
-            </Text>
-            <Button fx:id="studentLogin" layoutX="104.0" layoutY="103.0" mnemonicParsing="false" onAction="#continueToStudentLogin" prefHeight="37.0" prefWidth="83.0" style="-fx-background-color: #bb0000; -fx-border-radius: 10;" text="Login" textFill="WHITE" />
-            <Button fx:id="studentRegistration" layoutX="104.0" layoutY="245.0" mnemonicParsing="false" onAction="#continueToStudentRegistration" prefHeight="37.0" prefWidth="83.0" style="-fx-background-color: #bb0000; -fx-border-radius: 10;" text="Register" textFill="WHITE" />
-            <Text fill="#bb0000" layoutX="119.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New?">
-               <font>
-                  <Font name="Consolas" size="24.0" />
-               </font>
-            </Text>
+            </Label>
          </children>
-      </AnchorPane>
-   </left>
-   <right>
-      <AnchorPane prefHeight="315.0" prefWidth="290.0" BorderPane.alignment="CENTER">
-         <children>
-            <Text fill="#bb0000" layoutX="59.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Administrator">
-               <font>
-                  <Font name="Consolas" size="24.0" />
-               </font>
-            </Text>
-            <Button fx:id="adminLogin" layoutX="103.0" layoutY="101.0" mnemonicParsing="false" onAction="#continueToAdminLogin" prefHeight="37.0" prefWidth="83.0" style="-fx-background-color: #bb0000; -fx-border-radius: 10;" text="Login" textFill="WHITE" />
-            <Text fill="#bb0000" layoutX="118.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New?">
-               <font>
-                  <Font name="Consolas" size="24.0" />
-               </font>
-            </Text>
-            <Button fx:id="adminRegistration" layoutX="103.0" layoutY="242.0" mnemonicParsing="false" onAction="#continueToAdminRegistration" prefHeight="37.0" prefWidth="83.0" style="-fx-background-color: #bb0000; -fx-border-radius: 10;" text="Register" textFill="WHITE" />
-         </children>
-      </AnchorPane>
-   </right>
-</BorderPane>
+      </Pane>
+      <Button layoutX="360.0" layoutY="289.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="102.0" style="-fx-background-color: #bb0000;" text="Student" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color opacity="0.5954198241233826" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Button>
+      <Button layoutX="508.0" layoutY="289.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="102.0" style="-fx-background-color: #bb0000;" text="Admin" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color opacity="0.6030534505844116" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Button>
+      <Label layoutX="374.0" layoutY="223.0" text="Log back into your account" textFill="#bb0000">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="367.0" layoutY="243.0" text="or create new one and join us" textFill="#bb0000">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
