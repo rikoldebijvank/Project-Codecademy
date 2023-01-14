@@ -10,13 +10,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-public class FxmlController {
-    DatabaseController controller = new DatabaseController();
-    Gui gui = new Gui();
-
-    public FxmlController() {
-
-    }
+public class FxmlSignInController {
+    private DatabaseController controller = new DatabaseController();
+    private Gui gui = new Gui();
 
     public void continueToStudentLogin() throws IOException {
         gui.changeScene("FxmlFiles/studentLoginPage.fxml");
@@ -32,14 +28,6 @@ public class FxmlController {
 
     public void continueToAdminRegistration() throws IOException {
         gui.changeScene("FxmlFiles/adminRegistration.fxml");
-    }
-
-    public void backToFrontPage() throws IOException {
-        gui.changeScene("startingPage.fxml");
-    }
-
-    public void continueToStudentCoursesPage() throws IOException {
-        gui.changeScene("FxmlFiles/astudentCoursePage.fxml");
     }
 
     @FXML
