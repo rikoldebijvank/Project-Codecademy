@@ -100,7 +100,7 @@
                   <HBox prefHeight="1.0" prefWidth="396.0" spacing="10.0">
                      <children>
                         <TextField id="searchCourse" prefHeight="31.0" prefWidth="287.0" />
-                        <Button mnemonicParsing="false" onAction="#addCourse" prefHeight="31.0" prefWidth="102.0" style="-fx-background-color: #b00;" text="Add Course" textFill="WHITE">
+                        <Button mnemonicParsing="false" onAction="#continueToAddCoursePage" prefHeight="31.0" prefWidth="102.0" style="-fx-background-color: #b00;" text="Add Course" textFill="WHITE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>

@@ -85,6 +85,7 @@
       </Pane>
       <VBox layoutX="306.0" layoutY="164.0" prefHeight="315.0" prefWidth="333.0" spacing="2.0">
          <children>
+            <Label fx:id="addCourseSuccessLabel" prefHeight="17.0" prefWidth="335.0" textFill="#00ff1a" />
             <Label text="New Course">
                <font>
                   <Font size="18.0" />
@@ -98,32 +99,26 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField prefHeight="25.0" prefWidth="296.0" />
+            <TextField fx:id="courseName" prefHeight="25.0" prefWidth="296.0" />
             <Label layoutX="10.0" layoutY="37.0" text="Subject">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="10.0" layoutY="57.0" prefHeight="25.0" prefWidth="296.0" />
-            <Label layoutX="10.0" layoutY="82.0" text="Intro">
+            <TextField fx:id="courseSubject" layoutX="10.0" layoutY="57.0" prefHeight="25.0" prefWidth="296.0" />
+            <Label layoutX="10.0" layoutY="82.0" text="Introduction Text">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="10.0" layoutY="102.0" prefHeight="25.0" prefWidth="296.0" />
-            <Label layoutX="10.0" layoutY="127.0" text="Certificate">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <TextField layoutX="10.0" layoutY="147.0" prefHeight="25.0" prefWidth="296.0" />
+            <TextField fx:id="courseIntro" layoutX="10.0" layoutY="102.0" prefHeight="25.0" prefWidth="296.0" />
             <Label layoutX="10.0" layoutY="172.0" text="Difficulty">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="10.0" layoutY="192.0" prefHeight="25.0" prefWidth="296.0" />
-            <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="107.0" style="-fx-background-color: #bb0000;" text="Add Course" textFill="WHITE">
+            <TextField fx:id="courseDifficulty" layoutX="10.0" layoutY="192.0" prefHeight="25.0" prefWidth="296.0" />
+            <Button mnemonicParsing="false" onAction="#addCourse" prefHeight="36.0" prefWidth="107.0" style="-fx-background-color: #bb0000;" text="Add Course" textFill="WHITE">
                <VBox.margin>
                   <Insets top="7.0" />
                </VBox.margin>

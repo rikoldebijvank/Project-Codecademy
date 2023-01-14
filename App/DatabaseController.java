@@ -62,35 +62,20 @@ public class DatabaseController {
         return null;
     }
 
-    public String createStudent(String name, String email, String password, LocalDate dateOfBirth, String address,
+    public void createStudent(String name, String email, String password, LocalDate dateOfBirth, String address,
             String residence,
             String country, String gender) {
-        try {
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            con = DriverManager.getConnection(connectionUrl);
-            stmt = con.createStatement();
-            rs = stmt.executeQuery("INSERT INTO Student VALUES ('" + email + "', '" + name + "', '" + dateOfBirth
-                    + "', '" + gender + "', '" + address + "', '" + residence + "', '" + country
-                    + "') INSERT INTO Students VALUES ('" + email + "', '" + password + "')");
-        }
-
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
+        executeSQL("INSERT INTO Student VALUES ('" + email + "', '" + name + "', '" + dateOfBirth
+                + "', '" + gender + "', '" + address + "', '" + residence + "', '" + country
+                + "') INSERT INTO Students VALUES ('" + email + "', '" + password + "')");
     }
 
-    public String createAdmin(String email, String password) {
-        try {
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            con = DriverManager.getConnection(connectionUrl);
-            stmt = con.createStatement();
-            rs = stmt.executeQuery("INSERT INTO Admins VALUES ('" + email + "', '" + password + "')");
-        }
+    public void createAdmin(String name, String email, String password) {
+        executeSQL("INSERT INTO Admins VALUES ('" + name + "', '" + email + "', '" + password + "')");
+    }
 
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
+    public void createCourse(String name, String subject, String intro, String difficulty, String adminEmail) {
+        executeSQL("INSERT INTO Course VALUES ('" + name + "', '" + subject + "', '" + intro + "', '" + difficulty
+                + "', '" + adminEmail + "')");
     }
 }

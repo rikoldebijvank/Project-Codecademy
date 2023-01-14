@@ -1,9 +1,10 @@
-package App.GUI;
+package App.GUI.FxmlController;
 
 import java.io.IOException;
 import java.time.LocalDate;
 
 import App.DatabaseController;
+import App.GUI.Gui;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
@@ -13,21 +14,26 @@ import javafx.scene.control.TextField;
 public class FxmlSignInController {
     private DatabaseController controller = new DatabaseController();
     private Gui gui = new Gui();
+    public String adminEmailLoggedIn;
 
     public void continueToStudentLogin() throws IOException {
-        gui.changeScene("FxmlFiles/studentLoginPage.fxml");
+        gui.changeScene("./FxmlFiles/studentLoginPage.fxml");
     }
 
     public void continueToStudentRegistration() throws IOException {
-        gui.changeScene("FxmlFiles/studentRegistration.fxml");
+        gui.changeScene("./FxmlFiles/studentRegistration.fxml");
     }
 
     public void continueToAdminLogin() throws IOException {
-        gui.changeScene("FxmlFiles/adminLoginPage.fxml");
+        gui.changeScene("./FxmlFiles/adminLoginPage.fxml");
     }
 
     public void continueToAdminRegistration() throws IOException {
-        gui.changeScene("FxmlFiles/adminRegistration.fxml");
+        gui.changeScene("./FxmlFiles/adminRegistration.fxml");
+    }
+
+    public void backToFrontPage() throws IOException {
+        gui.changeScene("./startingPage.fxml");
     }
 
     @FXML
@@ -41,11 +47,13 @@ public class FxmlSignInController {
     @FXML
     private TextField studentAddress;
     @FXML
-    private TextField studentResidence;
+    private TextField studentPostalCode;
     @FXML
     private TextField studentCountry;
     @FXML
     private TextField studentGender;
+    @FXML
+    private TextField adminName;
     @FXML
     private TextField adminEmail;
     @FXML
@@ -75,6 +83,7 @@ public class FxmlSignInController {
                 studentLoginError.setText("Login Failed");
             } else if (!signInValuePassword.isEmpty()) {
                 studentLoginError.setText("Login Complete!");
+                gui.changeScene("./FxmlFiles/studentHomePage.fxml");
             } else {
                 studentLoginError.setText("Login Failed");
             }
@@ -86,6 +95,8 @@ public class FxmlSignInController {
                 adminLoginError.setText("Login Failed");
             } else if (!signInValuePassword.isEmpty()) {
                 adminLoginError.setText("Login Complete!");
+                gui.changeScene("./FxmlFiles/adminHomePage.fxml");
+                adminEmailLoggedIn = adminLoginEmail.getText();
             } else {
                 adminLoginError.setText("Login Failed");
             }
@@ -105,7 +116,7 @@ public class FxmlSignInController {
             String signUpSQLTakenValue = controller.checkSQLEmail(studentEmail.getText(), "Students");
             if (studentName.getText().equals("") || studentEmail.getText().equals("")
                     || studentPassword.getText().equals("") || studentDateOfBirth.getValue().equals("")
-                    || studentAddress.getText().equals("") || studentResidence.getText().equals("")
+                    || studentAddress.getText().equals("") || studentPostalCode.getText().equals("")
                     || studentCountry.getText().equals("") || studentGender.getText().equals("")) {
                 studentSignUpError.setText("Please fill out the form");
             } else if (!studentEmail.getText().contains("@") || !studentEmail.getText().contains(".")) {
@@ -118,7 +129,7 @@ public class FxmlSignInController {
                 studentSignUpError.setText("Gender has to be either 'Male' or 'Female'");
             } else if (signUpSQLTakenValue == null) {
                 controller.createStudent(studentName.getText(), studentEmail.getText(), studentPassword.getText(),
-                        studentDateOfBirth.getValue(), studentAddress.getText(), studentResidence.getText(),
+                        studentDateOfBirth.getValue(), studentAddress.getText(), studentPostalCode.getText(),
                         studentCountry.getText(), studentGender.getText());
                 studentSignUpError.setText("Sign up complete!");
             } else if (signUpSQLTakenValue.equals(studentEmail.getText())) {
@@ -136,8 +147,10 @@ public class FxmlSignInController {
             } else if (adminPassword.getText().length() < 8) {
                 adminSignUpError.setText("Password has to be greater than 8 characters");
             } else if (signUpSQLTakenValue == null) {
-                controller.createAdmin(adminEmail.getText(), adminPassword.getText());
+                controller.createAdmin(adminName.getText(), adminEmail.getText(), adminPassword.getText());
                 adminSignUpError.setText("Sign up complete!");
+                adminEmailLoggedIn = adminEmail.getText();
+                gui.changeScene("./FxmlFiles/adminHomePage.fxml");
             } else if (signUpSQLTakenValue.equals(adminEmail.getText())) {
                 adminSignUpError.setText("Email taken");
             } else {

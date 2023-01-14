@@ -12,17 +12,17 @@ public class Course {
     private String courseName;
     private String subject;
     private String introduction;
-    private Certificate certificate;
     private Difficulty difficulty;
     private ArrayList<Course> recommendedCourses;
     private HashMap<String, Content> content;
+    private String adminEmail;
 
-    public Course(String courseName, String subject, String intro, Certificate certificate, Difficulty difficulty) {
+    public Course(String courseName, String subject, String intro, Difficulty difficulty, String adminEmail) {
         this.courseName = courseName;
         this.subject = subject;
         this.introduction = intro;
-        this.certificate = certificate;
         this.difficulty = difficulty;
+        this.adminEmail = adminEmail;
         this.recommendedCourses = new ArrayList<>();
         this.content = new HashMap<>();
     }
@@ -77,14 +77,6 @@ public class Course {
         this.introduction = introduction;
     }
 
-    public Certificate getCertificate() {
-        return certificate;
-    }
-
-    public void setCertificate(Certificate certificate) {
-        this.certificate = certificate;
-    }
-
     public Difficulty getDifficulty() {
         return difficulty;
     }
@@ -107,5 +99,13 @@ public class Course {
 
     public void setContent(HashMap<String, Content> content) {
         this.content = content;
+    }
+
+    public String getAdminEmail() {
+        return adminEmail;
+    }
+
+    public void setAdminEmail(String adminEmail) {
+        this.adminEmail = adminEmail;
     }
 }

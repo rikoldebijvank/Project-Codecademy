@@ -136,12 +136,12 @@
                </font>
             </Label>
             <TextField fx:id="studentCountry" />
-            <Label text="Residence">
+            <Label text="Postal Code">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="studentResidence" />
+            <TextField fx:id="studentPostalCode" />
          </children>
       </VBox>
       <Label fx:id="studentSignUpError" layoutX="311.0" layoutY="163.0" prefHeight="17.0" prefWidth="343.0" textAlignment="CENTER" textFill="RED" />
