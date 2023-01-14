@@ -19,23 +19,27 @@ public class FxmlController {
     }
 
     public void continueToStudentLogin() throws IOException {
-        gui.changeScene("FxmlFiles/StudentLoginPage.fxml");
+        gui.changeScene("FxmlFiles/studentLoginPage.fxml");
     }
 
     public void continueToStudentRegistration() throws IOException {
-        gui.changeScene("FxmlFiles/StudentRegistration.fxml");
+        gui.changeScene("FxmlFiles/studentRegistration.fxml");
     }
 
     public void continueToAdminLogin() throws IOException {
-        gui.changeScene("FxmlFiles/AdminLoginPage.fxml");
+        gui.changeScene("FxmlFiles/adminLoginPage.fxml");
     }
 
     public void continueToAdminRegistration() throws IOException {
-        gui.changeScene("FxmlFiles/AdminRegistration.fxml");
+        gui.changeScene("FxmlFiles/adminRegistration.fxml");
     }
 
     public void backToFrontPage() throws IOException {
-        gui.changeScene("StartingPage.fxml");
+        gui.changeScene("startingPage.fxml");
+    }
+
+    public void continueToStudentCoursesPage() throws IOException {
+        gui.changeScene("FxmlFiles/astudentCoursePage.fxml");
     }
 
     @FXML
