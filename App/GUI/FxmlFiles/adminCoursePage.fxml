@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="696.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="App.GUI.FxmlAdminController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="696.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="App.GUI.FxmlController.FxmlAdminController">
    <children>
       <VBox prefHeight="493.0" prefWidth="272.0" style="-fx-background-color: #bb0000;">
          <children>
@@ -27,9 +27,20 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
+                  <Button alignment="BASELINE_LEFT" layoutX="8.0" layoutY="77.0" mnemonicParsing="false" onAction="#backToAdminHomePage" prefHeight="75.0" prefWidth="272.0" style="-fx-background-color: #aa0000;" text="Home" textFill="WHITE">
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
                </children>
             </Pane>
-            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="55.0" prefWidth="272.0" style="-fx-background-color: #bb0000;" text="Courses" textFill="WHITE">
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#continueToAdminCoursesPage" prefHeight="55.0" prefWidth="272.0" style="-fx-background-color: #bb0000;" text="Courses" textFill="WHITE">
                <padding>
                   <Insets left="50.0" />
                </padding>
@@ -40,7 +51,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="272.0" style="-fx-background-color: #bb0000;" text="Registrations" textFill="WHITE">
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#continueToAdminStudentPage" prefHeight="55.0" prefWidth="272.0" style="-fx-background-color: #bb0000;" text="Students" textFill="WHITE">
                <padding>
                   <Insets left="50.0" />
                </padding>
@@ -51,7 +62,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="218.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="272.0" style="-fx-background-color: #bb0000;" text="Certificates" textFill="WHITE">
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="218.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="272.0" style="-fx-background-color: #bb0000;" text="Statistics" textFill="WHITE">
                <padding>
                   <Insets left="50.0" />
                </padding>
