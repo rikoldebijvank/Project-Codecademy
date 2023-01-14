@@ -20,7 +20,7 @@
    <children>
       <VBox prefHeight="493.0" prefWidth="272.0" style="-fx-background-color: #bb0000;">
          <children>
-            <Pane prefHeight="151.0" prefWidth="272.0" style="-fx-background-color: #a00;">
+            <Pane prefHeight="153.0" prefWidth="272.0" style="-fx-background-color: #a00;">
                <children>
                   <Label layoutX="50.0" layoutY="20.0" text="Avans Dash" textFill="WHITE">
                      <font>
@@ -51,7 +51,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="216.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="272.0" style="-fx-background-color: #bb0000;" text="Certificates" textFill="WHITE">
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="218.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="272.0" style="-fx-background-color: #bb0000;" text="Certificates" textFill="WHITE">
                <padding>
                   <Insets left="50.0" />
                </padding>
@@ -77,11 +77,10 @@
                <children>
                   <TableView prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                      <columns>
-                        <TableColumn editable="false" prefWidth="109.0" style="-fx-background-color: #DD0000; -fx-color: #000;" text="ID" />
-                        <TableColumn editable="false" prefWidth="81.0" style="-fx-background-color: #DD0000; -fx-color: #000;" text="First name" />
-                        <TableColumn editable="false" prefWidth="99.0" style="-fx-background-color: #DD0000; -fx-color: #000;" text="Last name" />
-                        <TableColumn editable="false" prefWidth="106.0" style="-fx-background-color: #DD0000; -fx-color: #000;" text="Email" />
-                        <TableColumn editable="false" prefWidth="106.0" style="-fx-background-color: #DD0000; -fx-color: #000;" text="Birthday" />
+                        <TableColumn editable="false" prefWidth="109.0" style="-fx-background-color: #DD0000; -fx-color: #000;" text="Course Name" />
+                        <TableColumn editable="false" prefWidth="81.0" style="-fx-background-color: #DD0000; -fx-color: #000;" text="Subject" />
+                        <TableColumn editable="false" prefWidth="99.0" style="-fx-background-color: #DD0000; -fx-color: #000;" text="Difficulty" />
+                        <TableColumn editable="false" prefWidth="106.0" style="-fx-background-color: #DD0000; -fx-color: #000;" text="Rec. Course" />
                      </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -89,12 +88,7 @@
                   </TableView>
                   <HBox prefHeight="1.0" prefWidth="396.0" spacing="10.0">
                      <children>
-                        <TextField id="searchStudent" prefHeight="31.0" prefWidth="287.0" />
-                        <Button mnemonicParsing="false" onAction="#addStudent" prefHeight="31.0" prefWidth="102.0" style="-fx-background-color: #b00;" text="Add Student" textFill="WHITE">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Button>
+                        <TextField id="searchCourse" prefHeight="31.0" prefWidth="399.0" />
                      </children>
                      <padding>
                         <Insets top="5.0" />
@@ -106,12 +100,12 @@
       </VBox>
       <Pane layoutX="272.0" layoutY="69.0" prefHeight="83.0" prefWidth="425.0" style="-fx-background-color: #b00;">
          <children>
-            <Label layoutX="34.0" layoutY="34.0" prefHeight="35.0" prefWidth="101.0" text="Students" textFill="WHITE">
+            <Label layoutX="34.0" layoutY="34.0" prefHeight="30.0" prefWidth="84.0" text="Courses" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="34.0" layoutY="19.0" text="/Home/Students" textFill="WHITE">
+            <Label layoutX="34.0" layoutY="19.0" text="/Home/Courses" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>

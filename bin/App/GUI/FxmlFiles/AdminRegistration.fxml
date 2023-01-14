@@ -59,7 +59,7 @@
             </Button>
          </children>
       </VBox>
-      <Pane layoutX="272.0" layoutY="67.0" prefHeight="83.0" prefWidth="425.0" style="-fx-background-color: #e00;">
+      <Pane layoutX="272.0" layoutY="67.0" prefHeight="83.0" prefWidth="425.0" style="-fx-background-color: #b00;">
          <children>
             <Label layoutX="29.0" layoutY="34.0" prefHeight="35.0" prefWidth="88.0" text="Sign up" textFill="WHITE">
                <font>
@@ -103,7 +103,6 @@
             </Button>
          </children>
       </VBox>
-      <VBox layoutX="495.0" layoutY="190.0" prefHeight="180.0" prefWidth="159.0" spacing="5.0" />
       <Label fx:id="adminSignUpError" layoutX="309.0" layoutY="173.0" prefHeight="17.0" prefWidth="265.0" textFill="RED" />
    </children>
 </AnchorPane>
