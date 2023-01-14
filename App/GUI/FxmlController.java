@@ -7,6 +7,7 @@ import App.DatabaseController;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 public class FxmlController {
@@ -18,23 +19,23 @@ public class FxmlController {
     }
 
     public void continueToStudentLogin() throws IOException {
-        gui.changeScene("FxmlFiles/studentLoginPage.fxml");
+        gui.changeScene("FxmlFiles/StudentLoginPage.fxml");
     }
 
     public void continueToStudentRegistration() throws IOException {
-        gui.changeScene("FxmlFiles/studentRegistration.fxml");
+        gui.changeScene("FxmlFiles/StudentRegistration.fxml");
     }
 
     public void continueToAdminLogin() throws IOException {
-        gui.changeScene("FxmlFiles/adminLoginPage.fxml");
+        gui.changeScene("FxmlFiles/AdminLoginPage.fxml");
     }
 
     public void continueToAdminRegistration() throws IOException {
-        gui.changeScene("FxmlFiles/adminRegistration.fxml");
+        gui.changeScene("FxmlFiles/AdminRegistration.fxml");
     }
 
     public void backToFrontPage() throws IOException {
-        gui.changeScene("startingPage.fxml");
+        gui.changeScene("StartingPage.fxml");
     }
 
     @FXML
@@ -42,7 +43,7 @@ public class FxmlController {
     @FXML
     private TextField studentEmail;
     @FXML
-    private TextField studentPassword;
+    private PasswordField studentPassword;
     @FXML
     private DatePicker studentDateOfBirth;
     @FXML
@@ -56,19 +57,7 @@ public class FxmlController {
     @FXML
     private TextField adminEmail;
     @FXML
-    private TextField adminPassword;
-    @FXML
-    private TextField adminName;
-    @FXML
-    private DatePicker adminDateOfBirth;
-    @FXML
-    private TextField adminAddress;
-    @FXML
-    private TextField adminResidence;
-    @FXML
-    private TextField adminCountry;
-    @FXML
-    private TextField adminGender;
+    private PasswordField adminPassword;
     @FXML
     private Label studentLoginError;
     @FXML
@@ -76,23 +65,15 @@ public class FxmlController {
     @FXML
     private TextField studentLoginEmail;
     @FXML
-    private TextField studentLoginPassword;
+    private PasswordField studentLoginPassword;
     @FXML
     private TextField adminLoginEmail;
     @FXML
-    private TextField adminLoginPassword;
+    private PasswordField adminLoginPassword;
     @FXML
     private Label studentSignUpError;
     @FXML
     private Label adminSignUpError;
-
-    public void createStudent() throws IOException {
-        signUp("Students");
-    }
-
-    public void createAdmin() throws IOException {
-        signUp("Admins");
-    }
 
     public void checkLogin(String userType) throws IOException {
         if (userType.equals("Students")) {

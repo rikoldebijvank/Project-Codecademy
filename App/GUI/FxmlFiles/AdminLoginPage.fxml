@@ -102,15 +102,15 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField prefHeight="31.0" prefWidth="252.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <TextField fx:id="adminLoginEmail" prefHeight="31.0" prefWidth="252.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor></TextField>
-            <PasswordField prefHeight="35.0" prefWidth="252.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <PasswordField fx:id="adminLoginPassword" prefHeight="35.0" prefWidth="252.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor></PasswordField>
-            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="111.0" style="-fx-background-color: #bb0000;" text="Sign in" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="6">
+            <Button mnemonicParsing="false" onAction="#checkAdminLogin" prefHeight="30.0" prefWidth="111.0" style="-fx-background-color: #bb0000;" text="Sign in" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="6">
                <font>
                   <Font size="14.0" />
                </font>
@@ -118,6 +118,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
+            <Label fx:id="adminLoginError" prefHeight="32.0" prefWidth="252.0" textAlignment="CENTER" textFill="RED" GridPane.columnIndex="1" />
          </children>
       </GridPane>
    </children>

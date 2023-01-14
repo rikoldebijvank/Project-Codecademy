@@ -120,6 +120,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
+            <Label fx:id="studentLoginError" prefHeight="43.0" prefWidth="252.0" textAlignment="CENTER" textFill="RED" GridPane.columnIndex="1" />
          </children>
       </GridPane>
    </children>
