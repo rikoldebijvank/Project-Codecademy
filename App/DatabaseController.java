@@ -22,6 +22,26 @@ public class DatabaseController {
         }
     }
 
+    public Object returnSQL(String sqlString, String columnTable) {
+        try {
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            con = DriverManager.getConnection(connectionUrl);
+            stmt = con.createStatement();
+            rs = stmt.executeQuery(sqlString);
+            StringBuilder builder = new StringBuilder();
+            while (rs.next()) {
+                builder.append(rs.getString(columnTable));
+                builder.append(";");
+            }
+            return builder;
+        }
+
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public String checkSQLEmail(String email, String userType) {
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");

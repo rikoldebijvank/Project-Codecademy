@@ -28,10 +28,10 @@ public class Course {
         this.content = new HashMap<>();
     }
 
-    public Course(String courseName, String subject, Difficulty difficulty, int studentsFinished) {
+    public Course(String courseName, String subject, Difficulty difficultyNames, int studentsFinished) {
         this.courseName = courseName;
         this.subject = subject;
-        this.difficulty = difficulty;
+        this.difficulty = difficultyNames;
         this.studentsFinished = studentsFinished;
     }
 
