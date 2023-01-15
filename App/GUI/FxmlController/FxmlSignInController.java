@@ -113,24 +113,49 @@ public class FxmlSignInController {
     public void signUp(String userType) throws IOException {
         if (userType.equals("Students")) {
             String signUpSQLTakenValue = controller.checkSQLEmail(studentEmail.getText(), "Students");
+
             if (studentName.getText().equals("") || studentEmail.getText().equals("")
                     || studentPassword.getText().equals("") || studentDateOfBirth.getValue().equals("")
                     || studentAddress.getText().equals("") || studentPostalCode.getText().equals("")
                     || studentCountry.getText().equals("") || studentGender.getText().equals("")) {
                 studentSignUpError.setText("Please fill out the form");
-            } else if (!studentEmail.getText().contains("@") || !studentEmail.getText().contains(".")) {
+
+            } else if (!studentEmail.getText().contains("@") || !studentEmail.getText().contains(".")
+                    || !(studentEmail.getText().charAt(0) >= 'a') || !(studentEmail.getText().charAt(0) <= 'z')
+                    || !(studentEmail.getText().charAt(studentEmail.getText().indexOf("@") + 1) >= 'a')
+                    || !(studentEmail.getText().charAt(studentEmail.getText().indexOf("@") + 1) <= 'z')
+                    || (studentEmail.getText().endsWith("."))) {
                 studentSignUpError.setText("Incorrect email format");
+
             } else if (studentDateOfBirth.getValue().isAfter(LocalDate.now())) {
                 studentSignUpError.setText("Birth date has to be in the past");
+
             } else if (studentPassword.getText().length() < 8) {
                 studentSignUpError.setText("Password has to be greater than 8 characters");
+
             } else if (!studentGender.getText().equals("Male") && !studentGender.getText().equals("Female")) {
                 studentSignUpError.setText("Gender has to be either 'Male' or 'Female'");
+
+            } else if (!(studentPostalCode.getText().charAt(0) > '0') || !(studentPostalCode.getText().charAt(0) <= '9')
+                    || !(studentPostalCode.getText().charAt(1) >= '0')
+                    || !(studentPostalCode.getText().charAt(1) <= '9')
+                    || !(studentPostalCode.getText().charAt(2) >= '0')
+                    || !(studentPostalCode.getText().charAt(2) <= '9')
+                    || !(studentPostalCode.getText().charAt(3) >= '0')
+                    || !(studentPostalCode.getText().charAt(3) <= '9')
+                    || !(studentPostalCode.getText().charAt(4) == ' ')
+                    || !(studentPostalCode.getText().charAt(5) >= 'A')
+                    || !(studentPostalCode.getText().charAt(5) <= 'Z')
+                    || !(studentPostalCode.getText().charAt(6) >= 'A')
+                    || !(studentPostalCode.getText().charAt(6) <= 'Z')) {
+                studentSignUpError.setText("Incorrect Postal Code Format");
+
             } else if (signUpSQLTakenValue == null) {
                 controller.createStudent(studentName.getText(), studentEmail.getText(), studentPassword.getText(),
                         studentDateOfBirth.getValue(), studentAddress.getText(), studentPostalCode.getText(),
                         studentCountry.getText(), studentGender.getText());
                 studentSignUpError.setText("Sign up complete!");
+                gui.changeScene("./FxmlFiles/studentHomePage.fxml");
             } else if (signUpSQLTakenValue.equals(studentEmail.getText())) {
                 studentSignUpError.setText("Email taken");
             } else {
@@ -141,7 +166,11 @@ public class FxmlSignInController {
             String signUpSQLTakenValue = controller.checkSQLEmail(adminEmail.getText(), "Admins");
             if (adminEmail.getText().equals("") || adminEmail.getText().equals("")) {
                 adminSignUpError.setText("Please fill out the form");
-            } else if (!adminEmail.getText().contains("@") || !adminEmail.getText().contains(".")) {
+            } else if (!adminEmail.getText().contains("@") || !adminEmail.getText().contains(".")
+                    || !(adminEmail.getText().charAt(0) >= 'a') || !(adminEmail.getText().charAt(0) <= 'z')
+                    || !(adminEmail.getText().charAt(adminEmail.getText().indexOf("@") + 1) >= 'a')
+                    || !(adminEmail.getText().charAt(adminEmail.getText().indexOf("@") + 1) <= 'z')
+                    || (adminEmail.getText().endsWith("."))) {
                 adminSignUpError.setText("Incorrect email format");
             } else if (adminPassword.getText().length() < 8) {
                 adminSignUpError.setText("Password has to be greater than 8 characters");
