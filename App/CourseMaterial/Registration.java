@@ -8,12 +8,14 @@ public class Registration {
     private LocalDate date;
     private Certificate certificate;
 
+    // constructor methode
     public Registration(Course course, String studentEmail, LocalDate date) {
         this.course = course;
         this.studentEmail = studentEmail;
         this.date = date;
     }
 
+    // setters en getters
     public Course getCourse() {
         return course;
     }

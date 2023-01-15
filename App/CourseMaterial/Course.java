@@ -18,6 +18,7 @@ public class Course {
     private ArrayList<Course> recommendedCourses;
     private HashMap<String, Content> content;
 
+    // constructor methode
     public Course(String courseName, String subject, String intro, Difficulty difficulty, String adminEmail) {
         this.courseName = courseName;
         this.subject = subject;
@@ -27,7 +28,7 @@ public class Course {
         this.recommendedCourses = new ArrayList<>();
         this.content = new HashMap<>();
     }
-
+    // andere constructor methode
     public Course(String courseName, String subject, Difficulty difficultyNames, int studentsFinished) {
         this.courseName = courseName;
         this.subject = subject;
@@ -35,19 +36,23 @@ public class Course {
         this.studentsFinished = studentsFinished;
     }
 
+    // nieuwe modules toevoegen
     public void addModule(Module module) {
         content.put(module.getTitle(), module);
     }
 
+    // nieuwe webcast toevoegen
     public void addWebcast(Webcast webcast) {
         content.put(webcast.getTitle(), webcast);
     }
 
+    // 
     public Double perctDoneAllStudents(HashMap<String, Content> modules) {
         // Method moet nog ingevuld worden
         return 0.0;
     }
 
+    // recommended cursussen suggereren 
     public void showRecommendedCourses() {
         StringBuilder builder = new StringBuilder();
         Iterator<Course> iterator = recommendedCourses.iterator();
@@ -57,10 +62,12 @@ public class Course {
         System.out.println(builder);
     }
 
+    // percentage van studenten die de cursussen hebben afgerond
     public void perctFinishedStudents() {
         // Method moet nog ingevuld worden
     }
 
+    // setters en getters
     public String getCourseName() {
         return courseName;
     }

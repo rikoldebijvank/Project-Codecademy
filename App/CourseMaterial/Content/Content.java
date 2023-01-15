@@ -9,6 +9,7 @@ public abstract class Content {
     private int contentId;
     private Status status;
 
+    // constructor methode
     public Content(String title, String description, LocalDate publicationDate, int contentId, Status status) {
         this.title = title;
         this.description = description;
@@ -16,11 +17,13 @@ public abstract class Content {
         this.contentId = contentId;
         this.status = status;
     }
-
+    // andere constructor
     public Content(String title) {
         this.title = title;
     }
 
+    // setters en getters
+    // ..
     public String getTitle() {
         return title;
     }

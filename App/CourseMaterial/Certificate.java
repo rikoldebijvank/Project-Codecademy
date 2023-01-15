@@ -8,18 +8,20 @@ public class Certificate {
     private Double rating;
     private Employee employee;
 
+    // constructor methode
     public Certificate(int id, Double rating, Employee employee) {
         this.id = id;
         this.rating = rating;
         this.employee = employee;
     }
-
+    // andere constructor methode
     public Certificate(String courseName, int id, Double rating) {
         this.courseName = courseName;
         this.id = id;
         this.rating = rating;
     }
 
+    // setters en getters
     public int getId() {
         return id;
     }
