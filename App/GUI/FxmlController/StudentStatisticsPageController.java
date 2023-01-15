@@ -1,11 +1,8 @@
 package App.GUI.FxmlController;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import App.CourseMaterial.Content.Module;
-import App.GUI.Gui;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -14,28 +11,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-public class StudentStatisticsPageController implements Initializable {
-    private Gui gui = new Gui();
-
-    public void continueToStudentCourses() throws IOException {
-        gui.changeScene("./FxmlFiles/studentCoursesPage.fxml");
-    }
-
-    public void continueToStudentRegistrations() throws IOException {
-        gui.changeScene("./FxmlFiles/studentShowRegistrations.fxml");
-    }
-
-    public void continueToStudentCertificates() throws IOException {
-        gui.changeScene("./FxmlFiles/studentCertificates.fxml");
-    }
-
-    public void continueToStudentStatistics() throws IOException {
-        gui.changeScene("./FxmlFiles/studentStatistics.fxml");
-    }
-
-    public void backToStudentHomePage() throws IOException {
-        gui.changeScene("./FxmlFiles/studentHomePage.fxml");
-    }
+public class StudentStatisticsPageController extends StudentController implements Initializable {
 
     @FXML
     private TableView<Module> statisticsTable;
