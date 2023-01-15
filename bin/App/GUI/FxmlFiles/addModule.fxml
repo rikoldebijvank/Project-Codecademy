@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="696.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="App.GUI.FxmlController.FxmlAdminController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="696.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="App.GUI.FxmlController.AddModuleController">
    <children>
       <VBox prefHeight="493.0" prefWidth="272.0" style="-fx-background-color: #bb0000;">
          <children>
@@ -62,7 +62,7 @@
       </VBox>
       <Pane layoutX="272.0" layoutY="69.0" prefHeight="84.0" prefWidth="425.0" style="-fx-background-color: #b00;">
          <children>
-            <Label layoutX="34.0" layoutY="34.0" prefHeight="35.0" prefWidth="97.0" text="Modules" textFill="WHITE">
+            <Label layoutX="34.0" layoutY="34.0" prefHeight="35.0" prefWidth="140.0" text="Add Module" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
@@ -74,52 +74,79 @@
             </Label>
          </children>
       </Pane>
-      <VBox layoutX="296.0" layoutY="153.0" prefHeight="333.0" prefWidth="376.0" spacing="2.0">
+      <VBox layoutX="296.0" layoutY="153.0" prefHeight="333.0" prefWidth="378.0" spacing="2.0">
          <children>
-            <Label fx:id="addCourseSuccessLabel" prefHeight="17.0" prefWidth="334.0" textFill="#00ff1a" />
-            <Label prefHeight="19.0" prefWidth="97.0" text="New Module">
-               <font>
-                  <Font size="18.0" />
-               </font>
-               <padding>
-                  <Insets bottom="5.0" />
-               </padding>
-            </Label>
+            <Label fx:id="addModuleError" prefHeight="48.0" prefWidth="378.0" textFill="RED" />
+         </children>
+      </VBox>
+      <VBox layoutX="321.0" layoutY="200.0" prefHeight="180.0" prefWidth="159.0" spacing="5.0">
+         <children>
             <Label text="Title">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="courseName" prefHeight="25.0" prefWidth="296.0" />
-            <Label layoutX="10.0" layoutY="37.0" text="Description">
+            <TextField fx:id="moduleTitle" />
+            <Label text="Version">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="courseSubject" layoutX="10.0" layoutY="57.0" prefHeight="25.0" prefWidth="296.0" />
-            <Label layoutX="10.0" layoutY="82.0" text="PublicationDate">
+            <TextField fx:id="moduleVersion" />
+            <Label text="ID">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <DatePicker />
-            <Label layoutX="10.0" layoutY="172.0" text="Status">
+            <TextField fx:id="moduleID" />
+            <Label text="Contact Person Name">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <ChoiceBox fx:id="courseDifficulty" prefHeight="25.0" prefWidth="335.0" />
-            <Label text="contentId">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <TextField fx:id="adminCourseEmail" prefHeight="25.0" prefWidth="296.0" />
-            <Button mnemonicParsing="false" onAction="#addModule" prefHeight="36.0" prefWidth="107.0" style="-fx-background-color: #bb0000;" text="Add Module" textFill="WHITE">
+            <TextField fx:id="moduleContactPersonName" />
+            <Button mnemonicParsing="false" onAction="#addModule" prefHeight="25.0" prefWidth="124.0" style="-fx-background-color: #bb0000;" text="Create Module" textFill="WHITE">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
                <VBox.margin>
-                  <Insets top="7.0" />
+                  <Insets top="10.0" />
                </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
+         </children>
+      </VBox>
+      <VBox layoutX="505.0" layoutY="200.0" prefHeight="180.0" prefWidth="159.0" spacing="5.0">
+         <children>
+            <Label text="Description">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="moduleDescription" />
+            <Label text="ModuleNumber">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="moduleNumber" />
+            <Label text="Status">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="moduleStatus" prefHeight="25.0" prefWidth="163.0" />
+            <Label text="Publication Date">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="modulePublicationDate" />
          </children>
       </VBox>
    </children>

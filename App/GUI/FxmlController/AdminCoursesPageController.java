@@ -1,5 +1,6 @@
 package App.GUI.FxmlController;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -7,21 +8,24 @@ import java.util.ResourceBundle;
 import App.DatabaseController;
 import App.CourseMaterial.Course;
 import App.CourseMaterial.Difficulty;
+import App.GUI.Gui;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class AdminCoursesPageController extends AdminController implements Initializable {
         DatabaseController controller = new DatabaseController();
+        Gui gui = new Gui();
 
         @FXML
         private TableView<Course> adminCoursesTable;
         @FXML
-        private TableColumn<Course, String> adminCoursesCourseName;
+        private TableColumn<Course, Button> adminCoursesCourseName;
         @FXML
         private TableColumn<Course, String> adminCoursesSubject;
         @FXML
@@ -32,7 +36,7 @@ public class AdminCoursesPageController extends AdminController implements Initi
         @Override
         public void initialize(URL location, ResourceBundle resources) {
                 adminCoursesCourseName
-                                .setCellValueFactory(new PropertyValueFactory<Course, String>("courseName"));
+                                .setCellValueFactory(new PropertyValueFactory<Course, Button>("courseButton"));
                 adminCoursesSubject
                                 .setCellValueFactory(new PropertyValueFactory<Course, String>("subject"));
                 adminCoursesDifficulty
@@ -48,6 +52,18 @@ public class AdminCoursesPageController extends AdminController implements Initi
                 String courseName = controller.returnSQL("SELECT CourseName FROM Course", "CourseName")
                                 .toString();
                 String[] courseNames = courseName.split(";");
+                ArrayList<Button> courseButtons = new ArrayList<>();
+                for (String name : courseNames) {
+                        Button newButton = new Button(name);
+                        newButton.setOnAction((event) -> {
+                                try {
+                                        gui.changeScene("./FxmlFiles/addModule.fxml");
+                                } catch (IOException e) {
+                                        e.printStackTrace();
+                                }
+                        });
+                        courseButtons.add(newButton);
+                }
 
                 String subject = controller.returnSQL("SELECT Subject FROM Course", "Subject")
                                 .toString();
@@ -68,7 +84,7 @@ public class AdminCoursesPageController extends AdminController implements Initi
                 }
 
                 for (int i = 0; i < courseNames.length && i < difficultyList.size(); i++) {
-                        data.add(new Course(courseNames[i], subjectNames[i], difficultyList.get(i), -1));
+                        data.add(new Course(courseButtons.get(i), subjectNames[i], difficultyList.get(i), -1));
                 }
                 return data;
         }

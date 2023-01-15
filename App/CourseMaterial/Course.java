@@ -7,8 +7,10 @@ import java.util.Iterator;
 import App.CourseMaterial.Content.Content;
 import App.CourseMaterial.Content.Module;
 import App.CourseMaterial.Content.Webcast;
+import javafx.scene.control.Button;
 
 public class Course {
+    private Button courseButton;
     private String courseName;
     private String subject;
     private String introduction;
@@ -28,9 +30,11 @@ public class Course {
         this.recommendedCourses = new ArrayList<>();
         this.content = new HashMap<>();
     }
+
     // andere constructor methode
-    public Course(String courseName, String subject, Difficulty difficultyNames, int studentsFinished) {
-        this.courseName = courseName;
+    public Course(Button courseButton, String subject, Difficulty difficultyNames,
+            int studentsFinished) {
+        this.courseButton = courseButton;
         this.subject = subject;
         this.difficulty = difficultyNames;
         this.studentsFinished = studentsFinished;
@@ -130,5 +134,13 @@ public class Course {
 
     public void setStudentsFinished(Integer studentsFinished) {
         this.studentsFinished = studentsFinished;
+    }
+
+    public Button getCourseButton() {
+        return courseButton;
+    }
+
+    public void setCourseButton(Button courseButton) {
+        this.courseButton = courseButton;
     }
 }

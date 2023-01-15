@@ -20,7 +20,7 @@ public class Module extends Content {
         this.contactPerson = contactPerson;
     }
 
-    // andere methode
+    // andere constructor
     public Module(String courseName, String title, int percentageFinished) {
         super(title);
         this.courseName = courseName;
