@@ -40,7 +40,7 @@
                   </Button>
                </children>
             </Pane>
-            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#continueToStudentCoursesPage" prefHeight="55.0" prefWidth="272.0" style="-fx-background-color: #bb0000;" text="Courses" textFill="WHITE">
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="55.0" prefWidth="272.0" style="-fx-background-color: #bb0000;" text="Courses" textFill="WHITE">
                <padding>
                   <Insets left="50.0" />
                </padding>
@@ -51,7 +51,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="272.0" style="-fx-background-color: #bb0000;" text="Registrations" textFill="WHITE">
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#continueToStudentRegistrations" prefHeight="55.0" prefWidth="272.0" style="-fx-background-color: #bb0000;" text="Registrations" textFill="WHITE">
                <padding>
                   <Insets left="50.0" />
                </padding>
@@ -62,7 +62,18 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="218.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="272.0" style="-fx-background-color: #bb0000;" text="Certificates" textFill="WHITE">
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="218.0" mnemonicParsing="false" onAction="#continueToStudentCertificates" prefHeight="55.0" prefWidth="272.0" style="-fx-background-color: #bb0000;" text="Certificates" textFill="WHITE">
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#continueToStudentStatistics" prefHeight="55.0" prefWidth="272.0" style="-fx-background-color: #bb0000;" text="Statistics" textFill="WHITE">
                <padding>
                   <Insets left="50.0" />
                </padding>

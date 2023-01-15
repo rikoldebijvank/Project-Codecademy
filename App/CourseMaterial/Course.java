@@ -12,10 +12,11 @@ public class Course {
     private String courseName;
     private String subject;
     private String introduction;
+    private String adminEmail;
+    private Integer studentsFinished;
     private Difficulty difficulty;
     private ArrayList<Course> recommendedCourses;
     private HashMap<String, Content> content;
-    private String adminEmail;
 
     public Course(String courseName, String subject, String intro, Difficulty difficulty, String adminEmail) {
         this.courseName = courseName;
@@ -25,6 +26,13 @@ public class Course {
         this.adminEmail = adminEmail;
         this.recommendedCourses = new ArrayList<>();
         this.content = new HashMap<>();
+    }
+
+    public Course(String courseName, String subject, Difficulty difficulty, int studentsFinished) {
+        this.courseName = courseName;
+        this.subject = subject;
+        this.difficulty = difficulty;
+        this.studentsFinished = studentsFinished;
     }
 
     public void addModule(Module module) {
@@ -107,5 +115,13 @@ public class Course {
 
     public void setAdminEmail(String adminEmail) {
         this.adminEmail = adminEmail;
+    }
+
+    public Integer getStudentsFinished() {
+        return studentsFinished;
+    }
+
+    public void setStudentsFinished(Integer studentsFinished) {
+        this.studentsFinished = studentsFinished;
     }
 }

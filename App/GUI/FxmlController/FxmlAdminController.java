@@ -10,13 +10,9 @@ import javafx.fxml.FXML;
 public class FxmlAdminController {
     private DatabaseController controller = new DatabaseController();
     private Gui gui = new Gui();
-    private FxmlSignInController signInController = new FxmlSignInController();
 
-    @FXML
-    private Label adminWelcomeName;
-
-    public void setAdminWelcomeName(String name) {
-        adminWelcomeName.setText(name);
+    public void continueToHomePage() throws IOException {
+        gui.changeScene("././startingPage.fxml");
     }
 
     public void continueToAdminCoursesPage() throws IOException {
@@ -35,6 +31,26 @@ public class FxmlAdminController {
         gui.changeScene("./FxmlFiles/addCourse.fxml");
     }
 
+    public void continueToAdminStatistics() throws IOException {
+        gui.changeScene("./FxmlFiles/adminStatistics.fxml");
+    }
+
+    public void continueToAdminModulesStatistics() throws IOException {
+        gui.changeScene("./FxmlFiles/adminModulesStatistics.fxml");
+    }
+
+    public void continueToAdminGenderStatistics() throws IOException {
+        gui.changeScene("./FxmlFiles/adminGenderStatistics.fxml");
+    }
+
+    public void continueToAdminWebcastsStatistics() throws IOException {
+        gui.changeScene("./FxmlFiles/adminWebcastsStatistics.fxml");
+    }
+
+    public void continueToAdminCertificatesStatistics() throws IOException {
+        gui.changeScene("./FxmlFiles/adminCertificatesStatistics.fxml");
+    }
+
     @FXML
     private TextField courseName;
     @FXML
@@ -45,10 +61,12 @@ public class FxmlAdminController {
     private TextField courseDifficulty;
     @FXML
     private Label addCourseSuccessLabel;
+    @FXML
+    private TextField adminCourseEmail;
 
     public void addCourse() {
         controller.createCourse(courseName.getText(), courseSubject.getText(), courseIntro.getText(),
-                courseDifficulty.getText(), signInController.adminEmailLoggedIn);
+                courseDifficulty.getText(), adminCourseEmail.getText());
         addCourseSuccessLabel.setText("Course Successfully Added");
     }
 }

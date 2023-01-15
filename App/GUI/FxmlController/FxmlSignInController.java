@@ -14,7 +14,7 @@ import javafx.scene.control.TextField;
 public class FxmlSignInController {
     private DatabaseController controller = new DatabaseController();
     private Gui gui = new Gui();
-    public String adminEmailLoggedIn;
+    String adminEmailLoggedIn;
 
     public void continueToStudentLogin() throws IOException {
         gui.changeScene("./FxmlFiles/studentLoginPage.fxml");
@@ -96,7 +96,6 @@ public class FxmlSignInController {
             } else if (!signInValuePassword.isEmpty()) {
                 adminLoginError.setText("Login Complete!");
                 gui.changeScene("./FxmlFiles/adminHomePage.fxml");
-                adminEmailLoggedIn = adminLoginEmail.getText();
             } else {
                 adminLoginError.setText("Login Failed");
             }
@@ -149,7 +148,6 @@ public class FxmlSignInController {
             } else if (signUpSQLTakenValue == null) {
                 controller.createAdmin(adminName.getText(), adminEmail.getText(), adminPassword.getText());
                 adminSignUpError.setText("Sign up complete!");
-                adminEmailLoggedIn = adminEmail.getText();
                 gui.changeScene("./FxmlFiles/adminHomePage.fxml");
             } else if (signUpSQLTakenValue.equals(adminEmail.getText())) {
                 adminSignUpError.setText("Email taken");

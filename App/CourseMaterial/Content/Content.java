@@ -3,7 +3,7 @@ package App.CourseMaterial.Content;
 import java.time.LocalDate;
 
 public abstract class Content {
-    private String title;
+    protected String title;
     private String description;
     private LocalDate publicationDate;
     private int contentId;
@@ -15,6 +15,10 @@ public abstract class Content {
         this.publicationDate = publicationDate;
         this.contentId = contentId;
         this.status = status;
+    }
+
+    public Content(String title) {
+        this.title = title;
     }
 
     public String getTitle() {

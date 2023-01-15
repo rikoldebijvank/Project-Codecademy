@@ -3,7 +3,8 @@ package App.CourseMaterial;
 import App.Individuals.Employee;
 
 public class Certificate {
-    private int id;
+    private String courseName;
+    private Integer id;
     private Double rating;
     private Employee employee;
 
@@ -11,6 +12,12 @@ public class Certificate {
         this.id = id;
         this.rating = rating;
         this.employee = employee;
+    }
+
+    public Certificate(String courseName, int id, Double rating) {
+        this.courseName = courseName;
+        this.id = id;
+        this.rating = rating;
     }
 
     public int getId() {
@@ -35,6 +42,18 @@ public class Certificate {
 
     public void setEmployee(Employee employee) {
         this.employee = employee;
+    }
+
+    public String getCourseName() {
+        return courseName;
+    }
+
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
 }
