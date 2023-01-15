@@ -62,7 +62,21 @@
             </Button>
          </children>
       </VBox>
-      <VBox layoutX="286.0" layoutY="163.0" prefHeight="281.0" prefWidth="396.0">
+      <Pane layoutX="272.0" layoutY="69.0" prefHeight="84.0" prefWidth="425.0" style="-fx-background-color: #b00;">
+         <children>
+            <Label layoutX="34.0" layoutY="34.0" prefHeight="35.0" prefWidth="97.0" text="Modules" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="34.0" layoutY="19.0" text="/Home/Statistics" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="289.0" layoutY="179.0" prefHeight="281.0" prefWidth="396.0">
          <children>
             <GridPane prefHeight="238.0" prefWidth="396.0">
                <columnConstraints>
@@ -84,25 +98,16 @@
                   </TableView>
                </children>
             </GridPane>
-            <Button mnemonicParsing="false" onAction="#continueToAdminStatistics" prefHeight="41.0" prefWidth="401.0" style="-fx-background-color: #ffffff; -fx-border-color: bb0000; -fx-background-radius: 5; -fx-background-insets: 3;" text="Back" textFill="#bb0000">
+            <Button layoutY="238.0" mnemonicParsing="false" onAction="#continueToAdminStatistics" prefHeight="41.0" prefWidth="198.0" style="-fx-background-color: #ffffff; -fx-border-color: bb0000; -fx-background-radius: 5; -fx-background-insets: 3;" text="Back" textFill="#bb0000">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-         </children>
-      </VBox>
-      <Pane layoutX="272.0" layoutY="69.0" prefHeight="84.0" prefWidth="425.0" style="-fx-background-color: #b00;">
-         <children>
-            <Label layoutX="34.0" layoutY="34.0" prefHeight="35.0" prefWidth="97.0" text="Modules" textFill="WHITE">
+            <Button layoutX="198.0" layoutY="238.0" mnemonicParsing="false" onAction="#continueToAddModule" prefHeight="41.0" prefWidth="198.0" style="-fx-background-color: #ffffff; -fx-border-color: bb0000; -fx-background-radius: 5; -fx-background-insets: 3;" text="Add new module" textFill="#bb0000">
                <font>
-                  <Font size="24.0" />
+                  <Font size="18.0" />
                </font>
-            </Label>
-            <Label layoutX="34.0" layoutY="19.0" text="/Home/Statistics" textFill="WHITE">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
+            </Button>
          </children>
       </Pane>
    </children>
