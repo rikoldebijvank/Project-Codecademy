@@ -9,6 +9,7 @@ public class Webcast extends Content {
     private double length;
     private Speaker speaker;
 
+    //constructor methode
     Webcast(String title, String description, LocalDate publicationDate, int contentId, Status status, String url,
             double length, Speaker speaker) {
         super(title, description, publicationDate, contentId, status);
@@ -17,6 +18,7 @@ public class Webcast extends Content {
         this.speaker = speaker;
     }
 
+    // setters en getters 
     public String getUrl() {
         return url;
     }

@@ -11,6 +11,7 @@ public class Module extends Content {
     private ContactPerson contactPerson;
     private Integer percentageFinished;
 
+    // constructor methode
     public Module(String title, String description, LocalDate publicationDate, Status status, int contentId,
             Double version, int moduleNumber, ContactPerson contactPerson) {
         super(title, description, publicationDate, contentId, status);
@@ -19,12 +20,14 @@ public class Module extends Content {
         this.contactPerson = contactPerson;
     }
 
+    // andere methode
     public Module(String courseName, String title, int percentageFinished) {
         super(title);
         this.courseName = courseName;
         this.percentageFinished = percentageFinished;
     }
 
+    // setters en getters
     public Double getVersion() {
         return version;
     }
