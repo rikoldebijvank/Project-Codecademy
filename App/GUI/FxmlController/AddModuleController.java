@@ -33,6 +33,7 @@ public class AddModuleController extends AdminController {
     @FXML
     private TextField addModuleCourse;
 
+    // "nieuwe modules toevoegen" functie via gui
     public void addModule() throws IOException {
         controller.executeSQL("INSERT INTO ContentItem VALUES ('" + moduleID.getText() + "', '"
                 + modulePublicationDate.getValue() + "', '" + moduleStatus.getValue() + "', '"

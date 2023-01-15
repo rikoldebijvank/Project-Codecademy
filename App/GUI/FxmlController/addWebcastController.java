@@ -10,7 +10,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
-public class AddWebcastController {
+public class addWebcastController {
     DatabaseController controller = new DatabaseController();
     Gui gui = new Gui();
 
@@ -33,6 +33,7 @@ public class AddWebcastController {
     @FXML
     private TextField addWebcastCourseName;
 
+    // "nieuwe webcast toevoegen" functie via gui
     public void addWebcast() throws IOException {
         controller.executeSQL("INSERT INTO ContentItem VALUES ('" + webcastContentId.getText() + "', '"
                 + webcastPublicationDate.getValue() + "', '" + webcastStatus.getValue() + "', '"

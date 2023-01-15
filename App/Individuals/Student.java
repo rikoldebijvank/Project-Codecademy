@@ -19,6 +19,7 @@ public class Student extends Person {
     private ArrayList<Certificate> certificateList;
     private HashMap<String, Course> courseList;
 
+    // constructor methode 
     public Student(String name, String email, LocalDate birthday, String gender, String address, String residence,
             String country) {
         super(name, email);
@@ -31,22 +32,26 @@ public class Student extends Person {
         this.courseList = new HashMap<>();
     }
 
+    // het percentage van hoeveel een cursist de gevolgde cursus heeft gelezen
     public int perctRead() {
         // Method moet nog ingevuld worden
         return 0;
     }
 
+    // enrollen bij een nieuwe cursus voor student
     public void enrollCourse(Course course, LocalDate date) {
         Registration newRegistration = new Registration(course, super.getEmail(), date);
         courseList.put(course.getCourseName(), course);
         // Moet nog aan toegevoegd worden
     }
 
+    // enrollen bij een nieuwe cursus voor student
     public Double perctDoneModule(Course course, Module module) {
         // Method moet nog ingevuld worden
         return 0.0;
     }
 
+    // laat certificaten van student zien
     public void showCertificates() {
         StringBuilder builder = new StringBuilder();
         Iterator<Certificate> iterator = certificateList.iterator();
@@ -55,6 +60,8 @@ public class Student extends Person {
         }
         System.out.println(builder);
     }
+
+    // setters rn getters
 
     public LocalDate getBirthday() {
         return birthday;

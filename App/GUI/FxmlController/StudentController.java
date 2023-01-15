@@ -6,6 +6,8 @@ import App.GUI.Gui;
 public abstract class StudentController {
     private Gui gui = new Gui();
 
+    // functie aan buttons geven om tussen alle pagina's (scenes)
+    // te kunnen bewegen in studentDashboard
     public void continueToHomePage() throws IOException {
         gui.changeScene("././startingPage.fxml");
     }

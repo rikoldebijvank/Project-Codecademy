@@ -16,6 +16,8 @@ public class FxmlSignInController {
     private Gui gui = new Gui();
     String adminEmailLoggedIn;
 
+    // functie aan buttons geven (in signInPage en signUpPage) 
+    // om tussen alle pagina's (scenes) te kunnen bewegen
     public void continueToStudentLogin() throws IOException {
         gui.changeScene("./FxmlFiles/studentLoginPage.fxml");
     }
@@ -75,6 +77,7 @@ public class FxmlSignInController {
     @FXML
     private Label adminSignUpError;
 
+    // checken van ingevoerde inloggegevens om users toe te laten
     public void checkLogin(String userType) throws IOException {
         if (userType.equals("Students")) {
             String signInValuePassword = controller.checkSQLPassword(studentLoginEmail.getText(),
@@ -102,14 +105,17 @@ public class FxmlSignInController {
         }
     }
 
+    // roepen van checkLogin methode voor inloggen van de admins
     public void checkAdminLogin() throws IOException {
         checkLogin("Admins");
     }
 
+    // roepen van checkLogin methode voor inloggen van de studenten
     public void checkStudentLogin() throws IOException {
         checkLogin("Students");
     }
 
+    // checken van ingevorde gegevens of ze aan de eisen voedoen en dan een nieuwe account maken 
     public void signUp(String userType) throws IOException {
         if (userType.equals("Students")) {
             String signUpSQLTakenValue = controller.checkSQLEmail(studentEmail.getText(), "Students");
@@ -186,10 +192,12 @@ public class FxmlSignInController {
         }
     }
 
+    // roepen van signUp methode voor aanmelden van admins
     public void adminSignUp() throws IOException {
         signUp("Admins");
     }
 
+    // roepen van signUp methode voor aanmelden van studenten
     public void studentSignUp() throws IOException {
         signUp("Students");
     }

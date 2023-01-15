@@ -22,6 +22,8 @@ public class StudentStatisticsPageController extends StudentController implement
     @FXML
     private TableColumn<Module, Integer> statisticsTablePercentageFinished;
 
+    // definiëren van de benodigde data en getData methode roepen
+    // en op de juiste plek in de tabel weergeven
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         statisticsTableCourseName
@@ -34,6 +36,7 @@ public class StudentStatisticsPageController extends StudentController implement
         statisticsTable.setItems(getData());
     }
 
+    // get alle benodigde data vanuit de sql
     public ObservableList<Module> getData() {
         ObservableList<Module> data = FXCollections.observableArrayList();
         data.add(new Module("title", "module", 60));

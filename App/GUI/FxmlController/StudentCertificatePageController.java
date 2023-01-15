@@ -22,6 +22,8 @@ public class StudentCertificatePageController extends StudentController implemen
     @FXML
     private TableColumn<Certificate, Double> studentCertificateRating;
 
+    // definiëren van de benodigde data en getData methode roepen
+    //  en op de juiste plek in de tabel weergeven
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         studentCertificateCourseName
@@ -34,6 +36,7 @@ public class StudentCertificatePageController extends StudentController implemen
         studentCertificateTable.setItems(getData());
     }
 
+    // get alle benodigde data vanuit de sql
     public ObservableList<Certificate> getData() {
         ObservableList<Certificate> data = FXCollections.observableArrayList();
         data.add(new Certificate("rik", 100, 10.0));

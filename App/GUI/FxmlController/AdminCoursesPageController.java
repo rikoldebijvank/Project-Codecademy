@@ -34,6 +34,7 @@ public class AdminCoursesPageController extends AdminController implements Initi
         @FXML
         private TableColumn<Course, Integer> adminCoursesStudentsFinished;
 
+        // definiëren van de benodigde data en getData methode roepen en op de juiste plek in de tabel weergeven
         @Override
         public void initialize(URL location, ResourceBundle resources) {
                 adminCoursesCourseName
@@ -48,6 +49,7 @@ public class AdminCoursesPageController extends AdminController implements Initi
                 adminCoursesTable.setItems(getData());
         }
 
+        // get alle benodigde data vanuit de sql
         public ObservableList<Course> getData() {
                 ObservableList<Course> data = FXCollections.observableArrayList();
                 String courseName = controller.returnSQL("SELECT CourseName FROM Course", "CourseName")

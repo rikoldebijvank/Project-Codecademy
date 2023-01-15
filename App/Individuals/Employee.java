@@ -3,6 +3,7 @@ package App.Individuals;
 public class Employee {
     private String name;
 
+    // constructor methode 
     public Employee(String name) {
         this.name = name;
     }
@@ -11,6 +12,7 @@ public class Employee {
         // Method moet nog ingevuld worden
     }
 
+    // setters en gitters 
     public String getName() {
         return name;
     }

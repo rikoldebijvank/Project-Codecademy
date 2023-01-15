@@ -31,12 +31,14 @@ public class AddCourseController extends AdminController implements Initializabl
     ObservableList<Difficulty> courseDifficultyList = FXCollections.observableArrayList(Difficulty.BEGINNER,
             Difficulty.ADVANCED, Difficulty.EXPERT);
 
+    // "nieuwe cursussen toevoegen" functie via gui
     public void addCourse() {
         controller.createCourse(courseName.getText(), courseSubject.getText(), courseIntro.getText(),
                 courseDifficulty.getValue().name(), adminCourseEmail.getText());
         addCourseSuccessLabel.setText("Course Successfully Added");
     }
 
+    //  laat de moeilijkheid opties in de choose box bij nieuwe cursus aanmaken (addCourse page)
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         courseDifficulty.setValue(Difficulty.BEGINNER);
