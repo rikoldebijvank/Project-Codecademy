@@ -77,27 +77,18 @@
       </Pane>
       <VBox layoutX="296.0" layoutY="154.0" prefHeight="333.0" prefWidth="376.0" spacing="2.0">
          <children>
-            <Label fx:id="addCourseSuccessLabel" prefHeight="17.0" prefWidth="334.0" textFill="#00ff1a" />
-            <Label prefHeight="32.0" prefWidth="115.0" text="New Webcast">
-               <font>
-                  <Font size="18.0" />
-               </font>
-               <padding>
-                  <Insets bottom="5.0" />
-               </padding>
-            </Label>
             <Label text="Title">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="courseName" prefHeight="25.0" prefWidth="296.0" />
+            <TextField fx:id="webcastTitle" prefHeight="25.0" prefWidth="296.0" />
             <Label layoutX="10.0" layoutY="37.0" text="Description">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="courseSubject" layoutX="10.0" layoutY="57.0" prefHeight="25.0" prefWidth="296.0" />
+            <TextField fx:id="webcastDescription" layoutX="10.0" layoutY="57.0" prefHeight="25.0" prefWidth="296.0" />
             <HBox prefHeight="29.0" prefWidth="272.0" spacing="100.0">
                <children>
                   <Label text="PublicationDate">
@@ -114,22 +105,42 @@
             </HBox>
             <HBox layoutX="10.0" layoutY="161.0" prefHeight="29.0" prefWidth="272.0" spacing="15.0">
                <children>
-                  <DatePicker prefHeight="25.0" prefWidth="269.0" />
-                  <ChoiceBox fx:id="courseDifficulty" prefHeight="25.0" prefWidth="277.0" />
+                  <DatePicker fx:id="webcastPublicationDate" prefHeight="25.0" prefWidth="269.0" />
+                  <ChoiceBox fx:id="webcastStatus" prefHeight="25.0" prefWidth="277.0" />
                </children>
             </HBox>
-            <Label text="ContentId">
+            <HBox prefHeight="29.0" prefWidth="272.0" spacing="100.0">
+               <children>
+                  <Label prefHeight="20.0" prefWidth="98.0" text="ContentID">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="20.0" prefWidth="70.0" text="SpeakerID">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="29.0" prefWidth="272.0" spacing="15.0">
+               <children>
+                  <TextField fx:id="webcastContentId" prefHeight="25.0" prefWidth="296.0" />
+                  <TextField fx:id="webcastSpeakerId" prefHeight="25.0" prefWidth="296.0" />
+               </children>
+            </HBox>
+            <Label text="Length">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="adminCourseEmail" prefHeight="25.0" prefWidth="296.0" />
-            <Label layoutX="10.0" layoutY="223.0" text="URL">
+            <TextField fx:id="webcastLength" prefHeight="25.0" prefWidth="296.0" />
+            <Label text="URL">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="adminCourseEmail1" layoutX="10.0" layoutY="245.0" prefHeight="25.0" prefWidth="296.0" />
+            <TextField fx:id="webcastURL" prefHeight="25.0" prefWidth="296.0" />
             <Button mnemonicParsing="false" onAction="#addWebcast" prefHeight="36.0" prefWidth="107.0" style="-fx-background-color: #bb0000;" text="Add Webcast" textFill="WHITE">
                <VBox.margin>
                   <Insets top="7.0" />

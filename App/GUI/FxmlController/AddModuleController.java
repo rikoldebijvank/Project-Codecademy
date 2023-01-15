@@ -8,7 +8,6 @@ import App.GUI.Gui;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class AddModuleController extends AdminController {
@@ -32,16 +31,15 @@ public class AddModuleController extends AdminController {
     @FXML
     private TextField moduleVersion;
     @FXML
-    private Label addModuleCourse;
+    private TextField addModuleCourse;
 
     public void addModule() throws IOException {
+        controller.executeSQL("INSERT INTO ContentItem VALUES ('" + moduleID.getText() + "', '"
+                + modulePublicationDate.getValue() + "', '" + moduleStatus.getValue() + "', '"
+                + addModuleCourse.getText() + "')");
         controller.executeSQL("INSERT INTO Module VALUES ('" + moduleTitle.getText() + "', '" + moduleVersion.getText()
                 + "', '" + moduleID.getText() + "', '" + moduleContactPersonName.getText() + "', '"
                 + moduleDescription.getText() + "', '" + moduleNumber.getText() + "')");
-
-        controller.executeSQL("INSERT INTO ContentItem VALUES ('" + moduleID.getText() + "', '"
-                + modulePublicationDate.getValue() + "', '" + moduleStatus.getValue() + "', '"
-                + moduleContactPersonName.getText() + "')");
 
         gui.changeScene("./FxmlFiles/adminCoursesPage.fxml");
     }

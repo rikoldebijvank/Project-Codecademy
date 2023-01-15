@@ -45,4 +45,12 @@ public abstract class AdminController {
     public void continueToAdminCertificatesStatistics() throws IOException {
         gui.changeScene("./FxmlFiles/adminCertificatesStatistics.fxml");
     }
+
+    public void continueToAdminAddModulePage() throws IOException {
+        gui.changeScene("./FxmlFiles/addModule.fxml");
+    }
+
+    public void continueToAdminAddWebcastPage() throws IOException {
+        gui.changeScene("./FxmlFiles/addWebcast.fxml");
+    }
 }
