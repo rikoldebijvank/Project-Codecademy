@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="696.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="App.GUI.FxmlController.FxmlAdminController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="696.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="App.GUI.FxmlController.AddWebcastController">
    <children>
       <VBox prefHeight="493.0" prefWidth="272.0" style="-fx-background-color: #bb0000;">
          <children>
@@ -116,7 +116,7 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label prefHeight="20.0" prefWidth="70.0" text="SpeakerID">
+                  <Label prefHeight="20.0" prefWidth="94.0" text="Speaker Name">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -126,21 +126,35 @@
             <HBox prefHeight="29.0" prefWidth="272.0" spacing="15.0">
                <children>
                   <TextField fx:id="webcastContentId" prefHeight="25.0" prefWidth="296.0" />
-                  <TextField fx:id="webcastSpeakerId" prefHeight="25.0" prefWidth="296.0" />
+                  <TextField fx:id="webcastSpeakerName" prefHeight="25.0" prefWidth="296.0" />
                </children>
             </HBox>
-            <Label text="Length">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <TextField fx:id="webcastLength" prefHeight="25.0" prefWidth="296.0" />
             <Label text="URL">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
             <TextField fx:id="webcastURL" prefHeight="25.0" prefWidth="296.0" />
+            <HBox prefHeight="29.0" prefWidth="272.0" spacing="100.0">
+               <children>
+                  <Label prefHeight="20.0" prefWidth="98.0" text="Length">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="20.0" prefWidth="89.0" text="Course Name">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="29.0" prefWidth="272.0" spacing="15.0">
+               <children>
+                  <TextField fx:id="webcastLength" prefHeight="25.0" prefWidth="296.0" />
+                  <TextField fx:id="addWebcastCourseName" prefHeight="25.0" prefWidth="296.0" />
+               </children>
+            </HBox>
             <Button mnemonicParsing="false" onAction="#addWebcast" prefHeight="36.0" prefWidth="107.0" style="-fx-background-color: #bb0000;" text="Add Webcast" textFill="WHITE">
                <VBox.margin>
                   <Insets top="7.0" />
