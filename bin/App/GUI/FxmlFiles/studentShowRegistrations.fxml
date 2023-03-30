@@ -107,7 +107,7 @@
                   </TableView>
                   <HBox prefHeight="1.0" prefWidth="396.0" spacing="10.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#contiueToAvailableCourse" prefHeight="31.0" prefWidth="399.0" style="-fx-background-color: #b00;" text="Add Registration" textFill="WHITE">
+                        <Button mnemonicParsing="false" onAction="#continueToAvailableCourse" prefHeight="31.0" prefWidth="399.0" style="-fx-background-color: #b00;" text="Add Registration" textFill="WHITE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
