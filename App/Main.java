@@ -1,7 +1,7 @@
-package App;
+package app;
 
+import app.presentation.Gui;
 import javafx.application.Application;
-import App.GUI.Gui;
 
 public class Main {
 
