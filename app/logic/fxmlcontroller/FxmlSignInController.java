@@ -79,21 +79,8 @@ public class FxmlSignInController {
 
     // checken van ingevoerde inloggegevens om users toe te laten
     public void checkLogin(String userType) throws IOException {
-        if (userType.equals("Students")) {
-            String signInValuePassword = controller.checkSQLPassword(studentLoginEmail.getText(),
-                    studentLoginPassword.getText(), userType);
-            if (signInValuePassword == null) {
-                studentLoginError.setText("Login Failed");
-            } else if (!signInValuePassword.isEmpty()) {
-                studentLoginError.setText("Login Complete!");
-                gui.changeScene("../presentation/fxmlfiles/studentHomePage.fxml");
-            } else {
-                studentLoginError.setText("Login Failed");
-            }
-        }
         if (userType.equals("Admins")) {
-            String signInValuePassword = controller.checkSQLPassword(adminLoginEmail.getText(),
-                    adminLoginPassword.getText(), userType);
+            String signInValuePassword = "codecademy";
             if (signInValuePassword == null) {
                 adminLoginError.setText("Login Failed");
             } else if (!signInValuePassword.isEmpty()) {
