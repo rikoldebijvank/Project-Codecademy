@@ -17,7 +17,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-public class AdminCoursesPageController extends AdminController implements Initializable {
+public class CoursesPageController extends Controller implements Initializable {
         DatabaseController controller = new DatabaseController();
         Gui gui = new Gui();
 
@@ -59,7 +59,7 @@ public class AdminCoursesPageController extends AdminController implements Initi
                         Button newButton = new Button(name);
                         newButton.setOnAction((event) -> {
                                 try {
-                                        gui.changeScene("../presentation/fxmlfiles/addModule.fxml");
+                                        gui.changeScene("../presentation/fxmlfiles/AddModule.fxml");
                                 } catch (IOException e) {
                                         e.printStackTrace();
                                 }

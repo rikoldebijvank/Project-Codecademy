@@ -12,7 +12,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-public class StudentStatisticsPageController extends StudentController implements Initializable {
+public class StudentStatisticsPageController implements Initializable {
 
     @FXML
     private TableView<Module> statisticsTable;

@@ -13,7 +13,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class AddCourseController extends AdminController implements Initializable {
+public class AddCourseController extends Controller implements Initializable {
     private DatabaseController controller = new DatabaseController();
 
     @FXML

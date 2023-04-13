@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import app.presentation.Gui;
 
-public abstract class AdminController {
+public abstract class Controller {
     private Gui gui = new Gui();
 
     //
@@ -16,7 +16,7 @@ public abstract class AdminController {
     }
 
     public void continueToAdminCoursesPage() throws IOException {
-        gui.changeScene("../presentation/fxmlfiles/adminCoursesPage.fxml");
+        gui.changeScene("../presentation/fxmlfiles/CoursesPage.fxml");
     }
 
     public void continueToAdminStudentPage() throws IOException {
@@ -24,38 +24,33 @@ public abstract class AdminController {
     }
 
     public void backToAdminHomePage() throws IOException {
-        gui.changeScene("../presentation/fxmlfiles/adminHomePage.fxml");
+        gui.changeScene("../presentation/fxmlfiles/HomePage.fxml");
     }
 
     public void continueToAddCoursePage() throws IOException {
-        gui.changeScene("../presentation/fxmlfiles/addCourse.fxml");
+        gui.changeScene("../presentation/fxmlfiles/AddCourse.fxml");
     }
 
     public void continueToAdminStatistics() throws IOException {
-        gui.changeScene("../presentation/fxmlfiles/adminStatistics.fxml");
+        gui.changeScene("../presentation/fxmlfiles/Statistics.fxml");
     }
-
     public void continueToAdminModulesStatistics() throws IOException {
-        gui.changeScene("../presentation/fxmlfiles/adminModulesStatistics.fxml");
+        gui.changeScene("../presentation/fxmlfiles/ModulesStatistics.fxml");
     }
 
     public void continueToAdminGenderStatistics() throws IOException {
-        gui.changeScene("../presentation/fxmlfiles/adminGenderStatistics.fxml");
+        gui.changeScene("../presentation/fxmlfiles/GenderStatistics.fxml");
     }
 
     public void continueToAdminWebcastsStatistics() throws IOException {
-        gui.changeScene("../presentation/fxmlfiles/adminWebcastsStatistics.fxml");
-    }
-
-    public void continueToAdminCertificatesStatistics() throws IOException {
-        gui.changeScene("../presentation/fxmlfiles/adminCertificatesStatistics.fxml");
+        gui.changeScene("../presentation/fxmlfiles/WebcastsStatistics.fxml");
     }
 
     public void continueToAdminAddModulePage() throws IOException {
-        gui.changeScene("../presentation/fxmlfiles/addModule.fxml");
+        gui.changeScene("../presentation/fxmlfiles/AddModule.fxml");
     }
 
     public void continueToAdminAddWebcastPage() throws IOException {
-        gui.changeScene("../presentation/fxmlfiles/addWebcast.fxml");
+        gui.changeScene("../presentation/fxmlfiles/AddWebcast.fxml");
     }
 }

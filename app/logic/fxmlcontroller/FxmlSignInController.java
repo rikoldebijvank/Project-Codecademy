@@ -85,7 +85,7 @@ public class FxmlSignInController {
                 adminLoginError.setText("Login Failed");
             } else if (!signInValuePassword.isEmpty()) {
                 adminLoginError.setText("Login Complete!");
-                gui.changeScene("../presentation/fxmlfiles/adminHomePage.fxml");
+                gui.changeScene("../presentation/fxmlfiles/HomePage.fxml");
             } else {
                 adminLoginError.setText("Login Failed");
             }
@@ -95,11 +95,6 @@ public class FxmlSignInController {
     // roepen van checkLogin methode voor inloggen van de admins
     public void checkAdminLogin() throws IOException {
         checkLogin("Admins");
-    }
-
-    // roepen van checkLogin methode voor inloggen van de studenten
-    public void checkStudentLogin() throws IOException {
-        checkLogin("Students");
     }
 
     // checken van ingevorde gegevens of ze aan de eisen voedoen en dan een nieuwe
@@ -171,7 +166,7 @@ public class FxmlSignInController {
             } else if (signUpSQLTakenValue == null) {
                 controller.createAdmin(adminName.getText(), adminEmail.getText(), adminPassword.getText());
                 adminSignUpError.setText("Sign up complete!");
-                gui.changeScene("../presentation/fxmlfiles/adminHomePage.fxml");
+                gui.changeScene("../presentation/fxmlfiles/HomePage.fxml");
             } else if (signUpSQLTakenValue.equals(adminEmail.getText())) {
                 adminSignUpError.setText("Email taken");
             } else {

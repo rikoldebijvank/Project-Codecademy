@@ -65,27 +65,6 @@ public class DatabaseController {
         return null;
     }
 
-    // checking passwords opgeslagen in sql data
-    public String checkSQLPassword(String email, String password, String userType) {
-        try {
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            con = DriverManager.getConnection(connectionUrl);
-            stmt = con.createStatement();
-            rs = stmt.executeQuery("SELECT Password FROM " + userType + " WHERE Email = '" + email + "'");
-            while (rs.next()) {
-                String passwordIncluded = rs.getString("Password");
-                if (passwordIncluded.equals(password)) {
-                    return passwordIncluded;
-                }
-            }
-        }
-
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
     // create new account voor student en saving data in de sql
     public void createStudent(String name, String email, String password, LocalDate dateOfBirth, String address,
             String residence,

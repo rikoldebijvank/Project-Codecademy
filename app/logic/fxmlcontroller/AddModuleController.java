@@ -10,7 +10,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
-public class AddModuleController extends AdminController {
+public class AddModuleController extends Controller {
     private DatabaseController controller = new DatabaseController();
     private Gui gui = new Gui();
 
@@ -42,6 +42,6 @@ public class AddModuleController extends AdminController {
                 + "', '" + moduleID.getText() + "', '" + moduleContactPersonName.getText() + "', '"
                 + moduleDescription.getText() + "', '" + moduleNumber.getText() + "')");
 
-        gui.changeScene("../presentation/fxmlfiles/adminCoursesPage.fxml");
+        gui.changeScene("../presentation/fxmlfiles/CoursesPage.fxml");
     }
 }

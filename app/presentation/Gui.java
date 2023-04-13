@@ -16,8 +16,8 @@ public class Gui extends Application {
     public void start(Stage stage) throws Exception {
         stg = stage;
         stage.setResizable(false);
-        Parent root = FXMLLoader.load(getClass().getResource("fxmlfiles/AdminLoginPage.fxml"));
-        stage.setTitle("Avans Dash");
+        Parent root = FXMLLoader.load(getClass().getResource("fxmlfiles/LoginPage.fxml"));
+        stage.setTitle("Avans Dash - Rik Olde Bijvank (2202811) & Baraa Bayrkdar (student#)");
         stage.setScene(new Scene(root, 696, 493));
         stage.show();
     }

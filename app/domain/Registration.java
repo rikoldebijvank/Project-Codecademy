@@ -6,7 +6,6 @@ public class Registration {
     private Course course;
     private String studentEmail;
     private LocalDate date;
-    private Certificate certificate;
 
     // constructor methode
     public Registration(Course course, String studentEmail, LocalDate date) {
@@ -38,14 +37,6 @@ public class Registration {
 
     public void setDate(LocalDate date) {
         this.date = date;
-    }
-
-    public Certificate getCertificate() {
-        return certificate;
-    }
-
-    public void setCertificate(Certificate certificate) {
-        this.certificate = certificate;
     }
 
 }

@@ -10,7 +10,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
-public class addWebcastController {
+public class AddWebcastController {
     DatabaseController controller = new DatabaseController();
     Gui gui = new Gui();
 
@@ -42,7 +42,7 @@ public class addWebcastController {
                 + webcastContentId.getText() + "', '" + webcastSpeakerName.getText() + "', '"
                 + webcastURL.getText() + webcastDescription.getText() + "', '" + webcastLength.getText() + "')");
 
-        gui.changeScene("../presentation/fxmlfiles/adminCoursesPage.fxml");
+        gui.changeScene("../presentation/fxmlfiles/CoursesPage.fxml");
     }
 
 }
