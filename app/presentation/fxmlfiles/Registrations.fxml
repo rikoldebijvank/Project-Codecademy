@@ -111,8 +111,8 @@
                <children>
                   <TableView fx:id="coursesRegistrations" prefHeight="240.0" prefWidth="372.0">
                      <columns>
-                        <TableColumn fx:id="courseNames" editable="false" prefWidth="109.0" style="-fx-background-color: #DD0000; -fx-color: #000;" text="Course Name" />
-                        <TableColumn fx:id="viewRegistrationsBtn" editable="false" prefWidth="81.0" style="-fx-background-color: #DD0000; -fx-color: #000;" />
+                        <TableColumn fx:id="courseNames" editable="false" prefWidth="267.0" style="-fx-background-color: #DD0000; -fx-color: #000;" text="Course Name" />
+                        <TableColumn fx:id="viewRegistrationsBtn" editable="false" prefWidth="120.0" style="-fx-background-color: #DD0000; -fx-color: #000;" />
                      </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
