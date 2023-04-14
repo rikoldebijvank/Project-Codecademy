@@ -21,7 +21,7 @@ public class CourseRegistrationsController extends Controller implements Initial
     Gui gui = new Gui();
 
     @FXML
-    private TableView<Student> registrationsPerCourse;
+    private TableView<Student> courseRegistrationsTable;
     @FXML
     private TableColumn<Student, String> studentNames;
 
@@ -29,8 +29,8 @@ public class CourseRegistrationsController extends Controller implements Initial
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        studentNames.setCellValueFactory(new PropertyValueFactory<Student, String>("courseName"));
-        registrationsPerCourse.setItems(getData());
+        studentNames.setCellValueFactory(new PropertyValueFactory<>("courseName"));
+        courseRegistrationsTable.setItems(getData());
         
     }
 
