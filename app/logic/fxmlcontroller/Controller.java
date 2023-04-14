@@ -28,10 +28,6 @@ public abstract class Controller {
         gui.changeScene("../presentation/fxmlfiles/Content.fxml");
     }
 
-    public void continueToStudentPage() throws IOException {
-        gui.changeScene("../presentation/fxmlfiles/StudentPage.fxml");
-    }
-
     public void backToHomePage() throws IOException {
         gui.changeScene("../presentation/fxmlfiles/HomePage.fxml");
     }
@@ -53,6 +49,10 @@ public abstract class Controller {
 
     public void continueToAddModulePage() throws IOException {
         gui.changeScene("../presentation/fxmlfiles/AddModule.fxml");
+    }
+
+    public void continueToStudentRegistration() throws IOException {
+        gui.changeScene("../presentation/fxmlfiles/StudentRegistration.fxml");
     }
 
     public void continueToAddWebcastPage() throws IOException {

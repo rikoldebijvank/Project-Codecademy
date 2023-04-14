@@ -8,6 +8,7 @@ import java.util.Iterator;
 import app.domain.Course;
 import app.domain.Registration;
 import app.domain.content.Module;
+import javafx.scene.control.Button;
 
 public class Student extends Person {
     private LocalDate birthday;
@@ -16,8 +17,15 @@ public class Student extends Person {
     private String residence;
     private String country;
     private HashMap<String, Course> courseList;
+    private Button removeStudentButton;
 
     // constructor methode
+    public Student(String name, String email, String gender, Button button) {
+        super(name, email);
+        this.gender = gender;
+        this.removeStudentButton = button;
+    }
+
     public Student(String name, String email, LocalDate birthday, String gender, String address, String residence,
             String country) {
         super(name, email);
@@ -96,5 +104,13 @@ public class Student extends Person {
 
     public void setCourseList(HashMap<String, Course> courseList) {
         this.courseList = courseList;
+    }
+
+    public Button getRemoveStudentButton() {
+        return removeStudentButton;
+    }
+
+    public void setRemoveStudentButton(Button removeStudentButton) {
+        this.removeStudentButton = removeStudentButton;
     }
 }
