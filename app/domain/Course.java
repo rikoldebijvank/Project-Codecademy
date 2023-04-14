@@ -40,6 +40,12 @@ public class Course {
         this.studentsFinished = studentsFinished;
     }
 
+    // andere constructor methode
+    public Course(Button courseButton, String subject) {
+        this.courseButton = courseButton;
+        this.subject = subject;
+    }
+
     // nieuwe modules toevoegen
     public void addModule(Module module) {
         content.put(module.getTitle(), module);
