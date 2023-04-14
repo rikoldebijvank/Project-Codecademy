@@ -29,6 +29,10 @@ public class Student extends Person {
         this.courseList = new HashMap<>();
     }
 
+    public Student(String name) {
+        super(name);
+    }
+
     // het percentage van hoeveel een cursist de gevolgde cursus heeft gelezen
     public int perctRead() {
         // Method moet nog ingevuld worden

@@ -20,14 +20,14 @@ import javafx.scene.control.cell.PropertyValueFactory;
 public class RegistrationsController extends Controller implements Initializable {
 
     DatabaseController controller = new DatabaseController();
-        Gui gui = new Gui();
+    Gui gui = new Gui();
 
-        @FXML
-        private TableView<Course> coursesRegistrations;
-        @FXML
-        private TableColumn<Course, String> courseNames;
-        @FXML
-        private TableColumn<Course, Button> viewRegistrationsBtn;
+    @FXML
+    private TableView<Course> coursesRegistrations;
+    @FXML
+    private TableColumn<Course, String> courseNames;
+    @FXML
+    private TableColumn<Course, Button> viewRegistrationsBtn;
 
 
 

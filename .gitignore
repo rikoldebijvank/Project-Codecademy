@@ -2,3 +2,5 @@
 out/
 bin/
 Project-Codecademy.iml
+.vscode/
+Codecademy Database Script.sql
