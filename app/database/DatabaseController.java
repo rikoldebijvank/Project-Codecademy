@@ -66,12 +66,11 @@ public class DatabaseController {
     }
 
     // create new account voor student en saving data in de sql
-    public void createStudent(String name, String email, String password, LocalDate dateOfBirth, String address,
+    public void createStudent(String name, String email, LocalDate dateOfBirth, String address,
             String residence,
             String country, String gender) {
         executeSQL("INSERT INTO Student VALUES ('" + email + "', '" + name + "', '" + dateOfBirth
-                + "', '" + gender + "', '" + address + "', '" + residence + "', '" + country
-                + "') INSERT INTO Students VALUES ('" + email + "', '" + password + "')");
+                + "', '" + gender + "', '" + address + "', '" + residence + "', '" + country + "')");
     }
 
     // create new account voor admin en saving data in de sql
