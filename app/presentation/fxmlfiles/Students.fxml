@@ -15,60 +15,6 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="696.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.logic.fxmlcontroller.FxmlController">
    <children>
-      <VBox layoutX="286.0" layoutY="163.0" prefHeight="281.0" prefWidth="396.0">
-         <children>
-            <HBox prefHeight="1.0" prefWidth="396.0" spacing="10.0">
-               <padding>
-                  <Insets top="5.0" />
-               </padding>
-            </HBox>
-            <GridPane prefHeight="313.0" prefWidth="396.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints maxHeight="134.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="238.0" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="238.0" minHeight="10.0" prefHeight="57.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="238.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="238.0" minHeight="10.0" prefHeight="59.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <HBox prefHeight="1.0" prefWidth="396.0" spacing="10.0">
-                     <padding>
-                        <Insets top="5.0" />
-                     </padding>
-                  </HBox>
-                  <Button alignment="CENTER" graphicTextGap="5.0" mnemonicParsing="false" onAction="#continueToWebcastsStatistics" prefHeight="40.0" prefWidth="156.0" style="-fx-background-color: #b00;" text="Webcasts" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                  </Button>
-                  <Button alignment="CENTER" graphicTextGap="5.0" mnemonicParsing="false" onAction="#continueToCoursesPage" prefHeight="40.0" prefWidth="156.0" style="-fx-background-color: #b00;" text="Courses" textFill="WHITE" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                  </Button>
-               </children>
-               <padding>
-                  <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
-               </padding>
-            </GridPane>
-         </children>
-      </VBox>
       <VBox prefHeight="493.0" prefWidth="272.0" style="-fx-background-color: #bb0000;">
          <children>
             <Pane prefHeight="153.0" prefWidth="272.0" style="-fx-background-color: #a00;">
@@ -91,7 +37,7 @@
                   </Button>
                </children>
             </Pane>
-            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#continueToStudents" prefHeight="55.0" prefWidth="272.0" style="-fx-background-color: #bb0000;" text="Students" textFill="WHITE">
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#continueToStudents" prefHeight="55.0" prefWidth="272.0" style="-fx-background-color: #a00000;" text="Students" textFill="WHITE">
                <padding>
                   <Insets left="50.0" />
                </padding>
@@ -124,7 +70,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="218.0" mnemonicParsing="false" onAction="#continueToStatistics" prefHeight="55.0" prefWidth="272.0" style="-fx-background-color: #aa0000;" text="Statistics" textFill="WHITE">
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#continueToStatistics" prefHeight="55.0" prefWidth="272.0" style="-fx-background-color: #bb0000;" text="Statistics" textFill="WHITE">
                <padding>
                   <Insets left="50.0" />
                </padding>
@@ -137,14 +83,34 @@
             </Button>
          </children>
       </VBox>
-      <Pane layoutX="272.0" layoutY="69.0" prefHeight="84.0" prefWidth="425.0" style="-fx-background-color: #b00;">
+      <VBox layoutX="286.0" layoutY="163.0" prefHeight="281.0" prefWidth="396.0">
          <children>
-            <Label layoutX="34.0" layoutY="34.0" prefHeight="35.0" prefWidth="97.0" text="Statistics" textFill="WHITE">
+            <GridPane prefHeight="313.0" prefWidth="396.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="134.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="238.0" minHeight="10.0" prefHeight="238.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <HBox prefHeight="1.0" prefWidth="396.0" spacing="10.0">
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+      <Pane layoutX="272.0" layoutY="70.0" prefHeight="83.0" prefWidth="425.0" style="-fx-background-color: #b00;">
+         <children>
+            <Label layoutX="34.0" layoutY="34.0" prefHeight="35.0" prefWidth="144.0" text="Students" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="34.0" layoutY="19.0" text="/Home/Statistics" textFill="WHITE">
+            <Label layoutX="34.0" layoutY="19.0" text="/Home/Students" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>

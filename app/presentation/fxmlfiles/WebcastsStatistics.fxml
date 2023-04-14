@@ -25,7 +25,7 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Button alignment="BASELINE_LEFT" layoutX="8.0" layoutY="77.0" mnemonicParsing="false" onAction="#backToAdminHomePage" prefHeight="75.0" prefWidth="272.0" style="-fx-background-color: #aa0000;" text="Home" textFill="WHITE">
+                  <Button alignment="BASELINE_LEFT" layoutX="8.0" layoutY="77.0" mnemonicParsing="false" onAction="#backToHomePage" prefHeight="75.0" prefWidth="272.0" style="-fx-background-color: #aa0000;" text="Home" textFill="WHITE">
                      <padding>
                         <Insets left="50.0" />
                      </padding>
@@ -38,7 +38,7 @@
                   </Button>
                </children>
             </Pane>
-            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#continueToAdminCoursesPage" prefHeight="55.0" prefWidth="272.0" style="-fx-background-color: #bb0000;" text="Courses" textFill="WHITE">
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#continueToStudents" prefHeight="55.0" prefWidth="272.0" style="-fx-background-color: #bb0000;" text="Students" textFill="WHITE">
                <padding>
                   <Insets left="50.0" />
                </padding>
@@ -49,7 +49,29 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="218.0" mnemonicParsing="false" onAction="#continueToAdminStatistics" prefHeight="55.0" prefWidth="272.0" style="-fx-background-color: #bb0000;" text="Statistics" textFill="WHITE">
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#continueToRegistrations" prefHeight="55.0" prefWidth="272.0" style="-fx-background-color: #bb0000;" text="Registrations" textFill="WHITE">
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#continueToContent" prefHeight="55.0" prefWidth="272.0" style="-fx-background-color: #bb0000;" text="Content" textFill="WHITE">
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#continueToStatistics" prefHeight="55.0" prefWidth="272.0" style="-fx-background-color: #aa0000;" text="Statistics" textFill="WHITE">
                <padding>
                   <Insets left="50.0" />
                </padding>
@@ -83,7 +105,7 @@
                   </TableView>
                </children>
             </GridPane>
-            <Button mnemonicParsing="false" onAction="#continueToAdminStatistics" prefHeight="41.0" prefWidth="401.0" style="-fx-background-color: #ffffff; -fx-border-color: bb0000; -fx-background-radius: 5; -fx-background-insets: 3;" text="Back" textFill="#bb0000">
+            <Button mnemonicParsing="false" onAction="#continueToStatistics" prefHeight="41.0" prefWidth="401.0" style="-fx-background-color: #ffffff; -fx-border-color: bb0000; -fx-background-radius: 5; -fx-background-insets: 3;" text="Back" textFill="#bb0000">
                <font>
                   <Font size="18.0" />
                </font>

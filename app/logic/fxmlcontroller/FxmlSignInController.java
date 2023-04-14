@@ -26,11 +26,11 @@ public class FxmlSignInController {
         gui.changeScene("../presentation/fxmlfiles/studentRegistration.fxml");
     }
 
-    public void continueToAdminLogin() throws IOException {
+    public void continueToLogin() throws IOException {
         gui.changeScene("../presentation/fxmlfiles/adminLoginPage.fxml");
     }
 
-    public void continueToAdminRegistration() throws IOException {
+    public void continueToRegistration() throws IOException {
         gui.changeScene("../presentation/fxmlfiles/adminRegistration.fxml");
     }
 

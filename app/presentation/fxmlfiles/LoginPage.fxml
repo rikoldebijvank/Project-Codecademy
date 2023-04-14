@@ -37,7 +37,7 @@
                   </Button>
                </children>
             </Pane>
-            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="120.0" mnemonicParsing="false" onAction="#continueToAdminLogin" prefHeight="66.0" prefWidth="272.0" style="-fx-background-color: #bb0000;" text="Log in" textFill="WHITE">
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="120.0" mnemonicParsing="false" onAction="#continueToLogin" prefHeight="66.0" prefWidth="272.0" style="-fx-background-color: #bb0000;" text="Log in" textFill="WHITE">
                <padding>
                   <Insets left="50.0" />
                </padding>
@@ -57,7 +57,7 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="29.0" layoutY="9.0" prefHeight="35.0" prefWidth="173.0" text="/Log in/admin" textFill="WHITE">
+            <Label layoutX="29.0" layoutY="9.0" prefHeight="35.0" prefWidth="173.0" text="/Log in" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>

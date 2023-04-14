@@ -8,10 +8,6 @@ public class Employee {
         this.name = name;
     }
 
-    public void approveCertificate(int certId) {
-        // Method moet nog ingevuld worden
-    }
-
     // setters en gitters
     public String getName() {
         return name;

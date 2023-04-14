@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 
-import app.domain.Certificate;
 import app.domain.Course;
 import app.domain.Registration;
 import app.domain.content.Module;
@@ -16,7 +15,6 @@ public class Student extends Person {
     private String address;
     private String residence;
     private String country;
-    private ArrayList<Certificate> certificateList;
     private HashMap<String, Course> courseList;
 
     // constructor methode
@@ -28,7 +26,6 @@ public class Student extends Person {
         this.address = address;
         this.residence = residence;
         this.country = country;
-        this.certificateList = new ArrayList<>();
         this.courseList = new HashMap<>();
     }
 
@@ -51,17 +48,7 @@ public class Student extends Person {
         return 0.0;
     }
 
-    // laat certificaten van student zien
-    public void showCertificates() {
-        StringBuilder builder = new StringBuilder();
-        Iterator<Certificate> iterator = certificateList.iterator();
-        while (iterator.hasNext()) {
-            builder.append(iterator.next());
-        }
-        System.out.println(builder);
-    }
-
-    // setters rn getters
+    // setters en getters
 
     public LocalDate getBirthday() {
         return birthday;
@@ -101,14 +88,6 @@ public class Student extends Person {
 
     public void setCountry(String country) {
         this.country = country;
-    }
-
-    public ArrayList<Certificate> getCertificateList() {
-        return certificateList;
-    }
-
-    public void setCertificateList(ArrayList<Certificate> certificateList) {
-        this.certificateList = certificateList;
     }
 
     public HashMap<String, Course> getCourseList() {
