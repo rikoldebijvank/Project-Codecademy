@@ -17,7 +17,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-public class RegistrationsController implements Initializable{
+public class RegistrationsController extends Controller implements Initializable {
 
     DatabaseController controller = new DatabaseController();
         Gui gui = new Gui();
@@ -34,7 +34,7 @@ public class RegistrationsController implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         courseNames.setCellValueFactory(new PropertyValueFactory<Course, String>("courseName"));
-        viewRegistrationsBtn.setCellValueFactory(new PropertyValueFactory<Course, Button>("View registrations"));
+        viewRegistrationsBtn.setCellValueFactory(new PropertyValueFactory<Course, Button>("courseButton"));
         coursesRegistrations.setItems(getData());
         
     }

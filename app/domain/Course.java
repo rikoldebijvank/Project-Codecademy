@@ -41,9 +41,9 @@ public class Course {
     }
 
     // andere constructor methode
-    public Course(Button courseButton, String subject) {
+    public Course(Button courseButton, String courseName) {
         this.courseButton = courseButton;
-        this.subject = subject;
+        this.courseName = courseName;
     }
 
     // nieuwe modules toevoegen
