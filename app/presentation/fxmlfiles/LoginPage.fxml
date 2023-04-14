@@ -86,11 +86,11 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <PasswordField fx:id="adminLoginPassword" prefHeight="35.0" prefWidth="252.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <PasswordField fx:id="loginPassword" prefHeight="35.0" prefWidth="252.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor></PasswordField>
-            <Button mnemonicParsing="false" onAction="#checkAdminLogin" prefHeight="30.0" prefWidth="111.0" style="-fx-background-color: #bb0000;" text="Sign in" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <Button mnemonicParsing="false" onAction="#checkLogin" prefHeight="30.0" prefWidth="111.0" style="-fx-background-color: #bb0000;" text="Sign in" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <font>
                   <Font size="14.0" />
                </font>

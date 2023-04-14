@@ -71,30 +71,23 @@ public class FxmlSignInController {
     @FXML
     private TextField adminLoginEmail;
     @FXML
-    private PasswordField adminLoginPassword;
+    private PasswordField loginPassword;
     @FXML
     private Label studentSignUpError;
     @FXML
     private Label adminSignUpError;
 
     // checken van ingevoerde inloggegevens om users toe te laten
-    public void checkLogin(String userType) throws IOException {
-        if (userType.equals("Admins")) {
-            String signInValuePassword = "codecademy";
-            if (signInValuePassword == null) {
-                adminLoginError.setText("Login Failed");
-            } else if (!signInValuePassword.isEmpty()) {
-                adminLoginError.setText("Login Complete!");
-                gui.changeScene("../presentation/fxmlfiles/HomePage.fxml");
-            } else {
-                adminLoginError.setText("Login Failed");
-            }
+    public void checkLogin() throws IOException {
+        String signInValuePassword = "codecademy";
+        if (loginPassword.getText().isEmpty()) {
+            adminLoginError.setText("Login Failed");
+        } else if (loginPassword.getText().equals(signInValuePassword)) {
+            adminLoginError.setText("Login Complete!");
+            gui.changeScene("../presentation/fxmlfiles/HomePage.fxml");
+        } else {
+            adminLoginError.setText("Login Failed");
         }
-    }
-
-    // roepen van checkLogin methode voor inloggen van de admins
-    public void checkAdminLogin() throws IOException {
-        checkLogin("Admins");
     }
 
     // checken van ingevorde gegevens of ze aan de eisen voedoen en dan een nieuwe
