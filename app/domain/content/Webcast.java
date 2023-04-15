@@ -8,6 +8,7 @@ public class Webcast extends Content {
     private String url;
     private double length;
     private Speaker speaker;
+    private int views;
 
     // constructor methode
     public Webcast(String title, String description, LocalDate publicationDate, int contentId, Status status, String url,
@@ -16,8 +17,16 @@ public class Webcast extends Content {
         this.url = url;
         this.length = length;
         this.speaker = speaker;
+        this.views = 0;
     }
 
+    // andere constructor
+    public Webcast(String title, int views) {
+        super(title);
+        this.views = views;
+    }
+
+    
     // setters en getters
     public String getUrl() {
         return url;
@@ -43,4 +52,13 @@ public class Webcast extends Content {
         this.speaker = speaker;
     }
 
+    public int getViews() {
+        return views;
+    }
+
+    public void setViews(int views) {
+        this.views = views;
+    }
+
+    
 }
