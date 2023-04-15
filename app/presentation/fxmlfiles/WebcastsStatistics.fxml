@@ -94,7 +94,7 @@
                   <RowConstraints maxHeight="238.0" minHeight="10.0" prefHeight="238.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <TableView prefHeight="200.0" prefWidth="200.0" stylesheets="@../css/style.css">
+                  <TableView prefHeight="245.0" prefWidth="396.0" stylesheets="@../css/style.css">
                      <columns>
                         <TableColumn editable="false" prefWidth="109.0" text="Webcast" />
                         <TableColumn editable="false" prefWidth="99.0" text="Total Views" />
@@ -105,10 +105,16 @@
                   </TableView>
                </children>
             </GridPane>
-            <Button mnemonicParsing="false" onAction="#continueToStatistics" prefHeight="41.0" prefWidth="401.0" style="-fx-background-color: #ffffff; -fx-border-color: bb0000; -fx-background-radius: 5; -fx-background-insets: 3;" text="Back" textFill="#bb0000">
+            <Button mnemonicParsing="false" onAction="#continueToStatistics" prefHeight="20.0" prefWidth="396.0" style="-fx-background-color: #ffffff; -fx-border-color: bb0000; -fx-background-radius: 5; -fx-background-insets: 3;" text="Back" textFill="#bb0000">
                <font>
                   <Font size="18.0" />
                </font>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
          </children>
       </VBox>
