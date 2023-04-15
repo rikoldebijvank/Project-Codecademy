@@ -46,6 +46,13 @@ public class Student extends Person {
         // Moet nog aan toegevoegd worden
     }
 
+    // unenrollen bij een cursus voor student
+    public void unenrollCourse(Course course) {
+        // Registration newRegistration = new Registration(course, super.getEmail());
+        courseList.remove(course.getCourseName());
+        
+    }
+
     // enrollen bij een nieuwe cursus voor student
     public Double perctDoneModule(Course course, Module module) {
         // Method moet nog ingevuld worden
