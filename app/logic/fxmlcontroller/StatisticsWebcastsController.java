@@ -14,7 +14,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-public class StatisticsWebcastsController extends FxmlController implements Initializable{
+public class StatisticsWebcastsController extends Controller implements Initializable{
 
     DatabaseController controller = new DatabaseController();
     Gui gui = new Gui();

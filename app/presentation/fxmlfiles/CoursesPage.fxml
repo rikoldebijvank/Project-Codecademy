@@ -96,12 +96,12 @@
                 <RowConstraints maxHeight="238.0" minHeight="10.0" prefHeight="238.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <TableView fx:id="adminCoursesTable" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: ffffff;" GridPane.rowIndex="1">
+                  <TableView fx:id="adminCoursesTable" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: ffffff;" stylesheets="@../css/style.css" GridPane.rowIndex="1">
                     <columns>
-                      <TableColumn fx:id="adminCoursesCourseName" editable="false" prefWidth="109.0" style="-fx-background-color: #DD0000; -fx-color: #000;" text="Course Name" />
-                      <TableColumn fx:id="adminCoursesSubject" editable="false" prefWidth="81.0" style="-fx-background-color: #DD0000; -fx-color: #000;" text="Subject" />
-                        <TableColumn fx:id="adminCoursesDifficulty" editable="false" prefWidth="99.0" style="-fx-background-color: #DD0000; -fx-color: #000;" text="Difficulty" />
-                        <TableColumn fx:id="adminCoursesStudentsFinished" editable="false" prefWidth="106.0" style="-fx-background-color: #DD0000; -fx-color: #000;" text="Students Finished" />
+                      <TableColumn fx:id="adminCoursesCourseName" editable="false" prefWidth="109.0" text="Course Name" />
+                      <TableColumn fx:id="adminCoursesSubject" editable="false" prefWidth="81.0" text="Subject" />
+                        <TableColumn fx:id="adminCoursesDifficulty" editable="false" prefWidth="99.0" text="Difficulty" />
+                        <TableColumn fx:id="adminCoursesStudentsFinished" editable="false" prefWidth="106.0" text="Students Finished" />
                     </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
