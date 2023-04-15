@@ -28,8 +28,8 @@ public class StatisticsWebcastsController extends Controller implements Initiali
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        topWebcastsTitles.setCellValueFactory(new PropertyValueFactory<Webcast, String>("Webcast"));
-        viewsWebcast.setCellValueFactory(new PropertyValueFactory<Webcast, Integer>("Total Views"));
+        topWebcastsTitles.setCellValueFactory(new PropertyValueFactory<Webcast, String>("title"));
+        viewsWebcast.setCellValueFactory(new PropertyValueFactory<Webcast, Integer>("views"));
         topWebcastsTable.setItems(getData());
         
     }
@@ -37,19 +37,16 @@ public class StatisticsWebcastsController extends Controller implements Initiali
     // get alle benodigde data vanuit de sql
     public ObservableList<Webcast> getData() {
         ObservableList<Webcast> data = FXCollections.observableArrayList();
-        // String webcastTitle = controller.returnSQL("SELECT Title, FROM Webcast", "Title")
-        //                 .toString();
-        // String[] webcastTitles = webcastTitle.split(";");
-        
-        String views = controller.returnSQL("SELECT Webcast.Title, View as views FROM Webcast w " +
-        "ORDER BY views DESC " +
-        "LIMIT 3", "Views")
-        .toString();
+        String views = controller.returnSQL("SELECT TOP 3 Views AS topviews FROM Webcast ORDER BY views DESC", "topviews")
+            .toString();
         String[] webcastsViews = views.split(";");
 
+        String titles = controller.returnSQL("SELECT TOP 3 Title AS topviews FROM Webcast ORDER BY views DESC", "topviews")
+            .toString();
+        String[] webcastsTitles = titles.split(";");
+
         for (int i = 0; i < webcastsViews.length; i++) {
-            String[] webcastViews = webcastsViews[i].split(",");
-            data.add(new Webcast(webcastViews[0], Integer.valueOf(webcastViews[1])));
+            data.add(new Webcast(webcastsTitles[i], Integer.valueOf(webcastsViews[i])));
         }
         return data;
     }
