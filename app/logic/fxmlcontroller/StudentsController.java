@@ -16,7 +16,6 @@ import java.util.ResourceBundle;
 
 public class StudentsController extends Controller implements Initializable {
     private StudentsDAO dao = new StudentsDAO();
-    private DatabaseController controller = new DatabaseController();
 
     @FXML
     private TableView<Student> studentTableView;
@@ -29,6 +28,7 @@ public class StudentsController extends Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        studentTableView.refresh();
         if(dao.getStudents() != null) {
             studentName.setCellValueFactory(new PropertyValueFactory<>("name"));
             studentGender.setCellValueFactory(new PropertyValueFactory<>("gender"));

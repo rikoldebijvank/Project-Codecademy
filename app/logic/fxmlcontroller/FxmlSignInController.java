@@ -81,8 +81,8 @@ public class FxmlSignInController extends Controller {
         } else if (studentDateOfBirth.getValue().isAfter(LocalDate.now())) {
             studentSignUpError.setText("Birth date has to be in the past");
 
-        } else if (!studentGender.getText().equals("Male") && !studentGender.getText().equals("Female")) {
-            studentSignUpError.setText("Gender has to be either 'Male' or 'Female'");
+        } else if (!studentGender.getText().equals("M") && !studentGender.getText().equals("F")) {
+            studentSignUpError.setText("Gender has to be either 'M' or 'F'");
 
         } else if (!(studentPostalCode.getText().charAt(0) > '0') || !(studentPostalCode.getText().charAt(0) <= '9')
                 || !(studentPostalCode.getText().charAt(1) >= '0')
