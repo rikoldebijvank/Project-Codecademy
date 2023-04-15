@@ -10,6 +10,10 @@ public abstract class Person {
         this.email = email;
     }
 
+    public Person(String name) {
+        this.name = name;
+    }
+
     // setters en getters
     public String getName() {
         return name;

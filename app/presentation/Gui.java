@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -17,7 +18,8 @@ public class Gui extends Application {
         stg = stage;
         stage.setResizable(false);
         Parent root = FXMLLoader.load(getClass().getResource("fxmlfiles/LoginPage.fxml"));
-        stage.setTitle("Avans Dash - Rik Olde Bijvank (2202811) & Baraa Bayrkdar (student#)");
+        stage.setTitle("Avans Dash - Rik Olde Bijvank (2202811) & Baraa Bayrkdar (2210363)");
+        stage.getIcons().add(new Image("file:app\\presentation\\icon.png"));
         stage.setScene(new Scene(root, 696, 493));
         stage.show();
     }

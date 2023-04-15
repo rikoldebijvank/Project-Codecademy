@@ -10,7 +10,7 @@ public class Webcast extends Content {
     private Speaker speaker;
 
     // constructor methode
-    Webcast(String title, String description, LocalDate publicationDate, int contentId, Status status, String url,
+    public Webcast(String title, String description, LocalDate publicationDate, int contentId, Status status, String url,
             double length, Speaker speaker) {
         super(title, description, publicationDate, contentId, status);
         this.url = url;
