@@ -66,4 +66,8 @@ public abstract class Controller {
     public void continueToStudentsPage() throws IOException {
         gui.changeScene("../presentation/fxmlfiles/StudentsPage.fxml");
     }
+
+    public void continueToAddNewRegistration() throws IOException {
+        gui.changeScene("../presentation/fxmlfiles/AddNewRegistration.fxml");
+    }
 }
