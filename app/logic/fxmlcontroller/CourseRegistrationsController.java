@@ -44,7 +44,9 @@ public class CourseRegistrationsController extends Controller implements Initial
     // get alle benodigde data vanuit de sql
     public ObservableList<Student> getData() {
         ObservableList<Student> data = FXCollections.observableArrayList();
-        String studentName = controller.returnSQL("SELECT Name FROM Student WHERE Student.Email = Registration.StudentEmail AND Registration.CourseName = Course.CourseName", "StudentName")
+        String studentName = controller.returnSQL("SELECT Name FROM Student " + 
+        "JOIN Registration ON Student.Email = Registration.StudentEmail " + 
+        "JOIN Course ON Registration.CourseName = Course.CourseName", "Name")
                         .toString();
         String[] studentNames = studentName.split(";");
         ArrayList<Button> studentRegisterationsButtons = new ArrayList<>();
