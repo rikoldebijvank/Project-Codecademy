@@ -6,33 +6,42 @@ import app.domain.individuals.ContactPerson;
 
 public class Module extends Content {
     private String courseName;
-    private Double version;
+    private double version;
     private int moduleNumber;
     private ContactPerson contactPerson;
-    private Integer percentageFinished;
+    private Integer averageProgress;
 
     // constructor methode
+    public Module(String courseName, String title, Integer averageProgress) {
+        super(title);
+        this.courseName = courseName;
+        this.averageProgress = averageProgress;
+    }
+
+    // andere constructor
     public Module(String title, String description, LocalDate publicationDate, Status status, int contentId,
-            Double version, int moduleNumber, ContactPerson contactPerson) {
+            double version, int moduleNumber, ContactPerson contactPerson) {
         super(title, description, publicationDate, contentId, status);
         this.version = version;
         this.moduleNumber = moduleNumber;
         this.contactPerson = contactPerson;
     }
 
-    // andere constructor
-    public Module(String courseName, String title, int percentageFinished) {
-        super(title);
-        this.courseName = courseName;
-        this.percentageFinished = percentageFinished;
+    // setters en getters
+
+    public String getCourseName() {
+        return courseName;
     }
 
-    // setters en getters
-    public Double getVersion() {
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
+    }
+
+    public double getVersion() {
         return version;
     }
 
-    public void setVersion(Double version) {
+    public void setVersion(double version) {
         this.version = version;
     }
 
@@ -52,24 +61,11 @@ public class Module extends Content {
         this.contactPerson = contactPerson;
     }
 
-    public String getCourseName() {
-        return courseName;
+    public Integer getAverageProgress() {
+        return averageProgress;
     }
 
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
+    public void setAverageProgress(Integer averageProgress) {
+        this.averageProgress = averageProgress;
     }
-
-    public Integer getPercentageFinished() {
-        return percentageFinished;
-    }
-
-    public void setPercentageFinished(Integer percentageFinished) {
-        this.percentageFinished = percentageFinished;
-    }
-
-    public String getTitle() {
-        return super.title;
-    }
-
 }

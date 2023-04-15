@@ -40,31 +40,15 @@ public abstract class Controller {
         gui.changeScene("../presentation/fxmlfiles/Statistics.fxml");
     }
     public void continueToModulesStatistics() throws IOException {
-        gui.changeScene("../presentation/fxmlfiles/ModulesStatistics.fxml");
+        gui.changeScene("../presentation/fxmlfiles/ModuleStatistics.fxml");
     }
 
     public void continueToWebcastsStatistics() throws IOException {
         gui.changeScene("../presentation/fxmlfiles/WebcastsStatistics.fxml");
     }
 
-    public void continueToAddModulePage() throws IOException {
-        gui.changeScene("../presentation/fxmlfiles/AddModule.fxml");
-    }
-
     public void continueToStudentRegistration() throws IOException {
         gui.changeScene("../presentation/fxmlfiles/StudentRegistration.fxml");
-    }
-
-    public void continueToAddWebcastPage() throws IOException {
-        gui.changeScene("../presentation/fxmlfiles/AddWebcast.fxml");
-    }
-
-    public void continueToContentPage() throws IOException {
-        gui.changeScene("../presentation/fxmlfiles/ContentPage.fxml");
-    }
-
-    public void continueToStudentsPage() throws IOException {
-        gui.changeScene("../presentation/fxmlfiles/StudentsPage.fxml");
     }
 
     public void continueToAddNewRegistration() throws IOException {

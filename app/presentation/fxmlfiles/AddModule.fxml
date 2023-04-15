@@ -23,7 +23,7 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Button alignment="BASELINE_LEFT" layoutX="8.0" layoutY="77.0" mnemonicParsing="false" onAction="#continueToHomePage" prefHeight="75.0" prefWidth="272.0" style="-fx-background-color: #aa0000;" text="Home" textFill="WHITE">
+                  <Button alignment="BASELINE_LEFT" layoutY="77.0" mnemonicParsing="false" onAction="#backToHomePage" prefHeight="75.0" prefWidth="272.0" style="-fx-background-color: #aa0000;" text="Home" textFill="WHITE">
                      <padding>
                         <Insets left="50.0" />
                      </padding>
@@ -58,7 +58,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#continueToContent" prefHeight="55.0" prefWidth="272.0" style="-fx-background-color: #bb0000;" text="Content" textFill="WHITE">
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#continueToContent" prefHeight="55.0" prefWidth="272.0" style="-fx-background-color: #aa0000;" text="Content" textFill="WHITE">
                <padding>
                   <Insets left="50.0" />
                </padding>
@@ -123,7 +123,7 @@
                </font>
             </Label>
             <TextField fx:id="moduleContactPersonName" />
-            <Button mnemonicParsing="false" onAction="#addModule" prefHeight="25.0" prefWidth="124.0" style="-fx-background-color: #bb0000;" text="Create Module" textFill="WHITE">
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="124.0" style="-fx-background-color: #bb0000;" text="Create Module" textFill="WHITE">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>

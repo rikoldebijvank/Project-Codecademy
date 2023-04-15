@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="696.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.logic.fxmlcontroller.FxmlController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="696.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.logic.fxmlcontroller.ContentController">
    <children>
       <VBox prefHeight="493.0" prefWidth="272.0" style="-fx-background-color: #bb0000;">
          <children>
@@ -60,7 +60,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#continueToContent" prefHeight="55.0" prefWidth="272.0" style="-fx-background-color: #bb0000;" text="Content" textFill="WHITE">
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#continueToContent" prefHeight="55.0" prefWidth="272.0" style="-fx-background-color: #aa0000;" text="Content" textFill="WHITE">
                <padding>
                   <Insets left="50.0" />
                </padding>
@@ -71,7 +71,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#continueToStatistics" prefHeight="55.0" prefWidth="272.0" style="-fx-background-color: #aa0000;" text="Statistics" textFill="WHITE">
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#continueToStatistics" prefHeight="55.0" prefWidth="272.0" style="-fx-background-color: #bb0000;" text="Statistics" textFill="WHITE">
                <padding>
                   <Insets left="50.0" />
                </padding>
@@ -91,7 +91,7 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="34.0" layoutY="19.0" text="/Home/Statistics/Modules" textFill="WHITE">
+            <Label layoutX="34.0" layoutY="19.0" text="/Home/Content/Modules" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
@@ -108,11 +108,11 @@
                   <RowConstraints maxHeight="238.0" minHeight="10.0" prefHeight="238.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <TableView prefHeight="200.0" prefWidth="200.0">
+                  <TableView fx:id="moduleTableView" prefHeight="200.0" prefWidth="200.0" stylesheets="@../css/style.css">
                      <columns>
-                        <TableColumn editable="false" prefWidth="109.0" style="-fx-background-color: #DD0000; -fx-color: #000;" text="Course Name" />
-                        <TableColumn editable="false" prefWidth="81.0" style="-fx-background-color: #DD0000; -fx-color: #000;" text="Module" />
-                        <TableColumn editable="false" prefWidth="99.0" style="-fx-background-color: #DD0000; -fx-color: #000;" text="Average Progress" />
+                        <TableColumn fx:id="courseName" editable="false" prefWidth="109.0" text="Course Name" />
+                        <TableColumn fx:id="moduleTitle" editable="false" prefWidth="81.0" text="Module" />
+                        <TableColumn fx:id="averageProgress" editable="false" prefWidth="99.0" text="Average Progress" />
                      </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -120,12 +120,12 @@
                   </TableView>
                </children>
             </GridPane>
-            <Button layoutY="238.0" mnemonicParsing="false" onAction="#continueToStatistics" prefHeight="41.0" prefWidth="198.0" style="-fx-background-color: #ffffff; -fx-border-color: bb0000; -fx-background-radius: 5; -fx-background-insets: 3;" text="Back" textFill="#bb0000">
+            <Button layoutY="238.0" mnemonicParsing="false" onAction="#continueToContent" prefHeight="41.0" prefWidth="198.0" style="-fx-background-color: #ffffff; -fx-border-color: bb0000; -fx-background-radius: 5; -fx-background-insets: 3;" text="Back" textFill="#bb0000">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button layoutX="198.0" layoutY="238.0" mnemonicParsing="false" onAction="#continueToAddModulePage" prefHeight="41.0" prefWidth="198.0" style="-fx-background-color: #ffffff; -fx-border-color: bb0000; -fx-background-radius: 5; -fx-background-insets: 3;" text="Add new module" textFill="#bb0000">
+            <Button layoutX="198.0" layoutY="238.0" mnemonicParsing="false" onAction="#continueToAddModule" prefHeight="41.0" prefWidth="198.0" style="-fx-background-color: #ffffff; -fx-border-color: bb0000; -fx-background-radius: 5; -fx-background-insets: 3;" text="Add new module" textFill="#bb0000">
                <font>
                   <Font size="18.0" />
                </font>

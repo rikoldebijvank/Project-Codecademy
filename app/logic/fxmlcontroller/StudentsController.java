@@ -1,6 +1,5 @@
 package app.logic.fxmlcontroller;
 
-import app.database.DatabaseController;
 import app.database.StudentsDAO;
 import app.domain.individuals.Student;
 import javafx.fxml.FXML;
@@ -9,9 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-
 import java.net.URL;
-import java.util.Arrays;
 import java.util.ResourceBundle;
 
 public class StudentsController extends Controller implements Initializable {
@@ -28,7 +25,6 @@ public class StudentsController extends Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        studentTableView.refresh();
         if(dao.getStudents() != null) {
             studentName.setCellValueFactory(new PropertyValueFactory<>("name"));
             studentGender.setCellValueFactory(new PropertyValueFactory<>("gender"));

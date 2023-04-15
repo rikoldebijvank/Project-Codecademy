@@ -53,7 +53,6 @@ public class StudentsDAO {
             data.add(new Student(studentNames.get(i), studentEmails.get(i), studentGenders.get(i), buttons.get(i)));
         }
 
-        System.out.println("student name: " + studentNames.size());
         return data;
     }
 }
