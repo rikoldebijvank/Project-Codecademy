@@ -14,6 +14,7 @@ VALUES
 ('sannebakker@gmail.com', 'Sanne Bakker', '2000-01-01', 'F', 'Sportlaan 4', '2345 DF', 'Netherlands'),
 ('elinevisser@gmail.com', 'Eline Visser', '2001-08-02', 'F', 'Nieuwstraat 4', '9438 AL', 'Netherlands')
 
+<<<<<<< HEAD
 INSERT INTO Registration (CourseName, StudentEmail, Date, CourseFinished)
 VALUES
 ('English For Beginners', 'lucaspeeters@gmail.com', '2022-05-01', 0),
@@ -22,6 +23,15 @@ VALUES
 ('Beginners Guide for SQL', 'sannebakker@gmail.com', '2023-01-01', 0),
 ('Beginners Guide for SQL', 'elinevisser@gmail.com', '2022-04-22', 0),
 ('Beginners Guide for SQL', 'lucaspeeters@gmail.com', '2023-01-11', 1)
+=======
+INSERT INTO Registration (CourseName, StudentEmail, Date)
+VALUES
+('English For Beginners', 'lucaspeeters@gmail.com', '2022-05-01'),
+('Algebra', 'thijsdejong@hotmail.com', '2020-11-19'),
+('Data Science Using Python', 'koendevries@gmail.com', '2023-04-15'),
+('Beginners Guide for SQL', 'sannebakker@gmail.com', '2023-01-01'),
+('Beginners Guide for SQL', 'elinevisser@gmail.com', '2022-04-22')
+>>>>>>> statistics
 
 INSERT INTO ContactPerson (Name, Email)
 VALUES
@@ -67,6 +77,7 @@ VALUES
 INSERT INTO ViewedContent (ContentID, StudentEmail, PercentageViewed)
 VALUES
 (1, 'lucaspeeters@gmail.com', 70),
+<<<<<<< HEAD
 (2, 'thijsdejong@hotmail.com', 10),
 (3, 'koendevries@gmail.com', 20),
 (4, 'sannebakker@gmail.com', 90),
@@ -76,3 +87,14 @@ VALUES
 (6, 'lucaspeeters@gmail.com', 5),
 (7, 'koendevries@gmail.com', 65),
 (10, 'lucaspeeters@gmail.com', 100)
+=======
+(2, 'lucaspeeters@gmail.com', 10),
+(3, 'thijsdejong@hotmail.com', 20),
+(4, 'thijsdejong@hotmail.com', 90),
+(5, 'koendevries@gmail.com', 100),
+(6, 'koendevries@gmail.com', 5),
+(9, 'sannebakker@gmail.com', 65),
+(9, 'elinevisser@gmail.com', 100),
+(10, 'sannebakker@gmail.com', 100),
+(10, 'elinevisser@gmail.com', 100)
+>>>>>>> statistics

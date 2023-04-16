@@ -62,4 +62,12 @@ public abstract class Controller {
     public void continueToWebcasts() throws IOException {
         gui.changeScene("../presentation/fxmlfiles/AddWebcast.fxml");
     }
+
+    public void continueToStatisticsModules() throws IOException {
+        gui.changeScene("../presentation/fxmlfiles/ModulesStatistics.fxml");
+    }
+
+    public void continueToProgressPerStudent() throws IOException {
+        gui.changeScene("../presentation/fxmlfiles/ProgressModulesPerStudent.fxml");
+    }
 }

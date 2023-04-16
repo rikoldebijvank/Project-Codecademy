@@ -46,6 +46,11 @@ public class Course {
         this.courseName = courseName;
     }
 
+     // andere constructor methode
+     public Course(String courseName) {
+        this.courseName = courseName;
+    }
+
     // nieuwe modules toevoegen
     public void addModule(Module module) {
         content.put(module.getTitle(), module);
