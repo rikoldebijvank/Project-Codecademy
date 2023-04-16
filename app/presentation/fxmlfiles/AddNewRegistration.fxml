@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -117,22 +118,37 @@
                </font>
             </Label>
             <TextField fx:id="studentEmailTextField" layoutX="10.0" layoutY="57.0" prefHeight="25.0" prefWidth="296.0" />
-            <Button fx:id="addNewRegistrationBtn" mnemonicParsing="false" onAction="#addNewRegistration" prefHeight="36.0" prefWidth="107.0" style="-fx-background-color: #fff; -fx-text-fill: #b00; -fx-border-color: #b00;" text="Add Registration" textFill="WHITE">
+            <Label fx:id="addingNewRegLabel" prefHeight="29.0" prefWidth="198.0" text=" " textFill="#bb0000">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
                <VBox.margin>
-                  <Insets top="7.0" />
+                  <Insets top="5.0" />
                </VBox.margin>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Label prefHeight="29.0" prefWidth="198.0">
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
             </Label>
+            <HBox prefHeight="39.0" prefWidth="333.0" spacing="5.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#continueToRegistrations" prefHeight="36.0" prefWidth="384.0" style="-fx-background-color: #fff; -fx-text-fill: #b00; -fx-border-color: #b00;" text="Back" textFill="WHITE">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="addNewRegistrationBtn1" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#addNewRegistration" prefHeight="36.0" prefWidth="384.0" style="-fx-background-color: #fff; -fx-text-fill: #b00; -fx-border-color: #b00;" text="Add Registration" textFill="WHITE">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
          </children>
       </VBox>
    </children>
