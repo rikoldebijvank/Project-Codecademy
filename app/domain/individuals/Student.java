@@ -26,6 +26,7 @@ public class Student extends Person {
         this.removeStudentButton = button;
     }
 
+    // andere constructor
     public Student(String name, String email, LocalDate birthday, String gender, String address, String residence,
             String country) {
         super(name, email);
@@ -37,8 +38,10 @@ public class Student extends Person {
         this.courseList = new HashMap<>();
     }
 
-    public Student(String name) {
+    // andere constructor
+    public Student(String name, Button studentButton) {
         super(name);
+        this.removeStudentButton = studentButton;
     }
 
     // het percentage van hoeveel een cursist de gevolgde cursus heeft gelezen
