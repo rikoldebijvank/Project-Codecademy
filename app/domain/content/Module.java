@@ -10,6 +10,8 @@ public class Module extends Content {
     private int moduleNumber;
     private ContactPerson contactPerson;
     private Integer averageProgress;
+    private String progress;
+    private String studentName;
 
     // constructor methode
     public Module(String courseName, String title, Integer averageProgress) {
@@ -25,6 +27,13 @@ public class Module extends Content {
         this.version = version;
         this.moduleNumber = moduleNumber;
         this.contactPerson = contactPerson;
+    }
+
+    // andere constructor methode
+    public Module(String title, String studentName, String progress) {
+        super(title);
+        this.studentName = studentName;
+        this.progress = progress;
     }
 
     // setters en getters
@@ -68,4 +77,14 @@ public class Module extends Content {
     public void setAverageProgress(Integer averageProgress) {
         this.averageProgress = averageProgress;
     }
+
+    public String getProgress() {
+        return progress;
+    }
+
+    public void setProgress(String progress) {
+        this.progress = progress;
+    }
+
+    
 }

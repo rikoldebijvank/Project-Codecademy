@@ -44,6 +44,11 @@ public class Student extends Person {
         this.removeStudentButton = studentButton;
     }
 
+    // andere constructor
+    public Student(String name) {
+        super(name);
+    }
+
     // het percentage van hoeveel een cursist de gevolgde cursus heeft gelezen
     public int perctRead() {
         // Method moet nog ingevuld worden
