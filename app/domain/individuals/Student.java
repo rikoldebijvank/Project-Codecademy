@@ -20,15 +20,8 @@ public class Student extends Person {
     private Button removeStudentButton;
 
     // constructor methode
-    public Student(String name, String email, String gender, Button button) {
-        super(name, email);
-        this.gender = gender;
-        this.removeStudentButton = button;
-    }
-
-    // andere constructor
     public Student(String name, String email, LocalDate birthday, String gender, String address, String residence,
-            String country) {
+                   String country) {
         super(name, email);
         this.birthday = birthday;
         this.gender = gender;
@@ -36,6 +29,13 @@ public class Student extends Person {
         this.residence = residence;
         this.country = country;
         this.courseList = new HashMap<>();
+    }
+
+    // andere constructor
+    public Student(String name, String email, String gender, Button button) {
+        super(name, email);
+        this.gender = gender;
+        this.removeStudentButton = button;
     }
 
     // andere constructor
@@ -49,34 +49,7 @@ public class Student extends Person {
         super(name);
     }
 
-    // het percentage van hoeveel een cursist de gevolgde cursus heeft gelezen
-    public int perctRead() {
-        // Method moet nog ingevuld worden
-        return 0;
-    }
-
-    // enrollen bij een nieuwe cursus voor student
-    public void enrollCourse(Course course, LocalDate date) {
-        Registration newRegistration = new Registration(course, super.getEmail(), date);
-        courseList.put(course.getCourseName(), course);
-        // Moet nog aan toegevoegd worden
-    }
-
-    // unenrollen bij een cursus voor student
-    public void unenrollCourse(Course course) {
-        // Registration newRegistration = new Registration(course, super.getEmail());
-        courseList.remove(course.getCourseName());
-        
-    }
-
-    // enrollen bij een nieuwe cursus voor student
-    public Double perctDoneModule(Course course, Module module) {
-        // Method moet nog ingevuld worden
-        return 0.0;
-    }
-
     // setters en getters
-
     public LocalDate getBirthday() {
         return birthday;
     }

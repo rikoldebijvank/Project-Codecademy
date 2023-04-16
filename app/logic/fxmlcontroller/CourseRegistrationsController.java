@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import app.database.DatabaseController;
+import app.database.RegistrationsDAO;
 import app.domain.individuals.Student;
 import app.presentation.Gui;
 import javafx.collections.FXCollections;
@@ -18,9 +19,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class CourseRegistrationsController extends Controller implements Initializable{
-
-    DatabaseController controller = new DatabaseController();
-    Gui gui = new Gui();
+    private RegistrationsDAO dao = new RegistrationsDAO();
 
     @FXML
     private TableView<Student> registrationsPerCourse;
@@ -28,47 +27,13 @@ public class CourseRegistrationsController extends Controller implements Initial
     private TableColumn<Student, String> studentNames;
     @FXML
     private TableColumn<Student, Button> removeRegistrationStudentBtn;
-    @FXML
-    private Button addNewRegistrationBtn;
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         studentNames.setCellValueFactory(new PropertyValueFactory<Student, String>("Name"));
         removeRegistrationStudentBtn.setCellValueFactory(new PropertyValueFactory<Student, Button>("removeStudentButton"));
-        registrationsPerCourse.setItems(getData());
+        registrationsPerCourse.setItems(dao.getData());
         
     }
-
-
-    // get alle benodigde data vanuit de sql
-    public ObservableList<Student> getData() {
-        ObservableList<Student> data = FXCollections.observableArrayList();
-        String studentName = controller.returnSQL("SELECT Name FROM Student " + 
-        "WHERE Email IN ( SELECT StudentEmail FROM Registration " + 
-        "WHERE CourseName = '" + RegistrationsController.courseName1 + "');", "Name")
-                        .toString();
-        String[] studentNames = studentName.split(";");
-        ArrayList<Button> studentRegisterationsButtons = new ArrayList<>();
-        for (String name : studentNames) {
-                Button newButton = new Button("Unenroll");
-                newButton.setOnAction((event) -> {
-                        try {
-                                controller.executeSQL("DELETE FROM Registration WHERE CourseName = '" + RegistrationsController.courseName1 +
-                                "' AND StudentEmail = (SELECT Email FROM Student WHERE Name = '" + name + "');");
-                                gui.changeScene("../presentation/fxmlfiles/RegistrationsPerCourse.fxml");
-                        } catch (Exception e) {
-                                e.printStackTrace();
-                        }
-                });
-                studentRegisterationsButtons.add(newButton);
-        }
-
-        for (int i = 0; i < studentNames.length; i++) {
-                data.add(new Student(studentNames[i], studentRegisterationsButtons.get(i)));
-        }
-        return data;
-    }
-
-
 }

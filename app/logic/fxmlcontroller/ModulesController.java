@@ -8,12 +8,11 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import app.domain.content.Module;
-import java.io.IOException;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ContentController extends Controller implements Initializable {
-    private Gui gui = new Gui();
+public class ModulesController extends Controller implements Initializable {
     private ModulesDAO dao = new ModulesDAO();
 
     @FXML
@@ -24,10 +23,6 @@ public class ContentController extends Controller implements Initializable {
     private TableColumn<Module, String> moduleTitle;
     @FXML
     private TableColumn<Module, Integer> averageProgress;
-
-    public void continueToAddModule() throws IOException {
-        gui.changeScene("../presentation/fxmlfiles/AddModule.fxml");
-    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

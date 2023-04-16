@@ -6,7 +6,7 @@ VALUES
     ('Data Science Using Python', 'Data Science', 'This course uses Python to visualize large amounts of data', 'EXPERT', 4),
     ('Beginners Guide for SQL', 'SQL', 'Using SQL we will store data into our own database', 'BEGINNER', 10)
 
-INSERT INTO Student (Email, Name, DateOfBirth, Gender, Address, PostalCode, Country)
+    INSERT INTO Student (Email, Name, DateOfBirth, Gender, Address, PostalCode, Country)
 VALUES
     ('lucaspeeters@gmail.com', 'Lucas Peeters', '2005-03-20', 'M', 'Dorpsstraat 7', '2412 RH', 'Netherlands'),
     ('thijsdejong@hotmail.com', 'Thijs De Jong', '1999-11-05', 'M', 'Kerkstraat 10', '2352 SL', 'Netherlands'),
@@ -14,13 +14,13 @@ VALUES
     ('sannebakker@gmail.com', 'Sanne Bakker', '2000-01-01', 'F', 'Sportlaan 4', '2345 DF', 'Netherlands'),
     ('elinevisser@gmail.com', 'Eline Visser', '2001-08-02', 'F', 'Nieuwstraat 4', '9438 AL', 'Netherlands')
 
-INSERT INTO Registration (CourseName, StudentEmail, Date)
+INSERT INTO Registration (CourseName, StudentEmail, Date, CourseFinished)
 VALUES
-    ('English For Beginners', 'lucaspeeters@gmail.com', '2022-05-01'),
-    ('Algebra', 'thijsdejong@hotmail.com', '2020-11-19'),
-    ('Data Science Using Python', 'koendevries@gmail.com', '2023-04-15'),
-    ('Beginners Guide for SQL', 'sannebakker@gmail.com', '2023-01-01'),
-    ('Beginners Guide for SQL', 'elinevisser@gmail.com', '2022-04-22')
+    ('English For Beginners', 'lucaspeeters@gmail.com', '2022-05-01', 0),
+    ('Algebra', 'thijsdejong@hotmail.com', '2020-11-19', 0),
+    ('Data Science Using Python', 'koendevries@gmail.com', '2023-04-15', 1),
+    ('Beginners Guide for SQL', 'sannebakker@gmail.com', '2023-01-01', 0),
+    ('Beginners Guide for SQL', 'elinevisser@gmail.com', '2022-04-22', 0)
 
 INSERT INTO ContactPerson (Name, Email)
 VALUES
@@ -70,7 +70,7 @@ VALUES
     (3, 'thijsdejong@hotmail.com', 20),
     (4, 'thijsdejong@hotmail.com', 90),
     (5, 'koendevries@gmail.com', 100),
-    (6, 'koendevries@gmail.com', 5),
+    (6, 'koendevries@gmail.com', 100),
     (9, 'sannebakker@gmail.com', 65),
     (9, 'elinevisser@gmail.com', 100),
     (10, 'sannebakker@gmail.com', 100),

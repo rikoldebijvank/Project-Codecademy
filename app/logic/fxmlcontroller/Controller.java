@@ -32,15 +32,11 @@ public abstract class Controller {
         gui.changeScene("../presentation/fxmlfiles/HomePage.fxml");
     }
 
-    public void continueToAddCoursePage() throws IOException {
-        gui.changeScene("../presentation/fxmlfiles/AddCourse.fxml");
-    }
-
     public void continueToStatistics() throws IOException {
         gui.changeScene("../presentation/fxmlfiles/Statistics.fxml");
     }
     public void continueToModulesStatistics() throws IOException {
-        gui.changeScene("../presentation/fxmlfiles/ModuleStatistics.fxml");
+        gui.changeScene("../presentation/fxmlfiles/Modules.fxml");
     }
 
     public void continueToWebcastsStatistics() throws IOException {
@@ -52,15 +48,11 @@ public abstract class Controller {
     }
 
     public void continueToAddNewRegistration() throws IOException {
-        gui.changeScene("../presentation/fxmlfiles/AddNewRegistration.fxml");
+        gui.changeScene("../presentation/fxmlfiles/AddRegistration.fxml");
     }
 
     public void continueToModules() throws IOException {
-        gui.changeScene("../presentation/fxmlfiles/ModuleStatistics.fxml");
-    }
-
-    public void continueToWebcasts() throws IOException {
-        gui.changeScene("../presentation/fxmlfiles/AddWebcast.fxml");
+        gui.changeScene("../presentation/fxmlfiles/Modules.fxml");
     }
 
     public void continueToStatisticsModules() throws IOException {
@@ -68,6 +60,10 @@ public abstract class Controller {
     }
 
     public void continueToProgressPerStudent() throws IOException {
-        gui.changeScene("../presentation/fxmlfiles/ProgressModulesPerStudent.fxml");
+        gui.changeScene("../presentation/fxmlfiles/ContentProgress.fxml");
+    }
+
+    public void continueToWebcasts() throws IOException {
+        gui.changeScene("../presentation/fxmlfiles/Content.fxml");
     }
 }

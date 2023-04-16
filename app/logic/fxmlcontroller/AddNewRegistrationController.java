@@ -19,14 +19,11 @@ public class AddNewRegistrationController extends Controller {
     @FXML
     private TextField studentEmailTextField;
     @FXML
-    private Button addNewRegistrationBtn;
-    @FXML
     private Label addingNewRegLabel;
     
     private LocalDate currentDate;
 
     public void addNewRegistration() throws Exception{
-
         if (courseNameTextField.getText().isEmpty() || studentEmailTextField.getText().isEmpty()) {
             addingNewRegLabel.setText("Fields shouldn't be empty");
             return;

@@ -9,12 +9,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="696.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.logic.fxmlcontroller.ProgressModulesController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="696.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.logic.fxmlcontroller.ModulesController">
    <children>
       <VBox prefHeight="493.0" prefWidth="272.0" style="-fx-background-color: #bb0000;">
          <children>
@@ -60,7 +61,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#continueToContent" prefHeight="55.0" prefWidth="272.0" style="-fx-background-color: #bb0000;" text="Content" textFill="WHITE">
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#continueToContent" prefHeight="55.0" prefWidth="272.0" style="-fx-background-color: #aa0000;" text="Content" textFill="WHITE">
                <padding>
                   <Insets left="50.0" />
                </padding>
@@ -71,7 +72,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#continueToStatistics" prefHeight="55.0" prefWidth="272.0" style="-fx-background-color: #aa0000;" text="Statistics" textFill="WHITE">
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#continueToStatistics" prefHeight="55.0" prefWidth="272.0" style="-fx-background-color: #bb0000;" text="Statistics" textFill="WHITE">
                <padding>
                   <Insets left="50.0" />
                </padding>
@@ -84,7 +85,21 @@
             </Button>
          </children>
       </VBox>
-      <VBox layoutX="286.0" layoutY="163.0" prefHeight="281.0" prefWidth="396.0">
+      <Pane layoutX="272.0" layoutY="69.0" prefHeight="84.0" prefWidth="425.0" style="-fx-background-color: #b00;">
+         <children>
+            <Label layoutX="34.0" layoutY="34.0" prefHeight="35.0" prefWidth="97.0" text="Modules" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="34.0" layoutY="19.0" text="/Home/Content/Modules" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="289.0" layoutY="179.0" prefHeight="281.0" prefWidth="396.0">
          <children>
             <GridPane prefHeight="238.0" prefWidth="396.0">
                <columnConstraints>
@@ -94,12 +109,11 @@
                   <RowConstraints maxHeight="238.0" minHeight="10.0" prefHeight="238.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <TableView fx:id="progressTable" prefHeight="245.0" prefWidth="396.0" stylesheets="@../css/style.css">
+                  <TableView fx:id="moduleTableView" prefHeight="200.0" prefWidth="200.0" stylesheets="@../css/style.css">
                      <columns>
-                        <TableColumn fx:id="modulesTitles" editable="false" prefWidth="109.0" text="Module" />
-                        <TableColumn fx:id="moduleProgress" editable="false" prefWidth="99.0" text="Viewed" />
-                        <TableColumn fx:id="webcastsTitles" editable="false" prefWidth="109.0" text="Webcast" />
-                        <TableColumn fx:id="webcastsProgress" editable="false" prefWidth="99.0" text="Viewed" />
+                        <TableColumn fx:id="courseName" editable="false" prefWidth="109.0" text="Course Name" />
+                        <TableColumn fx:id="moduleTitle" editable="false" prefWidth="81.0" text="Module" />
+                        <TableColumn fx:id="averageProgress" editable="false" prefWidth="99.0" text="Average Progress" />
                      </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -107,31 +121,18 @@
                   </TableView>
                </children>
             </GridPane>
-            <Button mnemonicParsing="false" onAction="#continueToStatisticsModules" prefHeight="20.0" prefWidth="396.0" style="-fx-background-color: #ffffff; -fx-border-color: bb0000; -fx-background-radius: 5; -fx-background-insets: 3;" text="Back" textFill="#bb0000">
-               <font>
-                  <Font size="18.0" />
-               </font>
-               <VBox.margin>
-                  <Insets top="5.0" />
-               </VBox.margin>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-         </children>
-      </VBox>
-      <Pane layoutX="272.0" layoutY="69.0" prefHeight="84.0" prefWidth="425.0" style="-fx-background-color: #b00;">
-         <children>
-            <Label layoutX="34.0" layoutY="34.0" prefHeight="35.0" prefWidth="180.0" text="Progress student" textFill="WHITE">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <Label layoutX="34.0" layoutY="19.0" text="/Home/Statistics/Modules" textFill="WHITE">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
+            <HBox layoutY="246.0" prefHeight="42.0" prefWidth="396.0" spacing="5.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#continueToContent" prefHeight="41.0" prefWidth="401.0" style="-fx-background-color: #ffffff; -fx-border-color: bb0000; -fx-background-radius: 5; -fx-background-insets: 3;" text="Back" textFill="#bb0000">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </HBox>
          </children>
       </Pane>
    </children>

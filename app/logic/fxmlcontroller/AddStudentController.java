@@ -15,17 +15,6 @@ public class AddStudentController extends Controller {
     private DatabaseController controller = new DatabaseController();
     private Gui gui = new Gui();
 
-    // functie aan buttons geven
-    // om tussen alle pagina's (scenes) te kunnen bewegen
-
-    public void continueToLogin() throws IOException {
-        gui.changeScene("../presentation/fxmlfiles/adminLoginPage.fxml");
-    }
-
-    public void backToFrontPage() throws IOException {
-        gui.changeScene("../presentation/fxmlfiles/startingPage.fxml");
-    }
-
     @FXML
     private TextField studentName;
     @FXML
@@ -41,24 +30,7 @@ public class AddStudentController extends Controller {
     @FXML
     private TextField studentGender;
     @FXML
-    private Label adminLoginError;
-    @FXML
-    private PasswordField loginPassword;
-    @FXML
     private Label studentSignUpError;
-
-    // checken van ingevoerde inloggegevens om users toe te laten
-    public void checkLogin() throws IOException {
-        String signInValuePassword = "codecademy";
-        if (loginPassword.getText().isEmpty()) {
-            adminLoginError.setText("Login Failed");
-        } else if (loginPassword.getText().equals(signInValuePassword)) {
-            adminLoginError.setText("Login Complete!");
-            gui.changeScene("../presentation/fxmlfiles/HomePage.fxml");
-        } else {
-            adminLoginError.setText("Login Failed");
-        }
-    }
 
     // checken van ingevorde gegevens of ze aan de eisen voedoen en dan een nieuwe
     // account maken

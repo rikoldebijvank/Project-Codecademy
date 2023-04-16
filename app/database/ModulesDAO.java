@@ -28,7 +28,7 @@ public class ModulesDAO {
                 if(!averageProgressArray[0].equals("null")) {
                     data.add(new Module(name, moduleTitles.get(name), Integer.valueOf(averageProgressArray[0])));
                 } else {
-                    data.add(new Module(name, moduleTitles.get(name), -1));
+                    data.add(new Module(name, moduleTitles.get(name), 0));
                 }
             }
         }

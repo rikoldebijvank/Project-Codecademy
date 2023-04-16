@@ -85,7 +85,7 @@ public class StatisticsModulesController extends Controller implements Initializ
         selectedCourse = courseComboBox.getValue();
         selectedStudent = studentComboBox.getValue();
             try {
-                gui.changeScene("../presentation/fxmlfiles/ProgressModulesPerStudent.fxml");
+                gui.changeScene("../presentation/fxmlfiles/ContentProgress.fxml");
             } catch (Exception e) {
                 e.printStackTrace();
             }

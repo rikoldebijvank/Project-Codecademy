@@ -51,27 +51,6 @@ public class Course {
         this.courseName = courseName;
     }
 
-    // nieuwe modules toevoegen
-    public void addModule(Module module) {
-        content.put(module.getTitle(), module);
-    }
-
-    // nieuwe webcast toevoegen
-    public void addWebcast(Webcast webcast) {
-        content.put(webcast.getTitle(), webcast);
-    }
-
-    //
-    public Double perctDoneAllStudents(HashMap<String, Content> modules) {
-        // Method moet nog ingevuld worden
-        return 0.0;
-    }
-
-    // percentage van studenten die de cursussen hebben afgerond
-    public void perctFinishedStudents() {
-        // Method moet nog ingevuld worden
-    }
-
     // setters en getters
     public String getCourseName() {
         return courseName;
