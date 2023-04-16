@@ -70,7 +70,7 @@
                         <Insets />
                      </opaqueInsets>
                   </Button>
-                  <Button alignment="CENTER" graphicTextGap="5.0" mnemonicParsing="false" onAction="#continueToStudents" prefHeight="40.0" prefWidth="156.0" style="-fx-background-color: #b00;" text="Students" textFill="WHITE" GridPane.rowIndex="1">
+                  <Button fx:id="continueToStudents" alignment="CENTER" graphicTextGap="5.0" mnemonicParsing="false" onAction="#continueToStudents" prefHeight="40.0" prefWidth="156.0" style="-fx-background-color: #b00;" text="Students" textFill="WHITE" GridPane.rowIndex="1">
                      <font>
                         <Font size="18.0" />
                      </font>

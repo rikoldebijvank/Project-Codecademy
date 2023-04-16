@@ -90,7 +90,7 @@
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor></PasswordField>
-            <Button defaultButton="true" mnemonicParsing="false" onAction="#checkLogin" prefHeight="30.0" prefWidth="111.0" style="-fx-background-color: #bb0000;" text="Sign in" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <Button fx:id="checkLogin" defaultButton="true" mnemonicParsing="false" onAction="#checkLogin" prefHeight="30.0" prefWidth="111.0" style="-fx-background-color: #bb0000;" text="Sign in" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <font>
                   <Font size="14.0" />
                </font>

@@ -121,7 +121,7 @@
                </font>
             </Label>
             <TextField fx:id="studentAddress" />
-            <Button mnemonicParsing="false" onAction="#studentSignUp" prefHeight="32.0" prefWidth="163.0" style="-fx-background-color: #fff; -fx-text-fill: #b00; -fx-border-color: #b00;" text="Create Student" textFill="WHITE">
+            <Button fx:id="createStudentButton" mnemonicParsing="false" onAction="#studentSignUp" prefHeight="32.0" prefWidth="163.0" style="-fx-background-color: #fff; -fx-text-fill: #b00; -fx-border-color: #b00;" text="Create Student" textFill="WHITE">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
