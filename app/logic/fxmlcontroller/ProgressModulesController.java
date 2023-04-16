@@ -42,12 +42,12 @@ public class ProgressModulesController extends Controller implements Initializab
         ObservableList<Content> data = FXCollections.observableArrayList();
         
         String moduleTitle = controller.returnSQL("SELECT Title FROM Module " + 
-        "WHERE ID IN ( SELECT ModuleID FROM ContentItem WHERE CourseName ='" + StatisticsModulesController.selectedCourse +
+        "WHERE ID IN (SELECT ModuleID FROM ContentItem WHERE Status = 'ACTIVE' AND CourseName ='" + StatisticsModulesController.selectedCourse +
          "')", "Title").toString();
         String[] modules = moduleTitle.split(";");
         
         String moduleProgress = controller.returnSQL("SELECT PercentageViewed FROM ViewedContent " +
-        "WHERE ContentID IN ( SELECT ContentID FROM ContentItem WHERE CourseName = '"+ StatisticsModulesController.selectedCourse + "' AND ModuleID IS NOT NULL) " +
+        "WHERE ContentID IN ( SELECT ContentID FROM ContentItem WHERE Status = 'ACTIVE' AND CourseName = '"+ StatisticsModulesController.selectedCourse + "' AND ModuleID IS NOT NULL) " +
         "AND StudentEmail IN ( SELECT Email FROM Student WHERE Name = '" + StatisticsModulesController.selectedStudent + "')",
         "PercentageViewed").toString();
         String[] modulesProg = moduleProgress.split(";");
@@ -55,19 +55,34 @@ public class ProgressModulesController extends Controller implements Initializab
 
         
         String webcastTitle = controller.returnSQL("SELECT Title FROM Webcast " + 
-        "WHERE ID IN ( SELECT ModuleID FROM ContentItem WHERE CourseName ='"+ StatisticsModulesController.selectedCourse +
+        "WHERE ID IN ( SELECT ModuleID FROM ContentItem WHERE Status = 'ACTIVE' AND CourseName ='"+ StatisticsModulesController.selectedCourse +
         "')", "Title").toString();
         System.out.println(webcastTitle);
         String[] webcasts = webcastTitle.split(";");
         
         String webcastProgress = controller.returnSQL("SELECT PercentageViewed FROM ViewedContent "+
-        "WHERE ContentID IN ( SELECT ContentID FROM ContentItem WHERE CourseName = '"+ StatisticsModulesController.selectedCourse + "' AND WebcastID IS NOT NULL) " +
+        "WHERE ContentID IN ( SELECT ContentID FROM ContentItem WHERE Status = 'ACTIVE' AND CourseName = '"+ StatisticsModulesController.selectedCourse + "' AND WebcastID IS NOT NULL) " +
         "AND StudentEmail IN ( SELECT Email FROM Student WHERE Name = '" + StatisticsModulesController.selectedStudent + "')",
         "PercentageViewed").toString();
         String[] webcastsProg = webcastProgress.split(";");
 
-        for (int i = 0; i < modules.length; i++) {
-                data.add(new Content(modules[i], modulesProg[i] + "%", webcasts[i], webcastsProg[i] + "%" ));
+        int length = 0;
+        if(modules.length > webcasts.length) {
+            length = modules.length;
+        } else if(webcasts.length > modules.length) {
+            length = webcasts.length;
+        } else {
+            length = modules.length;
+        }
+
+        for (int i = 0; i < length; i++) {
+            if(i > modules.length) {
+                data.add(new Content("No Data", modulesProg[i] + "%", webcasts[i], webcastsProg[i] + "%"));
+            } else if(i > webcasts.length) {
+                data.add(new Content(modules[i], modulesProg[i] + "%", "No Data", webcastsProg[i] + "%"));
+            } else {
+                data.add(new Content(modules[i], modulesProg[i] + "%", webcasts[i], webcastsProg[i] + "%"));
+            }
         }
         return data;
     }
