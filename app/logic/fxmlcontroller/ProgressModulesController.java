@@ -2,11 +2,8 @@ package app.logic.fxmlcontroller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-
-import app.database.DatabaseController;
-import app.domain.individuals.Student;
 import app.domain.content.Content;
-import app.domain.content.Module;
+import app.database.DatabaseController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -52,8 +49,9 @@ public class ProgressModulesController extends Controller implements Initializab
         String moduleProgress = controller.returnSQL("SELECT PercentageViewed FROM ViewedContent " +
         "WHERE ContentID IN ( SELECT ContentID FROM ContentItem WHERE CourseName = '"+ StatisticsModulesController.selectedCourse + "' AND ModuleID IS NOT NULL) " +
         "AND StudentEmail IN ( SELECT Email FROM Student WHERE Name = '" + StatisticsModulesController.selectedStudent + "')",
-        "Viewed").toString();
+        "PercentageViewed").toString();
         String[] modulesProg = moduleProgress.split(";");
+
 
         
         String webcastTitle = controller.returnSQL("SELECT Title FROM Webcast " + 
@@ -65,7 +63,7 @@ public class ProgressModulesController extends Controller implements Initializab
         String webcastProgress = controller.returnSQL("SELECT PercentageViewed FROM ViewedContent "+
         "WHERE ContentID IN ( SELECT ContentID FROM ContentItem WHERE CourseName = '"+ StatisticsModulesController.selectedCourse + "' AND WebcastID IS NOT NULL) " +
         "AND StudentEmail IN ( SELECT Email FROM Student WHERE Name = '" + StatisticsModulesController.selectedStudent + "')",
-        "Viewed").toString();
+        "PercentageViewed").toString();
         String[] webcastsProg = webcastProgress.split(";");
 
         for (int i = 0; i < modules.length; i++) {

@@ -38,6 +38,7 @@ public class Content {
 
     // setters en getters
     // ..
+
     public String getTitle() {
         return title;
     }
@@ -78,4 +79,35 @@ public class Content {
         this.status = status;
     }
 
+    public String getModuleTitle() {
+        return moduleTitle;
+    }
+
+    public void setModuleTitle(String moduleTitle) {
+        this.moduleTitle = moduleTitle;
+    }
+
+    public String getModuleProgress() {
+        return moduleProgress;
+    }
+
+    public void setModuleProgress(String moduleProgress) {
+        this.moduleProgress = moduleProgress;
+    }
+
+    public String getWebcastTitle() {
+        return webcastTitle;
+    }
+
+    public void setWebcastTitle(String webcastTitle) {
+        this.webcastTitle = webcastTitle;
+    }
+
+    public String getWebcastProgress() {
+        return webcastProgress;
+    }
+
+    public void setWebcastProgress(String webcastProgress) {
+        this.webcastProgress = webcastProgress;
+    }
 }
