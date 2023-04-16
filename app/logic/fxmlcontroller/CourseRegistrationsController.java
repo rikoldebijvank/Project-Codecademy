@@ -53,11 +53,11 @@ public class CourseRegistrationsController extends Controller implements Initial
         for (String name : studentNames) {
                 Button newButton = new Button("Unenroll");
                 newButton.setOnAction((event) -> {
-                        // try {
-                        //         // controller.executeSQL("DELETE FROM Registration WHERE CourseName = " + courseName + " AND StudentEmail = (SELECT Email FROM Student WHERE Name = " + name);
-                        // } catch (IOException e) {
-                        //         e.printStackTrace();
-                        // }
+                        try {
+                                controller.executeSQL("DELETE FROM Registration WHERE CourseName = " + RegistrationsController.courseName1 + " AND StudentEmail = (SELECT Email FROM Student WHERE Name = " + name);
+                        } catch (Exception e) {
+                                e.printStackTrace();
+                        }
                 });
                 studentRegisterationsButtons.add(newButton);
         }

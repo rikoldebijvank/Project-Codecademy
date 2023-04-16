@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
@@ -110,7 +111,7 @@
                   <RowConstraints maxHeight="134.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <TableView fx:id="courseRegistrationsTable" prefHeight="236.0" prefWidth="389.0">
+                  <TableView fx:id="registrationsPerCourse" prefHeight="236.0" prefWidth="389.0" stylesheets="@../css/style.css">
                      <columns>
                         <TableColumn fx:id="studentNames" editable="false" prefWidth="281.0" style="-fx-background-color: #DD0000; -fx-color: #000;" text="Student Name" />
                         <TableColumn fx:id="removeRegistrationStudentBtn" editable="false" prefWidth="106.0" style="-fx-background-color: #DD0000; -fx-color: #000;" />
@@ -119,11 +120,23 @@
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                      </columnResizePolicy>
                   </TableView>
-                  <Button fx:id="toAddNewRegistrationBtn" mnemonicParsing="false" onAction="#continueToAddNewRegistration" prefHeight="31.0" prefWidth="399.0" style="-fx-background-color: #fff; -fx-text-fill: #b00; -fx-border-color: #b00;" text="Add New Registration" textFill="WHITE" GridPane.rowIndex="1">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.rowIndex="1">
+                     <children>
+                        <Button fx:id="toAddNewRegistrationBtn" mnemonicParsing="false" onAction="#continueToRegistrations" prefHeight="42.0" prefWidth="389.0" style="-fx-background-color: #fff; -fx-text-fill: #b00; -fx-border-color: #b00;" text="Back" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="toAddNewRegistrationBtn1" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#continueToAddNewRegistration" prefHeight="42.0" prefWidth="389.0" style="-fx-background-color: #fff; -fx-text-fill: #b00; -fx-border-color: #b00;" text="Add New Registration" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                     <GridPane.margin>
+                        <Insets top="5.0" />
+                     </GridPane.margin>
+                  </HBox>
                </children>
             </GridPane>
          </children>
