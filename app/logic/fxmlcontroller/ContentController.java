@@ -25,14 +25,6 @@ public class ContentController extends Controller implements Initializable {
     @FXML
     private TableColumn<Module, Integer> averageProgress;
 
-    public void continueToModules() throws IOException {
-        gui.changeScene("../presentation/fxmlfiles/ModuleStatistics.fxml");
-    }
-
-    public void continueToWebcasts() throws IOException {
-        gui.changeScene("../presentation/fxmlfiles/AddWebcast.fxml");
-    }
-
     public void continueToAddModule() throws IOException {
         gui.changeScene("../presentation/fxmlfiles/AddModule.fxml");
     }

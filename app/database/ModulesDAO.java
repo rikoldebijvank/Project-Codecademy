@@ -23,11 +23,15 @@ public class ModulesDAO {
             String[] moduleTitlesArray = moduleTitle.toString().split(";");
             for(String title : moduleTitlesArray) {
                 moduleTitles.put(name, title);
-                data.add(new Module(name, moduleTitles.get(name), 8));
+                Object averageProgress = controller.returnSQL("SELECT AVG(PercentageViewed) AS AverageProgress FROM ViewedContent WHERE ContentID = (SELECT ContentID FROM ContentItem WHERE ModuleID = (SELECT ID FROM Module WHERE Title = '" + title + "'))", "AverageProgress");
+                String[] averageProgressArray = averageProgress.toString().split(";");
+                if(!averageProgressArray[0].equals("null")) {
+                    data.add(new Module(name, moduleTitles.get(name), Integer.valueOf(averageProgressArray[0])));
+                } else {
+                    data.add(new Module(name, moduleTitles.get(name), -1));
+                }
             }
         }
-
-        System.out.println("All data: " + data.get(0).getTitle());
 
         return data;
     }

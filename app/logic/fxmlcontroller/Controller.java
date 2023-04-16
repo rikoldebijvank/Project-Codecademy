@@ -54,4 +54,12 @@ public abstract class Controller {
     public void continueToAddNewRegistration() throws IOException {
         gui.changeScene("../presentation/fxmlfiles/AddNewRegistration.fxml");
     }
+
+    public void continueToModules() throws IOException {
+        gui.changeScene("../presentation/fxmlfiles/ModuleStatistics.fxml");
+    }
+
+    public void continueToWebcasts() throws IOException {
+        gui.changeScene("../presentation/fxmlfiles/AddWebcast.fxml");
+    }
 }
