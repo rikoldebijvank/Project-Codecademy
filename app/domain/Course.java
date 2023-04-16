@@ -32,9 +32,9 @@ public class Course {
     }
 
     // andere constructor methode
-    public Course(Button courseButton, String subject, Difficulty difficultyNames,
+    public Course(String courseName, String subject, Difficulty difficultyNames,
             int studentsFinished) {
-        this.courseButton = courseButton;
+        this.courseName = courseName;
         this.subject = subject;
         this.difficulty = difficultyNames;
         this.studentsFinished = studentsFinished;
@@ -60,16 +60,6 @@ public class Course {
     public Double perctDoneAllStudents(HashMap<String, Content> modules) {
         // Method moet nog ingevuld worden
         return 0.0;
-    }
-
-    // recommended cursussen suggereren
-    public void showRecommendedCourses() {
-        StringBuilder builder = new StringBuilder();
-        Iterator<Course> iterator = recommendedCourses.iterator();
-        while (iterator.hasNext()) {
-            builder.append(iterator.next());
-        }
-        System.out.println(builder);
     }
 
     // percentage van studenten die de cursussen hebben afgerond

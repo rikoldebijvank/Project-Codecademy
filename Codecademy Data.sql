@@ -14,13 +14,14 @@ VALUES
 ('sannebakker@gmail.com', 'Sanne Bakker', '2000-01-01', 'F', 'Sportlaan 4', '2345 DF', 'Netherlands'),
 ('elinevisser@gmail.com', 'Eline Visser', '2001-08-02', 'F', 'Nieuwstraat 4', '9438 AL', 'Netherlands')
 
-INSERT INTO Registration (CourseName, StudentEmail, Date, RegistrationID)
+INSERT INTO Registration (CourseName, StudentEmail, Date, CourseFinished)
 VALUES
-('English For Beginners', 'lucaspeeters@gmail.com', '2022-05-01', 1),
-('Algebra', 'thijsdejong@hotmail.com', '2020-11-19', 2),
-('Data Science Using Python', 'koendevries@gmail.com', '2023-04-15', 3),
-('Beginners Guide for SQL', 'sannebakker@gmail.com', '2023-01-01', 4),
-('Beginners Guide for SQL', 'elinevisser@gmail.com', '2022-04-22', 5)
+('English For Beginners', 'lucaspeeters@gmail.com', '2022-05-01', 0),
+('Algebra', 'thijsdejong@hotmail.com', '2020-11-19', 0),
+('Data Science Using Python', 'koendevries@gmail.com', '2023-04-15', 0),
+('Beginners Guide for SQL', 'sannebakker@gmail.com', '2023-01-01', 0),
+('Beginners Guide for SQL', 'elinevisser@gmail.com', '2022-04-22', 0),
+('Beginners Guide for SQL', 'lucaspeeters@gmail.com', '2023-01-11', 1)
 
 INSERT INTO ContactPerson (Name, Email)
 VALUES
@@ -31,14 +32,14 @@ INSERT INTO Speaker (SpeakerID, Name, Organization)
 VALUES
 (1, 'Tijn de Vos', 'Avans')
 
-INSERT INTO Module (Title, Version, ID, ContactPersonName, Description)
+INSERT INTO Module (Title, Version, ID, ContactPersonName, Description, ModuleNumber)
 VALUES
-('English Alphabet', 1, 1, 'Willem Jansen', 'In this module we will learn how to pronounce the letters of the English alphabet.'),
-('Solving for X', 2, 2, 'Ina de Jong', 'This module will teach you how to solve for X'),
-('Introduction to Python', 1, 3, 'Ina de Jong', 'We will discuss the basics of Python and how it interacts with Data Science'),
-('Dutch Alphabet', 4, 4, 'Willem Jansen', 'This module will teach you how to pronounce the letters of the Dutch alphabet'),
-('Basic Commands', 1, 5, 'Ina de Jong', 'We will teach you the basic commands of SQL'),
-('Using JOIN', 2, 6, 'Ina de Jong', 'You will learn how to join two tables')
+('English Alphabet', 1, 1, 'Willem Jansen', 'In this module we will learn how to pronounce the letters of the English alphabet.', 1),
+('Solving for X', 2, 2, 'Ina de Jong', 'This module will teach you how to solve for X', 1),
+('Introduction to Python', 1, 3, 'Ina de Jong', 'We will discuss the basics of Python and how it interacts with Data Science', 1),
+('Dutch Alphabet', 4, 4, 'Willem Jansen', 'This module will teach you how to pronounce the letters of the Dutch alphabet', 1),
+('Basic Commands', 1, 5, 'Ina de Jong', 'We will teach you the basic commands of SQL', 1),
+('Using JOIN', 2, 6, 'Ina de Jong', 'You will learn how to join two tables', 1)
 
 INSERT INTO Webcast (Title, ID, SpeakerId, URL, Description, TimeInMinutes, Views)
 VALUES
@@ -73,4 +74,5 @@ VALUES
 (5, 'sannebakker@gmail.com', 30),
 (5, 'thijsdejong@hotmail.com', 15),
 (6, 'lucaspeeters@gmail.com', 5),
-(7, 'koendevries@gmail.com', 65)
+(7, 'koendevries@gmail.com', 65),
+(10, 'lucaspeeters@gmail.com', 100)

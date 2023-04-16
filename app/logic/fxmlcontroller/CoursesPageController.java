@@ -24,7 +24,7 @@ public class CoursesPageController extends Controller implements Initializable {
         @FXML
         private TableView<Course> adminCoursesTable;
         @FXML
-        private TableColumn<Course, Button> adminCoursesCourseName;
+        private TableColumn<Course, String> adminCoursesCourseName;
         @FXML
         private TableColumn<Course, String> adminCoursesSubject;
         @FXML
@@ -37,13 +37,13 @@ public class CoursesPageController extends Controller implements Initializable {
         @Override
         public void initialize(URL location, ResourceBundle resources) {
                 adminCoursesCourseName
-                                .setCellValueFactory(new PropertyValueFactory<Course, Button>("courseButton"));
+                                .setCellValueFactory(new PropertyValueFactory<>("courseName"));
                 adminCoursesSubject
-                                .setCellValueFactory(new PropertyValueFactory<Course, String>("subject"));
+                                .setCellValueFactory(new PropertyValueFactory<>("subject"));
                 adminCoursesDifficulty
-                                .setCellValueFactory(new PropertyValueFactory<Course, String>("difficulty"));
+                                .setCellValueFactory(new PropertyValueFactory<>("difficulty"));
                 adminCoursesStudentsFinished
-                                .setCellValueFactory(new PropertyValueFactory<Course, Integer>("studentsFinished"));
+                                .setCellValueFactory(new PropertyValueFactory<>("studentsFinished"));
 
                 adminCoursesTable.setItems(getData());
         }
@@ -51,25 +51,14 @@ public class CoursesPageController extends Controller implements Initializable {
         // get alle benodigde data vanuit de sql
         public ObservableList<Course> getData() {
                 ObservableList<Course> data = FXCollections.observableArrayList();
-                String courseName = controller.returnSQL("SELECT CourseName FROM Course", "CourseName")
-                                .toString();
-                String[] courseNames = courseName.split(";");
-                ArrayList<Button> courseButtons = new ArrayList<>();
-                for (String name : courseNames) {
-                        Button newButton = new Button(name);
-                        newButton.setOnAction((event) -> {
-                                try {
-                                        gui.changeScene("../presentation/fxmlfiles/AddModule.fxml");
-                                } catch (IOException e) {
-                                        e.printStackTrace();
-                                }
-                        });
-                        courseButtons.add(newButton);
-                }
 
-                String subject = controller.returnSQL("SELECT Subject FROM Course", "Subject")
+                String courseNames = controller.returnSQL("SELECT CourseName FROM Course", "CourseName")
                                 .toString();
-                String[] subjectNames = subject.split(";");
+                String[] courseNamesArray = courseNames.split(";");
+
+                String subjects = controller.returnSQL("SELECT Subject FROM Course", "Subject")
+                                .toString();
+                String[] subjectNames = subjects.split(";");
 
                 String difficulty = controller.returnSQL("SELECT Difficulty FROM Course", "Difficulty")
                                 .toString();
@@ -85,8 +74,15 @@ public class CoursesPageController extends Controller implements Initializable {
                         }
                 }
 
-                for (int i = 0; i < courseNames.length && i < difficultyList.size(); i++) {
-                        data.add(new Course(courseButtons.get(i), subjectNames[i], difficultyList.get(i), -1));
+                ArrayList<Integer> studentsFinishedArrayList = new ArrayList<>();
+                for(String name : courseNamesArray) {
+                        Object studentsFinished = controller.returnSQL("SELECT COUNT(CourseFinished) AS StudentsFinished FROM Registration WHERE CourseFinished = 1 AND CourseName = '" + name + "'", "StudentsFinished");
+                        String[] studentsFinishedArray = studentsFinished.toString().split(";");
+                        studentsFinishedArrayList.add(Integer.valueOf(studentsFinishedArray[0]));
+                }
+
+                for (int i = 0; i < courseNamesArray.length && i < difficultyList.size(); i++) {
+                        data.add(new Course(courseNamesArray[i], subjectNames[i], difficultyList.get(i), studentsFinishedArrayList.get(i)));
                 }
                 return data;
         }
