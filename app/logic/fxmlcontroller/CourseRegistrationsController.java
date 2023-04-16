@@ -1,5 +1,6 @@
 package app.logic.fxmlcontroller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -11,6 +12,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -21,16 +23,20 @@ public class CourseRegistrationsController extends Controller implements Initial
     Gui gui = new Gui();
 
     @FXML
-    private TableView<Student> courseRegistrationsTable;
+    private TableView<Student> registrationsPerCourse;
     @FXML
     private TableColumn<Student, String> studentNames;
-
+    @FXML
+    private TableColumn<Student, Button> removeRegistrationStudentBtn;
+    @FXML
+    private Button addNewRegistrationBtn;
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        studentNames.setCellValueFactory(new PropertyValueFactory<>("courseName"));
-        courseRegistrationsTable.setItems(getData());
+        studentNames.setCellValueFactory(new PropertyValueFactory<Student, String>("Name"));
+        removeRegistrationStudentBtn.setCellValueFactory(new PropertyValueFactory<Student, Button>("removeStudentButton"));
+        registrationsPerCourse.setItems(getData());
         
     }
 
@@ -38,13 +44,31 @@ public class CourseRegistrationsController extends Controller implements Initial
     // get alle benodigde data vanuit de sql
     public ObservableList<Student> getData() {
         ObservableList<Student> data = FXCollections.observableArrayList();
-        String studentName = controller.returnSQL("SELECT Name FROM Student WHERE Student.Email = Registration.StudentEmail AND Registration.CourseName = Course.CourseName", "StudentName")
+        String studentName = controller.returnSQL("SELECT Name FROM Student " + 
+        "WHERE Email IN ( SELECT StudentEmail FROM Registration " + 
+        "WHERE CourseName = '" + RegistrationsController.courseName1 + "');", "Name")
                         .toString();
         String[] studentNames = studentName.split(";");
+        ArrayList<Button> studentRegisterationsButtons = new ArrayList<>();
+        for (String name : studentNames) {
+                Button newButton = new Button("Unenroll");
+                newButton.setOnAction((event) -> {
+                        try {
+                                controller.executeSQL("DELETE FROM Registration WHERE CourseName = '" + RegistrationsController.courseName1 +
+                                "' AND StudentEmail = (SELECT Email FROM Student WHERE Name = '" + name + "');");
+                                gui.changeScene("../presentation/fxmlfiles/RegistrationsPerCourse.fxml");
+                        } catch (Exception e) {
+                                e.printStackTrace();
+                        }
+                });
+                studentRegisterationsButtons.add(newButton);
+        }
+
         for (int i = 0; i < studentNames.length; i++) {
-                data.add(new Student(studentNames[i]));
+                data.add(new Student(studentNames[i], studentRegisterationsButtons.get(i)));
         }
         return data;
-}
+    }
+
 
 }

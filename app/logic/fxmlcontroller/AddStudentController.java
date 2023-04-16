@@ -11,7 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-public class FxmlSignInController extends Controller {
+public class AddStudentController extends Controller {
     private DatabaseController controller = new DatabaseController();
     private Gui gui = new Gui();
 
@@ -84,20 +84,9 @@ public class FxmlSignInController extends Controller {
         } else if (!studentGender.getText().equals("M") && !studentGender.getText().equals("F")) {
             studentSignUpError.setText("Gender has to be either 'M' or 'F'");
 
-        } else if (!(studentPostalCode.getText().charAt(0) > '0') || !(studentPostalCode.getText().charAt(0) <= '9')
-                || !(studentPostalCode.getText().charAt(1) >= '0')
-                || !(studentPostalCode.getText().charAt(1) <= '9')
-                || !(studentPostalCode.getText().charAt(2) >= '0')
-                || !(studentPostalCode.getText().charAt(2) <= '9')
-                || !(studentPostalCode.getText().charAt(3) >= '0')
-                || !(studentPostalCode.getText().charAt(3) <= '9')
-                || !(studentPostalCode.getText().charAt(4) == ' ')
-                || !(studentPostalCode.getText().charAt(5) >= 'A')
-                || !(studentPostalCode.getText().charAt(5) <= 'Z')
-                || !(studentPostalCode.getText().charAt(6) >= 'A')
-                || !(studentPostalCode.getText().charAt(6) <= 'Z')) {
-            studentSignUpError.setText("Incorrect Postal Code Format");
-
+        } else if (!(studentPostalCode.getText().matches("[1-9][0-9]{3} [A-Z]{2}"))) {
+            studentSignUpError.setText("Incorrect Postal Code Format, use the format \"9999 XX\"");
+            
         } else if (signUpSQLTakenValue == null) {
             controller.createStudent(studentName.getText(), studentEmail.getText(),
                     studentDateOfBirth.getValue(), studentAddress.getText(), studentPostalCode.getText(),

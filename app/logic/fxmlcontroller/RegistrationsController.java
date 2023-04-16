@@ -29,6 +29,9 @@ public class RegistrationsController extends Controller implements Initializable
     @FXML
     private TableColumn<Course, Button> viewRegistrationsBtn;
 
+    public static String courseName1;
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         courseNames.setCellValueFactory(new PropertyValueFactory<Course, String>("courseName"));
@@ -49,7 +52,8 @@ public class RegistrationsController extends Controller implements Initializable
                 Button newButton = new Button("View Registrations");
                 newButton.setOnAction((event) -> {
                         try {
-                            gui.changeScene("../presentation/fxmlfiles/RegistrationsPerCourse.fxml");
+                                courseName1 = name;
+                                gui.changeScene("../presentation/fxmlfiles/RegistrationsPerCourse.fxml");
                         } catch (IOException e) {
                                 e.printStackTrace();
                         }

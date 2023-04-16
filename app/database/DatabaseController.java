@@ -79,8 +79,8 @@ public class DatabaseController {
     }
 
     // create new course en saving data in de sql
-    public void createCourse(String name, String subject, String intro, String difficulty, String adminEmail) {
+    public void createCourse(String name, String subject, String intro, String difficulty, int chapters) {
         executeSQL("INSERT INTO Course VALUES ('" + name + "', '" + subject + "', '" + intro + "', '" + difficulty
-                + "', '" + adminEmail + "')");
+                + "', '" + chapters + "')");
     }
 }
