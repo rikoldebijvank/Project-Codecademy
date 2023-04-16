@@ -2,7 +2,6 @@ package app.database;
 
 import app.domain.Course;
 import app.domain.Difficulty;
-import app.presentation.Gui;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
