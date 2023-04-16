@@ -40,7 +40,7 @@
                         <Insets top="5.0" />
                      </padding>
                   </HBox>
-                  <Button alignment="CENTER" graphicTextGap="5.0" mnemonicParsing="false" onAction="#continueToWebcastsStatistics" prefHeight="40.0" prefWidth="156.0" style="-fx-background-color: #b00;" text="Webcasts" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Button alignment="CENTER" graphicTextGap="5.0" mnemonicParsing="false" onAction="#continueToWebcastsStatistics" prefHeight="40.0" prefWidth="156.0" style="-fx-background-color: #fff; -fx-text-fill: #b00; -fx-border-color: #b00;" text="Webcasts" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -51,7 +51,18 @@
                         <Insets />
                      </opaqueInsets>
                   </Button>
-                  <Button alignment="CENTER" graphicTextGap="5.0" mnemonicParsing="false" onAction="#continueToCoursesPage" prefHeight="40.0" prefWidth="156.0" style="-fx-background-color: #b00;" text="Courses" textFill="WHITE" GridPane.rowIndex="1">
+                  <Button alignment="CENTER" graphicTextGap="5.0" mnemonicParsing="false" onAction="#continueToCoursesPage" prefHeight="40.0" prefWidth="156.0" style="-fx-background-color: #fff; -fx-text-fill: #b00; -fx-border-color: #b00;" text="Courses" textFill="WHITE" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Button>
+                  <Button alignment="CENTER" graphicTextGap="5.0" layoutX="25.0" layoutY="72.0" mnemonicParsing="false" onAction="#continueToStatisticsModules" prefHeight="40.0" prefWidth="156.0" style="-fx-background-color: #fff; -fx-text-fill: #b00; -fx-border-color: #b00;" text="Modules" textFill="WHITE" GridPane.rowIndex="2">
                      <font>
                         <Font size="18.0" />
                      </font>
