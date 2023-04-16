@@ -35,7 +35,7 @@ public class CourseRegistrationsController extends Controller implements Initial
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         studentNames.setCellValueFactory(new PropertyValueFactory<Student, String>("Name"));
-        removeRegistrationStudentBtn.setCellValueFactory(new PropertyValueFactory<Student, Button>("removeRegistrationButton"));
+        removeRegistrationStudentBtn.setCellValueFactory(new PropertyValueFactory<Student, Button>("removeStudentButton"));
         registrationsPerCourse.setItems(getData());
         
     }
@@ -45,8 +45,8 @@ public class CourseRegistrationsController extends Controller implements Initial
     public ObservableList<Student> getData() {
         ObservableList<Student> data = FXCollections.observableArrayList();
         String studentName = controller.returnSQL("SELECT Name FROM Student " + 
-        "JOIN Registration ON Student.Email = Registration.StudentEmail " + 
-        "JOIN Course ON Registration.CourseName = Course.CourseName", "Name")
+        "WHERE Email IN ( SELECT StudentEmail FROM Registration " + 
+        "WHERE CourseName = '" + RegistrationsController.courseName1 + "');", "Name")
                         .toString();
         String[] studentNames = studentName.split(";");
         ArrayList<Button> studentRegisterationsButtons = new ArrayList<>();
@@ -54,7 +54,9 @@ public class CourseRegistrationsController extends Controller implements Initial
                 Button newButton = new Button("Unenroll");
                 newButton.setOnAction((event) -> {
                         try {
-                                controller.executeSQL("DELETE FROM Registration WHERE CourseName = " + RegistrationsController.courseName1 + " AND StudentEmail = (SELECT Email FROM Student WHERE Name = " + name);
+                                controller.executeSQL("DELETE FROM Registration WHERE CourseName = '" + RegistrationsController.courseName1 +
+                                "' AND StudentEmail = (SELECT Email FROM Student WHERE Name = '" + name + "');");
+                                gui.changeScene("../presentation/fxmlfiles/RegistrationsPerCourse.fxml");
                         } catch (Exception e) {
                                 e.printStackTrace();
                         }
@@ -63,7 +65,7 @@ public class CourseRegistrationsController extends Controller implements Initial
         }
 
         for (int i = 0; i < studentNames.length; i++) {
-                data.add(new Student(studentNames[i]));
+                data.add(new Student(studentNames[i], studentRegisterationsButtons.get(i)));
         }
         return data;
     }
